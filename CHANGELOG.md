@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.0.2...v1.1.0) (2026-03-22)
+
+
+### Features
+
+* add manual staging/production deploy workflow ([1030631](https://github.com/arsdehnel/golden-key-matrix/commit/1030631227242804e3e6b78caa19724689ecf411))
+
 ## [1.0.2](https://github.com/arsdehnel/golden-key-matrix/compare/v1.0.1...v1.0.2) (2026-03-22)
 
 
