@@ -1,0 +1,66 @@
+{
+	"name": "golden-key-matrix",
+	"version": "0.0.0",
+	"description": "Site for our talk about the Golden Key to Badass Products.",
+	"main": "index.js",
+	"type": "module",
+	"keywords": [],
+	"author": "",
+	"license": "MIT",
+	"private": true,
+	"scripts": {
+		"build": "vite build",
+		"dev": "vite dev",
+		"dev:init": "rw-scripts dev-init",
+		"preview": "vite preview",
+		"worker:run": "rw-scripts worker-run",
+		"clean": "rm -rf ./node_modules/.vite",
+		"release": "rw-scripts ensure-deploy-env && pnpm clean && pnpm build && wrangler deploy --env $CLOUDFLARE_ENV",
+		"generate": "rw-scripts ensure-env && wrangler types --include-runtime false",
+		"types": "tsc",
+		"check": "biome check --write src/",
+		"check:ci": "biome check src/",
+		"format:styles": "prettier --write \"src/**/*.less\"",
+		"format:styles:check": "prettier --check \"src/**/*.less\"",
+		"test": "vitest run",
+		"test:watch": "vitest",
+		"semantic-release": "semantic-release",
+		"prepare": "husky"
+	},
+	"dependencies": {
+		"radix-ui": "latest",
+		"react": "19.2.4",
+		"react-dom": "19.2.4",
+		"react-server-dom-webpack": "19.2.4",
+		"rwsdk": "1.0.3"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "latest",
+		"@cloudflare/vite-plugin": "1.26.1",
+		"@cloudflare/workers-types": "4.20260307.1",
+		"@commitlint/cli": "latest",
+		"@commitlint/config-conventional": "latest",
+		"@semantic-release/changelog": "latest",
+		"@semantic-release/git": "latest",
+		"@semantic-release/github": "latest",
+		"@types/node": "~25.3.5",
+		"@types/react": "19.2.14",
+		"@types/react-dom": "19.2.3",
+		"husky": "latest",
+		"jsdom": "latest",
+		"less": "latest",
+		"prettier": "latest",
+		"semantic-release": "latest",
+		"typescript": "5.9.3",
+		"vite": "7.3.1",
+		"vitest": "latest",
+		"wrangler": "4.71.0"
+	},
+	"pnpm": {
+		"onlyBuiltDependencies": [
+			"esbuild",
+			"sharp",
+			"workerd"
+		]
+	}
+}

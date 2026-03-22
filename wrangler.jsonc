@@ -1,0 +1,37 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "golden-key-matrix",
+	"main": "src/worker.tsx",
+	"compatibility_date": "2025-08-21",
+	"compatibility_flags": ["nodejs_compat"],
+	"assets": {
+		"binding": "ASSETS"
+	},
+	"observability": {
+		"enabled": true
+	},
+	"vars": {},
+	"durable_objects": {
+		"bindings": [
+			{ "name": "SESSION_DO", "class_name": "SessionDurableObject" },
+			{ "name": "SYNCED_STATE_DO", "class_name": "SyncedStateServer" }
+		]
+	},
+	"migrations": [
+		{ "tag": "v1", "new_classes": ["SessionDurableObject", "SyncedStateServer"] }
+	],
+	"env": {
+		"integration": {
+			"name": "golden-key-matrix-integration",
+			"vars": {}
+		},
+		"staging": {
+			"name": "golden-key-matrix-staging",
+			"vars": {}
+		},
+		"production": {
+			"name": "golden-key-matrix",
+			"vars": {}
+		}
+	}
+}
