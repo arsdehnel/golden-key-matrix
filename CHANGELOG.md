@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/arsdehnel/golden-key-matrix/compare/v1.2.1...v1.2.2) (2026-03-22)
+
+
+### Bug Fixes
+
+* trigger deploy workflow explicitly from release rather than tag push ([e0b33fd](https://github.com/arsdehnel/golden-key-matrix/commit/e0b33fd3e97d3fec4c5be0830d1a3e410882ce4f))
+
 ## [1.2.1](https://github.com/arsdehnel/golden-key-matrix/compare/v1.2.0...v1.2.1) (2026-03-22)
 
 
