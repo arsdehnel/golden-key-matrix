@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/arsdehnel/golden-key-matrix/compare/v1.2.0...v1.2.1) (2026-03-22)
+
+
+### Bug Fixes
+
+* use PAT for semantic-release to trigger deploy workflow on tag push ([cac8261](https://github.com/arsdehnel/golden-key-matrix/commit/cac8261232990a21b242a6f1041ca7ce2fc31233))
+
 # [1.2.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.1.0...v1.2.0) (2026-03-22)
 
 
