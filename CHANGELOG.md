@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/arsdehnel/golden-key-matrix/compare/v1.2.2...v1.2.3) (2026-03-22)
+
+
+### Bug Fixes
+
+* add SESSION_SECRET_KEY var to all wrangler environments ([cca58f8](https://github.com/arsdehnel/golden-key-matrix/commit/cca58f83571f867b2e23cc289fdda3f1c9bf0ea2))
+
 ## [1.2.2](https://github.com/arsdehnel/golden-key-matrix/compare/v1.2.1...v1.2.2) (2026-03-22)
 
 
