@@ -11,6 +11,7 @@ declare namespace Cloudflare {
 	interface Env {
 		ASSETS?: Fetcher;
 		SESSION_DO?: DurableObjectNamespace<import("./src/worker").SessionDurableObject>;
+		SESSION_SECRET_KEY?: string;
 		SYNCED_STATE_DO?: DurableObjectNamespace<import("./src/worker").SyncedStateServer>;
 	}
 }
