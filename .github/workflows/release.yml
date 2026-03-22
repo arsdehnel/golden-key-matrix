@@ -1,4 +1,4 @@
-name: Release & Deploy
+name: Release
 
 on:
   push:
@@ -10,9 +10,8 @@ concurrency:
 
 jobs:
   release:
-    name: Release & Deploy to Integration
+    name: Semantic Release
     runs-on: ubuntu-latest
-    environment: integration
     permissions:
       contents: write
       issues: write
@@ -39,11 +38,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: pnpm semantic-release
-
-      - name: Deploy to Integration
-        if: success()
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          CLOUDFLARE_ENV: integration
-        run: pnpm release
