@@ -1,25 +1,18 @@
-import { env } from "cloudflare:workers";
-import { defineDurableSession } from "rwsdk/auth";
 import { render, route } from "rwsdk/router";
 import { SyncedStateServer, syncedStateRoutes } from "rwsdk/use-synced-state/worker";
 import { defineApp } from "rwsdk/worker";
 
 import { Document } from "@/document";
-import { setCommonHeaders } from "@/middleware/headers";
+import headerMiddleware from "@/middleware/headers";
 import { Home } from "@/pages/home";
-import { SessionDurableObject } from "@/session";
+import { SessionDurableObject } from "@/session/durable-object";
 
 export type AppContext = {
 	session: { userId: string | null } | null;
 };
 
-export const sessionStore = defineDurableSession({
-	// biome-ignore lint/style/noNonNullAssertion: binding always present in Workers runtime
-	sessionDurableObject: env.SESSION_DO!,
-});
-
 export default defineApp([
-	setCommonHeaders(),
+	headerMiddleware,
 	({ ctx }) => {
 		ctx;
 	},
