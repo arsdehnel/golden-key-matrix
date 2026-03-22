@@ -4,7 +4,10 @@ import { QrPollClient } from "@/components/dev/QrPollClient";
 import { sessions } from "@/session/store";
 import type { AppContext } from "@/worker";
 
-export const QrPoll = async ({ request, response }: RequestInfo<Record<string, never>, AppContext>) => {
+export const QrPoll = async ({
+	request,
+	response,
+}: RequestInfo<Record<string, never>, AppContext>) => {
 	const session = await sessions.load(request);
 
 	if (!session) {

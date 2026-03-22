@@ -1,8 +1,8 @@
 "use client";
 
-import { useSyncedState } from "rwsdk/use-synced-state/client";
 import { QRCodeSVG } from "qrcode.react";
 import { useEffect } from "react";
+import { useSyncedState } from "rwsdk/use-synced-state/client";
 
 type Props = {
 	sessionId: string | null;

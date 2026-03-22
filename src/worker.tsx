@@ -19,10 +19,7 @@ export default defineApp([
 	},
 	// biome-ignore lint/style/noNonNullAssertion: binding always present in Workers runtime
 	...syncedStateRoutes((e) => e.SYNCED_STATE_DO!),
-	render(Document, [
-		route("/", Home),
-		...prefix("/dev", [route("/qr-poll", QrPoll)]),
-	]),
+	render(Document, [route("/", Home), ...prefix("/dev", [route("/qr-poll", QrPoll)])]),
 ]);
 
 // Required top-level named exports for wrangler Durable Object bindings
