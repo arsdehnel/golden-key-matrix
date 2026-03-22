@@ -52,6 +52,11 @@
 		},
 		"production": {
 			"name": "golden-key-matrix",
+			"workers_dev": false,
+			"routes": [
+				{ "pattern": "golden-key-matrix.com", "custom_domain": true },
+				{ "pattern": "www.golden-key-matrix.com", "custom_domain": true }
+			],
 			"vars": {
 				// Placeholder for type generation — set the real value via `wrangler secret put SESSION_SECRET_KEY`
 				"SESSION_SECRET_KEY": ""

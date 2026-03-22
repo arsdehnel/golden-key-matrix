@@ -4,6 +4,7 @@ import { defineApp } from "rwsdk/worker";
 
 import { Document } from "@/document";
 import headerMiddleware from "@/middleware/headers";
+import wwwRedirect from "@/middleware/www-redirect";
 import { QrPoll } from "@/pages/dev/qr-poll";
 import { Home } from "@/pages/home";
 import { SessionDurableObject } from "@/session/durable-object";
@@ -13,6 +14,7 @@ export type AppContext = {
 };
 
 export default defineApp([
+	wwwRedirect,
 	headerMiddleware,
 	({ ctx }) => {
 		ctx;
