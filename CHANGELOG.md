@@ -1,3 +1,11 @@
+# [1.3.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.2.3...v1.3.0) (2026-03-22)
+
+
+### Features
+
+* configure production custom domain for golden-key-matrix.com ([1c396bc](https://github.com/arsdehnel/golden-key-matrix/commit/1c396bc92b34d9e04f32fcf37bb6a58b15195a1c))
+* redirect www to apex domain ([f60af30](https://github.com/arsdehnel/golden-key-matrix/commit/f60af30a79585a4063dd302d2e7fd649e7e15ca0))
+
 ## [1.2.3](https://github.com/arsdehnel/golden-key-matrix/compare/v1.2.2...v1.2.3) (2026-03-22)
 
 
