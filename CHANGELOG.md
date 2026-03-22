@@ -1,3 +1,15 @@
+# [1.2.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.1.0...v1.2.0) (2026-03-22)
+
+
+### Bug Fixes
+
+* resolve biome import order and formatting issues ([8ef9d66](https://github.com/arsdehnel/golden-key-matrix/commit/8ef9d667d85c3ecf3e261d73d6088b8f0645784c))
+
+
+### Features
+
+* add /dev/qr-poll page with QR code and synced session tracking ([e8868d2](https://github.com/arsdehnel/golden-key-matrix/commit/e8868d25b53baeee71085cb93f68de80a6f08f40))
+
 # [1.1.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.0.2...v1.1.0) (2026-03-22)
 
 
