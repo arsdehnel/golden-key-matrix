@@ -26,7 +26,10 @@
 	"env": {
 		"integration": {
 			"name": "golden-key-matrix-integration",
-			"vars": {},
+			"vars": {
+				// Placeholder for type generation — set the real value via `wrangler secret put SESSION_SECRET_KEY`
+				"SESSION_SECRET_KEY": ""
+			},
 			"durable_objects": {
 				"bindings": [
 					{ "name": "SESSION_DO", "class_name": "SessionDurableObject" },
@@ -36,7 +39,10 @@
 		},
 		"staging": {
 			"name": "golden-key-matrix-staging",
-			"vars": {},
+			"vars": {
+				// Placeholder for type generation — set the real value via `wrangler secret put SESSION_SECRET_KEY`
+				"SESSION_SECRET_KEY": ""
+			},
 			"durable_objects": {
 				"bindings": [
 					{ "name": "SESSION_DO", "class_name": "SessionDurableObject" },
@@ -46,7 +52,10 @@
 		},
 		"production": {
 			"name": "golden-key-matrix",
-			"vars": {},
+			"vars": {
+				// Placeholder for type generation — set the real value via `wrangler secret put SESSION_SECRET_KEY`
+				"SESSION_SECRET_KEY": ""
+			},
 			"durable_objects": {
 				"bindings": [
 					{ "name": "SESSION_DO", "class_name": "SessionDurableObject" },
