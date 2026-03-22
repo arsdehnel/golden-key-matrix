@@ -23,15 +23,33 @@
 	"env": {
 		"integration": {
 			"name": "golden-key-matrix-integration",
-			"vars": {}
+			"vars": {},
+			"durable_objects": {
+				"bindings": [
+					{ "name": "SESSION_DO", "class_name": "SessionDurableObject" },
+					{ "name": "SYNCED_STATE_DO", "class_name": "SyncedStateServer" }
+				]
+			}
 		},
 		"staging": {
 			"name": "golden-key-matrix-staging",
-			"vars": {}
+			"vars": {},
+			"durable_objects": {
+				"bindings": [
+					{ "name": "SESSION_DO", "class_name": "SessionDurableObject" },
+					{ "name": "SYNCED_STATE_DO", "class_name": "SyncedStateServer" }
+				]
+			}
 		},
 		"production": {
 			"name": "golden-key-matrix",
-			"vars": {}
+			"vars": {},
+			"durable_objects": {
+				"bindings": [
+					{ "name": "SESSION_DO", "class_name": "SessionDurableObject" },
+					{ "name": "SYNCED_STATE_DO", "class_name": "SyncedStateServer" }
+				]
+			}
 		}
 	}
 }
