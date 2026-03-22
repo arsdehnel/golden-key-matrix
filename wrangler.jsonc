@@ -18,7 +18,7 @@
 		]
 	},
 	"migrations": [
-		{ "tag": "v1", "new_classes": ["SessionDurableObject", "SyncedStateServer"] }
+		{ "tag": "v1", "new_sqlite_classes": ["SessionDurableObject", "SyncedStateServer"] }
 	],
 	"env": {
 		"integration": {
