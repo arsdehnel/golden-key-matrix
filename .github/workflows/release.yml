@@ -38,3 +38,12 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
         run: pnpm semantic-release
+
+      - name: Trigger Deploy
+        if: success()
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          TAG=$(git describe --tags --abbrev=0)
+          echo "Triggering deploy for $TAG"
+          gh workflow run deploy.yml --ref main --field tag="$TAG"
