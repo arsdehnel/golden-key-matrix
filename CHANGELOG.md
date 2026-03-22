@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/arsdehnel/golden-key-matrix/compare/v1.3.0...v1.3.1) (2026-03-22)
+
+
+### Bug Fixes
+
+* remove SESSION_SECRET_KEY empty var that was overriding the secret ([93e67ad](https://github.com/arsdehnel/golden-key-matrix/commit/93e67ad4060138b29881220f9c790824b1c23238))
+
 # [1.3.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.2.3...v1.3.0) (2026-03-22)
 
 
