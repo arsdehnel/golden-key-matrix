@@ -16,11 +16,7 @@ export type AppContext = {
 export default defineApp([
 	wwwRedirect,
 	headerMiddleware,
-	({ ctx }) => {
-		ctx;
-	},
-	// biome-ignore lint/style/noNonNullAssertion: binding always present in Workers runtime
-	...syncedStateRoutes((e) => e.SYNCED_STATE_DO!),
+	...syncedStateRoutes((e) => e.SYNCED_STATE_DO),
 	render(Document, [route("/", Home), ...prefix("/dev", [route("/qr-poll", QrPoll)])]),
 ]);
 
