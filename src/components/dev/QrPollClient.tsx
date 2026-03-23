@@ -1,7 +1,7 @@
 "use client";
 
 import { QRCodeSVG } from "qrcode.react";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useSyncedState } from "rwsdk/use-synced-state/client";
 
 type Props = {
@@ -15,14 +15,32 @@ export const QrPollClient = ({ sessionId, pollUrl }: Props) => {
 		"sessions",
 		"dev-qr-poll",
 	);
+	const addedRef = useRef(false);
+	const initialRenderRef = useRef(true);
 
+	// biome-ignore lint/correctness/useExhaustiveDependencies: connectedSessions is intentionally a dependency — re-runs when server state syncs so we add our session ID after the full list is known
 	useEffect(() => {
-		if (!sessionId) return;
-		setConnectedSessions((prev) => {
-			if (prev.includes(sessionId)) return prev;
-			return [...prev, sessionId];
-		});
-	}, [sessionId, setConnectedSessions]);
+		if (!sessionId || addedRef.current) return;
+
+		const addSelf = () => {
+			addedRef.current = true;
+			setConnectedSessions((prev) =>
+				prev.includes(sessionId) ? prev : [...prev, sessionId],
+			);
+		};
+
+		if (initialRenderRef.current) {
+			initialRenderRef.current = false;
+			// On first render, getState hasn't resolved yet so connectedSessions is still [].
+			// Wait for it — if the server state is genuinely empty, connectedSessions won't
+			// change and this effect won't re-run, so the timer handles that case.
+			const timer = setTimeout(addSelf, 150);
+			return () => clearTimeout(timer);
+		}
+
+		// connectedSessions changed because getState resolved — safe to add now.
+		addSelf();
+	}, [connectedSessions, sessionId, setConnectedSessions]);
 
 	return (
 		<div>
