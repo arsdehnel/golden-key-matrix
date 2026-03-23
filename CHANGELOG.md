@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/arsdehnel/golden-key-matrix/compare/v1.3.1...v1.3.2) (2026-03-23)
+
+
+### Bug Fixes
+
+* prevent race condition overwriting synced session list ([86c037f](https://github.com/arsdehnel/golden-key-matrix/commit/86c037f40bb21a82ae1b8b6971b30bf1c9376f31))
+
 ## [1.3.1](https://github.com/arsdehnel/golden-key-matrix/compare/v1.3.0...v1.3.1) (2026-03-22)
 
 
