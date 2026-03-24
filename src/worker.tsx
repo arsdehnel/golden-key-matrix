@@ -5,9 +5,9 @@ import { defineApp } from "rwsdk/worker";
 import { Document } from "@/document";
 import headerMiddleware from "@/middleware/headers";
 import wwwRedirect from "@/middleware/www-redirect";
-import { QrPoll } from "@/pages/dev/qr-poll";
 import { Home } from "@/pages/home";
 import { SessionDurableObject } from "@/session/durable-object";
+import DevRoutes from "./pages/dev/routes";
 
 export type AppContext = {
 	session: { userId: string | null } | null;
@@ -16,12 +16,8 @@ export type AppContext = {
 export default defineApp([
 	wwwRedirect,
 	headerMiddleware,
-	({ ctx }) => {
-		ctx;
-	},
-	// biome-ignore lint/style/noNonNullAssertion: binding always present in Workers runtime
-	...syncedStateRoutes((e) => e.SYNCED_STATE_DO!),
-	render(Document, [route("/", Home), ...prefix("/dev", [route("/qr-poll", QrPoll)])]),
+	...syncedStateRoutes((e) => e.SYNCED_STATE_DO),
+	render(Document, [route("/", Home), prefix("/dev", DevRoutes)]),
 ]);
 
 // Required top-level named exports for wrangler Durable Object bindings
