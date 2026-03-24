@@ -1,3 +1,19 @@
+# [1.4.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.3.2...v1.4.0) (2026-03-24)
+
+
+### Bug Fixes
+
+* claude submodule clean up ([4f6da57](https://github.com/arsdehnel/golden-key-matrix/commit/4f6da576d2a7b4ea4ee7a96d64a9e79b4f94fd5e))
+* cleanup worker to remove unnecessary type stuff and biome ignore ([6a00fbe](https://github.com/arsdehnel/golden-key-matrix/commit/6a00fbe6076746738c0f35f7f3239c7a40011093))
+* less formatting ([9c7ba8a](https://github.com/arsdehnel/golden-key-matrix/commit/9c7ba8a8701014244b83baa52d32f8400891091a))
+* rework the routes for dev ([ca8f3eb](https://github.com/arsdehnel/golden-key-matrix/commit/ca8f3eb8abfb36157a2fd5e99cbd0f2918be335a))
+
+
+### Features
+
+* initial page rendering with quadrant and scale idea ([683288a](https://github.com/arsdehnel/golden-key-matrix/commit/683288af3e9787d3347d428b8528e2e488cd138c))
+* sort of demoable poll views in dev page ([373d3f0](https://github.com/arsdehnel/golden-key-matrix/commit/373d3f0c80cf25c649326b157ca3c2fb146a3560))
+
 ## [1.3.2](https://github.com/arsdehnel/golden-key-matrix/compare/v1.3.1...v1.3.2) (2026-03-23)
 
 
