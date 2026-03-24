@@ -1,4 +1,5 @@
-import "@/styles/global.less";
+import styles from "@/styles/global.less?url";
+// import "@/styles/global.less";
 
 export const Document: React.FC<{ children: React.ReactNode }> = ({ children }) => (
 	<html lang="en">
@@ -7,6 +8,7 @@ export const Document: React.FC<{ children: React.ReactNode }> = ({ children }) 
 			<meta name="viewport" content="width=device-width, initial-scale=1" />
 			<title>Golden Key Matrix</title>
 			<link rel="modulepreload" href="/src/client.tsx" />
+			<link rel="stylesheet" href={styles} />
 		</head>
 		<body>
 			{children}
