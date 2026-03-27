@@ -1,6 +1,6 @@
 "use client";
 import { QRCodeSVG } from "qrcode.react";
-import type { PollAnswer } from "@/components/dev/host-view-client";
+import type { PollAnswer } from "@/types";
 
 export default function InitialQuestionHostView({
 	pollAnswerCoordinates,
