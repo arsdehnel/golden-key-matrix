@@ -1,3 +1,10 @@
+# [1.6.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.5.0...v1.6.0) (2026-03-27)
+
+
+### Features
+
+* better url parsing for poll ([5a5f2bc](https://github.com/arsdehnel/golden-key-matrix/commit/5a5f2bc0488b430f82d55f83b10afa8bcc214182))
+
 # [1.5.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.4.0...v1.5.0) (2026-03-27)
 
 
