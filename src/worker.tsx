@@ -4,20 +4,23 @@ import { defineApp } from "rwsdk/worker";
 
 import { Document } from "@/document";
 import headerMiddleware from "@/middleware/headers";
+import sessionMiddleware from "@/middleware/session";
 import wwwRedirect from "@/middleware/www-redirect";
 import { Home } from "@/pages/home";
 import { SessionDurableObject } from "@/session/durable-object";
 import DevRoutes from "./pages/dev/routes";
-
-export type AppContext = {
-	session: { userId: string | null } | null;
-};
+import PageOsnWelcome from "./pages/osn-welcome";
 
 export default defineApp([
 	wwwRedirect,
 	headerMiddleware,
+	sessionMiddleware,
 	...syncedStateRoutes((e) => e.SYNCED_STATE_DO),
-	render(Document, [route("/", Home), prefix("/dev", DevRoutes)]),
+	render(Document, [
+		route("/", Home),
+		route("/osn-welcome", PageOsnWelcome),
+		prefix("/dev", DevRoutes),
+	]),
 ]);
 
 // Required top-level named exports for wrangler Durable Object bindings

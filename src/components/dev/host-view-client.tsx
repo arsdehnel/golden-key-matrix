@@ -2,13 +2,7 @@
 import { useSyncedState } from "rwsdk/use-synced-state/client";
 import InitialQuestionHostView from "@/components/dev/initial-question-host-view";
 import RoomTemperatureQuestion from "@/components/dev/room-temperature-question";
-
-export type PollAnswer = {
-	sessionId: string;
-	roleColor: string;
-	xCoord: number;
-	yCoord: number;
-};
+import type { PollAnswer } from "@/types";
 
 export default function HostViewClient({
 	pollUrl,

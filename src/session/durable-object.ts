@@ -4,6 +4,7 @@ import { MAX_SESSION_DURATION } from "rwsdk/auth";
 type SessionError = "Invalid session" | "Session expired";
 
 export interface Session {
+	sessionId?: string;
 	userId?: string | null;
 	createdAt: number;
 	lastAccessedAt: number;
