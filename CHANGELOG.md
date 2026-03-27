@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.4.0...v1.5.0) (2026-03-27)
+
+
+### Features
+
+* split view for host and attendee ([6eaa305](https://github.com/arsdehnel/golden-key-matrix/commit/6eaa3050c5612aee647d361e40b33d7dad2f976f))
+
 # [1.4.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.3.2...v1.4.0) (2026-03-24)
 
 
