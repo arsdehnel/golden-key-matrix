@@ -1,13 +1,12 @@
-import type { RequestInfo } from "rwsdk/worker";
+import type { DefaultAppContext, RequestInfo } from "rwsdk/worker";
 
 import { QrPollClient } from "@/components/dev/QrPollClient";
 import { sessions } from "@/session/store";
-import type { AppContext } from "@/worker";
 
 export const QrPoll = async ({
 	request,
 	response,
-}: RequestInfo<Record<string, never>, AppContext>) => {
+}: RequestInfo<Record<string, never>, DefaultAppContext>) => {
 	const session = await sessions.load(request);
 
 	if (!session) {

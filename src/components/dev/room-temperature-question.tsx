@@ -2,7 +2,7 @@
 import chroma from "chroma-js";
 import { Slider } from "radix-ui";
 import { useState } from "react";
-import type { PollAnswer } from "./host-view-client";
+import type { PollAnswer } from "@/types";
 
 export default function RoomTemperatureQuestion({
 	recordPollAnswer,
