@@ -6,10 +6,10 @@ import { hostCodeValidation } from "@/actions/host-code-validation";
 import type { PollAnswer } from "@/types";
 
 export default function OsnWelcomeClient({
-	requestUrl,
+	pollUrl,
 	sessionId,
 }: {
-	requestUrl: string;
+	pollUrl: string;
 	sessionId: string | undefined;
 }) {
 	const [hostSessionId, setHostSessionId] = useSyncedState<string | null>(null, "hostSessionId");
@@ -57,7 +57,7 @@ export default function OsnWelcomeClient({
 			<>
 				<h1>Host View</h1>
 				<p>{JSON.stringify(pollAnswerCoordinates, null, 4)}</p>
-				<QRCodeSVG value={requestUrl} size={256} />
+				<QRCodeSVG value={pollUrl} size={256} />
 			</>
 		);
 	}
