@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.6.0...v1.7.0) (2026-03-27)
+
+
+### Features
+
+* separate views by poll status and role ([7f92705](https://github.com/arsdehnel/golden-key-matrix/commit/7f9270561b1fb57df25ed4cea076105a50d65b48))
+
 # [1.6.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.5.0...v1.6.0) (2026-03-27)
 
 
