@@ -65,4 +65,14 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm build
-      - run: pnpm exec wrangler dev --dry-run
+      - run: |
+          pnpm preview &
+          PID=$!
+          sleep 5
+          kill $PID 2>/dev/null
+          wait $PID
+          EXIT_CODE=$?
+
+          if [ $EXIT_CODE -ne 0 ] && [ $EXIT_CODE -ne 143 ]; then
+            exit 1
+          fi
