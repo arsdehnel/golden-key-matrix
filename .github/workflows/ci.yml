@@ -65,4 +65,4 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm build
-      - run: wrangler dev --dry-run
+      - run: pnpm exec wrangler dev --dry-run
