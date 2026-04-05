@@ -1,3 +1,10 @@
+# [1.8.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.7.0...v1.8.0) (2026-04-05)
+
+
+### Features
+
+* add homepage and nav to get to OSN ([a7ccf61](https://github.com/arsdehnel/golden-key-matrix/commit/a7ccf61373ca9dbc7ca3ea8fe430c170c9859e19))
+
 # [1.7.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.6.0...v1.7.0) (2026-03-27)
 
 
