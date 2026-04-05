@@ -1,7 +1,7 @@
 import { QRCodeSVG } from "qrcode.react";
 import type { RequestInfo } from "rwsdk/worker";
 
-export default function Pages__OSN__ThankYou({ request, ctx }: RequestInfo) {
+export default function Pages__OSN__ThankYou({ request }: RequestInfo) {
 	const thankYouUrl = new URL("/osn/thank-you", request.url).href;
 	return (
 		<>
