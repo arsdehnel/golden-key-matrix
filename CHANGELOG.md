@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.9.0...v1.10.0) (2026-04-06)
+
+
+### Features
+
+* add some crappy styling and a global nav ([9b6f5f3](https://github.com/arsdehnel/golden-key-matrix/commit/9b6f5f34d07b6ce09fb788fbc55eb77ebdfa2f48))
+
 # [1.9.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.8.1...v1.9.0) (2026-04-06)
 
 
