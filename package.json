@@ -15,6 +15,7 @@
 		"preview": "vite preview",
 		"worker:run": "rw-scripts worker-run",
 		"clean": "rm -rf ./node_modules/.vite",
+		"release-dry-run": "rw-scripts ensure-deploy-env && pnpm clean && pnpm build && wrangler deploy --dry-run --env $CLOUDFLARE_ENV",
 		"release": "rw-scripts ensure-deploy-env && pnpm clean && pnpm build && wrangler deploy --env $CLOUDFLARE_ENV",
 		"generate": "rw-scripts ensure-env && wrangler types --include-runtime false",
 		"types": "tsc",

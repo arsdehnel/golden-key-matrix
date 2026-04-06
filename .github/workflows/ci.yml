@@ -65,3 +65,6 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm build
+      - env:
+          CLOUDFLARE_ENV: integration
+        run: pnpm release-dry-run
