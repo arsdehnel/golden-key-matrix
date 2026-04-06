@@ -1,5 +1,5 @@
-import { env } from "cloudflare:workers";
-import { defineDurableSession } from "rwsdk/auth";
+import { env } from 'cloudflare:workers';
+import { defineDurableSession } from 'rwsdk/auth';
 
 export const sessions = defineDurableSession({
 	// biome-ignore lint/style/noNonNullAssertion: binding always present in Workers runtime

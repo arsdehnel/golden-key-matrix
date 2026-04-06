@@ -1,3 +1,4 @@
 pnpm check
 pnpm format:styles
 pnpm test
+pnpm lint-staged --allow-empty

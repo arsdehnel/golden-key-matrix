@@ -1,13 +1,7 @@
-import { GitHubLogoIcon } from "@radix-ui/react-icons";
-import { StrictMode } from "react";
+import { GitHubLogoIcon } from '@radix-ui/react-icons';
+import { StrictMode } from 'react';
 
-export default function StandardLayout({
-	children,
-	pageTitle,
-}: {
-	children: React.ReactNode;
-	pageTitle?: string;
-}) {
+export default function StandardLayout({ children, pageTitle }: { children: React.ReactNode; pageTitle?: string }) {
 	return (
 		<StrictMode>
 			<div className="layout-standard">
