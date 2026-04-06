@@ -1,3 +1,15 @@
+# [1.9.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.8.1...v1.9.0) (2026-04-06)
+
+
+### Bug Fixes
+
+* package.json shouldn't have latest as version number ([adb1476](https://github.com/arsdehnel/golden-key-matrix/commit/adb14762258fba94500d582530c1942a9df5b4c3))
+
+
+### Features
+
+* add homepage and nav to get to OSN ([99ceff2](https://github.com/arsdehnel/golden-key-matrix/commit/99ceff2e944d54c95766892763551bea60d9df16))
+
 ## [1.8.1](https://github.com/arsdehnel/golden-key-matrix/compare/v1.8.0...v1.8.1) (2026-04-06)
 
 
