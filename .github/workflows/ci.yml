@@ -68,6 +68,7 @@ jobs:
       - env:
           SESSION_SECRET_KEY: this-is-a-fake-key-for-ci
         run: |
+          env | grep SESSION
           pnpm preview &
           PID=$!
           sleep 5
