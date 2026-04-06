@@ -1,3 +1,10 @@
+## [1.8.1](https://github.com/arsdehnel/golden-key-matrix/compare/v1.8.0...v1.8.1) (2026-04-06)
+
+
+### Reverts
+
+* Revert "chore: fix package.json to have actual versions" ([9181e2e](https://github.com/arsdehnel/golden-key-matrix/commit/9181e2e770ceb022dcef5778a0354fdeb3001a4e))
+
 # [1.8.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.7.0...v1.8.0) (2026-04-05)
 
 
