@@ -67,6 +67,7 @@ jobs:
       - run: pnpm build
       - run: |
           echo "SESSION_SECRET_KEY=secret-key-for-ci-build" >> .env
+          echo "AUTH_SECRET_KEY=secret-key-for-ci-build" >> .env
           pnpm preview &
           PID=$!
           sleep 5
