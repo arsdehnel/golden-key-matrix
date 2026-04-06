@@ -65,7 +65,9 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm build
-      - run: |
+      - env:
+          SESSION_SECRET_KEY: this-is-a-fake-key-for-ci
+        run: |
           pnpm preview &
           PID=$!
           sleep 5
@@ -73,6 +75,9 @@ jobs:
           wait $PID
           EXIT_CODE=$?
 
-          if [ $EXIT_CODE -ne 0 ] && [ $EXIT_CODE -ne 143 ]; then
-            exit 1
+          if [ $EXIT_CODE -eq 143 ]; then
+            echo "Exit code 143 is the expected exit code for killing the process, exiting nicely"
+            exit 0
+          else
+            exit $EXIT_CODE
           fi
