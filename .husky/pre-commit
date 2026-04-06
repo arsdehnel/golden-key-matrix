@@ -1,3 +1,3 @@
-pnpm check:ci
-pnpm format:styles:check
+pnpm check
+pnpm format:styles
 pnpm test
