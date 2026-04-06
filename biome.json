@@ -1,50 +1,28 @@
 {
 	"$schema": "https://biomejs.dev/schemas/2.4.8/schema.json",
 	"files": {
-		"includes": [
-			"src/**/*.{ts,tsx}",
-			"*.ts",
-			"*.mts",
-			"!node_modules",
-			"!dist",
-			"!worker-configuration.d.ts"
-		]
+		"includes": ["**", "!node_modules", "!dist", "!worker-configuration.d.ts"]
 	},
 	"formatter": {
 		"enabled": true,
+		"formatWithErrors": false,
 		"indentStyle": "tab",
 		"indentWidth": 4,
-		"lineWidth": 100,
-		"lineEnding": "lf"
-	},
-	"javascript": {
-		"formatter": {
-			"quoteStyle": "double",
-			"trailingCommas": "all",
-			"semicolons": "always",
-			"arrowParentheses": "always",
-			"bracketSpacing": true
-		},
-		"jsxRuntime": "transparent"
+		"lineWidth": 130
 	},
 	"linter": {
 		"enabled": true,
 		"rules": {
-			"recommended": true,
-			"correctness": {
-				"noUnusedImports": "error",
-				"noUnusedVariables": "error"
-			},
-			"style": {
-				"noNonNullAssertion": "warn"
-			}
+			"recommended": true
 		}
 	},
-	"assist": {
-		"actions": {
-			"source": {
-				"organizeImports": "on"
-			}
-		}
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "single",
+			"trailingCommas": "all",
+			"semicolons": "always",
+			"arrowParentheses": "asNeeded"
+		},
+		"jsxRuntime": "transparent"
 	}
 }

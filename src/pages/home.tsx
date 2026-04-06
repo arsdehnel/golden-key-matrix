@@ -1,7 +1,8 @@
+import StandardLayout from "@/layouts/standard";
+
 export const Home = () => {
 	return (
-		<>
-			<h1>Golden Key Matrix</h1>
+		<StandardLayout>
 			<p>
 				The Golden Key Matrix started as a brainstorming idea for a talk about UX/Design and
 				Architecture working together to build amazing products. The public introduction of
@@ -11,6 +12,6 @@ export const Home = () => {
 			<p>
 				<a href="/osn">OSN Items</a>
 			</p>
-		</>
+		</StandardLayout>
 	);
 };
