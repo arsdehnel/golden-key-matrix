@@ -65,9 +65,10 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm build
-      - run: |
-          echo "SESSION_SECRET_KEY=secret-key-for-ci-build" >> .env
-          echo "AUTH_SECRET_KEY=secret-key-for-ci-build" >> .env
+      - env:
+          SESSION_SECRET_KEY: secret-key-for-ci-build
+          AUTH_SECRET_KEY: secret-key-for-ci-build
+        run: |
           pnpm preview &
           PID=$!
           sleep 5
