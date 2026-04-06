@@ -9,14 +9,18 @@ import wwwRedirect from "@/middleware/www-redirect";
 import { Home } from "@/pages/home";
 import { SessionDurableObject } from "@/session/durable-object";
 import DevRoutes from "./pages/dev/routes";
-import osnRoutes from "./pages/osn/routes";
+import PageOsnWelcome from "./pages/osn-welcome";
 
 export default defineApp([
 	wwwRedirect,
 	headerMiddleware,
 	sessionMiddleware,
 	...syncedStateRoutes((e) => e.SYNCED_STATE_DO),
-	render(Document, [route("/", Home), prefix("/osn", osnRoutes), prefix("/dev", DevRoutes)]),
+	render(Document, [
+		route("/", Home),
+		route("/osn-welcome", PageOsnWelcome),
+		prefix("/dev", DevRoutes),
+	]),
 ]);
 
 // Required top-level named exports for wrangler Durable Object bindings
