@@ -65,21 +65,4 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm build
-      - env:
-          SESSION_SECRET_KEY: secret-key-for-ci-build
-          AUTH_SECRET_KEY: secret-key-for-ci-build
-        run: |
-          pnpm preview &
-          PID=$!
-          sleep 5
-          kill $PID 2>/dev/null
-          wait $PID
-          EXIT_CODE=$?
-
-          if [ $EXIT_CODE -eq 143 ]; then
-            echo "Exit code 143 is the expected exit code for killing the process, exiting nicely"
-            exit 0
-          else
-            echo "Some exit code other than 143 was thrown: $EXIT_CODE"
-            exit $EXIT_CODE
-          fi
+      - run: pnpm release-dry-run
