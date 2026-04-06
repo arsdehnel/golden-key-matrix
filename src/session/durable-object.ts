@@ -1,7 +1,7 @@
-import { DurableObject } from "cloudflare:workers";
-import { MAX_SESSION_DURATION } from "rwsdk/auth";
+import { DurableObject } from 'cloudflare:workers';
+import { MAX_SESSION_DURATION } from 'rwsdk/auth';
 
-type SessionError = "Invalid session" | "Session expired";
+type SessionError = 'Invalid session' | 'Session expired';
 
 export interface Session {
 	sessionId?: string;
@@ -31,7 +31,7 @@ export class SessionDurableObject extends DurableObject {
 			lastAccessedAt: now,
 		};
 
-		await this.ctx.storage.put<Session>("session", session);
+		await this.ctx.storage.put<Session>('session', session);
 		this.session = session;
 		return session;
 	}
@@ -40,30 +40,30 @@ export class SessionDurableObject extends DurableObject {
 		if (this.session) {
 			// Sliding-window expiration: update lastAccessedAt on each access
 			this.session.lastAccessedAt = this.now();
-			await this.ctx.storage.put<Session>("session", this.session);
+			await this.ctx.storage.put<Session>('session', this.session);
 			return { value: this.session };
 		}
 
-		const session = await this.ctx.storage.get<Session>("session");
+		const session = await this.ctx.storage.get<Session>('session');
 
 		if (!session) {
-			return { error: "Invalid session" };
+			return { error: 'Invalid session' };
 		}
 
 		if (session.lastAccessedAt + MAX_SESSION_DURATION < this.now()) {
 			await this.revokeSession();
-			return { error: "Session expired" };
+			return { error: 'Session expired' };
 		}
 
 		// Update lastAccessedAt on read
 		session.lastAccessedAt = this.now();
-		await this.ctx.storage.put<Session>("session", session);
+		await this.ctx.storage.put<Session>('session', session);
 		this.session = session;
 		return { value: session };
 	}
 
 	async revokeSession(): Promise<void> {
-		await this.ctx.storage.delete("session");
+		await this.ctx.storage.delete('session');
 		this.session = undefined;
 	}
 }

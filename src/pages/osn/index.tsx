@@ -1,7 +1,8 @@
+import StandardLayout from '@/layouts/standard';
+
 export default function Pages__OSN__Index() {
 	return (
-		<>
-			<h1>GKM OSN</h1>
+		<StandardLayout pageTitle="Golden Keys Matrix @ OSN 2026">
 			<ul>
 				<li>
 					<a href="/osn/welcome">Welcome Slide / Poll</a>
@@ -10,6 +11,6 @@ export default function Pages__OSN__Index() {
 					<a href="/osn/thank-you">Thank You Slide / Leavebehinds</a>
 				</li>
 			</ul>
-		</>
+		</StandardLayout>
 	);
 }

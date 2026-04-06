@@ -1,8 +1,8 @@
-"use client";
-import chroma from "chroma-js";
-import { Slider } from "radix-ui";
-import { useState } from "react";
-import type { PollAnswer } from "@/types";
+'use client';
+import chroma from 'chroma-js';
+import { Slider } from 'radix-ui';
+import { useState } from 'react';
+import type { PollAnswer } from '@/types';
 
 export default function AttendeePoll({
 	recordPollAnswer,
@@ -11,7 +11,7 @@ export default function AttendeePoll({
 	recordPollAnswer: (answer: PollAnswer) => void;
 	sessionId: string | undefined;
 }) {
-	const roleColorScale = chroma.scale(["#8400ff", "#049e02"]);
+	const roleColorScale = chroma.scale(['#8400ff', '#049e02']);
 	const [roleColor, setRoleColor] = useState(roleColorScale(0.5).hex());
 	const [clickCoordinates, setClickCoordinatess] = useState([50, 50]);
 
@@ -53,13 +53,7 @@ export default function AttendeePoll({
 			<div className="question-frame">
 				<h3>How would you describe your role?</h3>
 				<div className="role-slider">
-					<Slider.Root
-						className="SliderRoot"
-						defaultValue={[50]}
-						max={100}
-						step={1}
-						onValueCommit={handleRoleChange}
-					>
+					<Slider.Root className="SliderRoot" defaultValue={[50]} max={100} step={1} onValueCommit={handleRoleChange}>
 						<Slider.Track className="SliderTrack">
 							<Slider.Range className="SliderRange" />
 						</Slider.Track>
@@ -88,7 +82,7 @@ export default function AttendeePoll({
 					></div>
 					{/* biome-ignore lint/a11y/useKeyWithClickEvents: need to add keyboard option */}
 					<img
-						onClick={(e) => handleRankingClick(e)}
+						onClick={e => handleRankingClick(e)}
 						src="/initial-question-bg.jpg"
 						alt="Empty quadrant graph showing Comfort on the x-axis and Experience on the y-axis"
 					/>
