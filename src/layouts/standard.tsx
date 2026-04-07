@@ -1,7 +1,16 @@
 import { GitHubLogoIcon } from '@radix-ui/react-icons';
+import classnames from 'classnames';
 import { StrictMode } from 'react';
 
-export default function StandardLayout({ children, pageTitle }: { children: React.ReactNode; pageTitle?: string }) {
+export default function StandardLayout({
+	siteSection,
+	children,
+	pageTitle,
+}: {
+	siteSection: string;
+	children: React.ReactNode;
+	pageTitle?: string;
+}) {
 	return (
 		<StrictMode>
 			<div className="layout-standard">
@@ -9,16 +18,26 @@ export default function StandardLayout({ children, pageTitle }: { children: Reac
 					<h1>Golden Keys Matrix</h1>
 					<nav className="primary-nav" aria-label="Primary">
 						<ul>
-							<li>
+							<li
+								className={classnames({
+									'nav-item': true,
+									'nav-item-active': siteSection === 'home',
+								})}
+							>
 								<a href="/">Home</a>
 							</li>
-							<li>
+							<li
+								className={classnames({
+									'nav-item': true,
+									'nav-item-active': siteSection === 'osn',
+								})}
+							>
 								<a href="/osn">Open Source North</a>
 							</li>
 						</ul>
 					</nav>
 				</header>
-				<main className="main-content">
+				<main className={classnames('main-content', `site-section-${siteSection}`)}>
 					{pageTitle && <h2 className="page-title">{pageTitle}</h2>}
 					{children}
 				</main>

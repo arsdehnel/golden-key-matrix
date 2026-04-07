@@ -2,7 +2,7 @@ import StandardLayout from '@/layouts/standard';
 
 export default function Pages__OSN__Index() {
 	return (
-		<StandardLayout pageTitle="Golden Keys Matrix @ OSN 2026">
+		<StandardLayout pageTitle="Golden Keys Matrix @ OSN 2026" siteSection="osn">
 			<ul>
 				<li>
 					<a href="/osn/welcome">Welcome Slide / Poll</a>

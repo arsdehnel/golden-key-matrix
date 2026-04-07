@@ -16,10 +16,10 @@ export default function HostRegister({ hostIdentified }: { hostIdentified: (sess
 
 	return (
 		<>
-			<h1>Hey hosts, enter your code to get started</h1>
+			<h3>Hey hosts, enter your code to get started</h3>
 			<form onSubmit={handleSubmit}>
 				<div>
-					Presenter code: <input type="text" name="presenter-code" />
+					Code: <input type="text" name="presenter-code" />
 				</div>
 				{error && <p>{error}</p>}
 				<button type="submit">Start Poll</button>

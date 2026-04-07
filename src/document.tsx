@@ -8,6 +8,12 @@ export const Document: React.FC<{ children: React.ReactNode }> = ({ children }) 
 			<title>Golden Key Matrix</title>
 			<link rel="modulepreload" href="/src/client.tsx" />
 			<link rel="stylesheet" href={styles} />
+			<link rel="preconnect" href="https://fonts.googleapis.com" />
+			<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+			<link
+				href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+				rel="stylesheet"
+			/>
 		</head>
 		<body>
 			{children}

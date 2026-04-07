@@ -5,7 +5,7 @@ import StandardLayout from '@/layouts/standard';
 export default function Pages__OSN__ThankYou({ request }: RequestInfo) {
 	const thankYouUrl = new URL('/osn/thank-you', request.url).href;
 	return (
-		<StandardLayout pageTitle="Thank You">
+		<StandardLayout pageTitle="Thank You" siteSection="osn">
 			<p>Thank you for participating!</p>
 			<h2>Dorothy Toth</h2>
 			<ul>
