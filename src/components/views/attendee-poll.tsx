@@ -46,7 +46,7 @@ export default function AttendeePoll({
 
 	return (
 		<div className="initial-question">
-			<h1>Attendee View</h1>
+			<h3>Attendee View</h3>
 			<p>Session ID: {sessionId}</p>
 			<h2>Taking the Temperature</h2>
 			<p>Looking to see who we have in the room with us today!</p>

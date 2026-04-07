@@ -17,6 +17,9 @@ importers:
       chroma-js:
         specifier: ^3.2.0
         version: 3.2.0
+      classnames:
+        specifier: ^2.5.1
+        version: 2.5.1
       qrcode.react:
         specifier: ^4.2.0
         version: 4.2.0(react@19.2.4)
@@ -2449,6 +2452,9 @@ packages:
     resolution: {integrity: sha512-9gYlLtS6tStdRWzrtXaTMnqcM4dudNegMXJxkR0I/CXObHalYeYcAMPrL19eroNZHtJ8DQmu1E+ZNOYu/IXMXw==}
     peerDependencies:
       devtools-protocol: '*'
+
+  classnames@2.5.1:
+    resolution: {integrity: sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==}
 
   clean-stack@2.2.0:
     resolution: {integrity: sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==}
@@ -7275,6 +7281,8 @@ snapshots:
       devtools-protocol: 0.0.1581282
       mitt: 3.0.1
       zod: 3.25.76
+
+  classnames@2.5.1: {}
 
   clean-stack@2.2.0: {}
 

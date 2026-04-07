@@ -32,6 +32,7 @@
 		"@radix-ui/colors": "^3.0.0",
 		"@radix-ui/react-icons": "^1.3.2",
 		"chroma-js": "^3.2.0",
+		"classnames": "^2.5.1",
 		"qrcode.react": "^4.2.0",
 		"radix-ui": "latest",
 		"react": "19.2.4",
