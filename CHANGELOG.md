@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.10.0...v1.11.0) (2026-04-07)
+
+
+### Features
+
+* much better styling and even some content ([6fcfd7a](https://github.com/arsdehnel/golden-key-matrix/commit/6fcfd7ab4ca8944241d632346ebde4e9f2840bea))
+
 # [1.10.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.9.0...v1.10.0) (2026-04-06)
 
 
