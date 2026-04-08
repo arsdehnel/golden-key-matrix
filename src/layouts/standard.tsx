@@ -1,6 +1,7 @@
-import { GitHubLogoIcon } from '@radix-ui/react-icons';
+import { GitHubLogoIcon, GlobeIcon, LinkedInLogoIcon } from '@radix-ui/react-icons';
 import classnames from 'classnames';
 import { StrictMode } from 'react';
+import FooterLinks from '@/components/footer-links';
 
 export default function StandardLayout({
 	siteSection,
@@ -42,15 +43,61 @@ export default function StandardLayout({
 					{children}
 				</main>
 				<footer className="global-footer">
-					<nav className="footer-nav" aria-label="Footer">
-						<ul>
-							<li>
-								<a href="https://github.com/arsdehnel/golden-key-matrix">
-									<GitHubLogoIcon />
-								</a>
-							</li>
-						</ul>
-					</nav>
+					<div className="footer-links-container">
+						<FooterLinks
+							title="Golden Key Matrix"
+							linkCategory="gkm"
+							links={[
+								{
+									key: 'github',
+									href: 'https://github.com/arsdehnel/golden-key-matrix',
+									icon: GitHubLogoIcon,
+								},
+							]}
+						/>
+						<FooterLinks
+							title="Dorothy Toth"
+							linkCategory="dt"
+							links={[
+								{
+									key: 'site',
+									href: 'https://dorothytoth.com/',
+									icon: GlobeIcon,
+								},
+								{
+									key: 'github',
+									href: 'https://github.com/DorothyToth',
+									icon: GitHubLogoIcon,
+								},
+								{
+									key: 'linkedin',
+									href: 'https://www.linkedin.com/in/dorothy-toth/',
+									icon: LinkedInLogoIcon,
+								},
+							]}
+						/>
+						<FooterLinks
+							title="Adam Dehnel"
+							linkCategory="ad"
+							links={[
+								{
+									key: 'site',
+									href: 'https://arsdehnel.com/',
+									icon: GlobeIcon,
+								},
+								{
+									key: 'github',
+									href: 'https://github.com/arsdehnel',
+									icon: GitHubLogoIcon,
+								},
+								{
+									key: 'linkedin',
+									href: 'https://www.linkedin.com/in/adamdehnel/',
+									icon: LinkedInLogoIcon,
+								},
+							]}
+						/>
+					</div>
 				</footer>
 			</div>
 		</StrictMode>
