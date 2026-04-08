@@ -1,3 +1,15 @@
+# [1.12.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.11.0...v1.12.0) (2026-04-08)
+
+
+### Bug Fixes
+
+* typo in method name ([0816156](https://github.com/arsdehnel/golden-key-matrix/commit/0816156d8fe75c0682951cfc71b9c93d97e150bc))
+
+
+### Features
+
+* better phone-friendly view for attendee poll ([cd12a4a](https://github.com/arsdehnel/golden-key-matrix/commit/cd12a4aa2ff526b11f8c83e52c7f344e05f275fe))
+
 # [1.11.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.10.0...v1.11.0) (2026-04-07)
 
 
