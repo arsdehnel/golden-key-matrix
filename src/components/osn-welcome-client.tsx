@@ -9,7 +9,7 @@ export default function OsnWelcomeClient({ pollUrl, sessionId }: { pollUrl: stri
 	const [hostSessionId, setHostSessionId] = useSyncedState<string | null>(null, 'hostSessionId');
 	const [pollAnswerCoordinates, setPollAnswerCoordinates] = useSyncedState<PollAnswer[]>([], 'pollCoordinates');
 
-	const recordPollAnswerr = (answer: PollAnswer) => {
+	const recordPollAnswer = (answer: PollAnswer) => {
 		setPollAnswerCoordinates(prev => [...prev.filter(a => a.sessionId !== answer.sessionId), answer]);
 	};
 
@@ -25,5 +25,5 @@ export default function OsnWelcomeClient({ pollUrl, sessionId }: { pollUrl: stri
 		return <HostWelcome pollAnswerCoordinates={pollAnswerCoordinates} pollUrl={pollUrl} />;
 	}
 
-	return <AttendeePoll sessionId={sessionId} recordPollAnswer={recordPollAnswerr} />;
+	return <AttendeePoll sessionId={sessionId} recordPollAnswer={recordPollAnswer} />;
 }
