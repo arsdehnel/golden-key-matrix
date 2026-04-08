@@ -12,6 +12,24 @@ export default function StandardLayout({
 	children: React.ReactNode;
 	pageTitle?: string;
 }) {
+	const navItems = [
+		{
+			key: 'home',
+			href: '/',
+			label: 'Home',
+		},
+		{
+			key: 'osn',
+			href: '/osn',
+			label: 'Open Source North',
+		},
+		{
+			key: 'matrix',
+			href: '/matrix',
+			label: 'Matrix',
+		},
+	];
+
 	return (
 		<StrictMode>
 			<div className="layout-standard">
@@ -19,22 +37,19 @@ export default function StandardLayout({
 					<h1>Golden Keys Matrix</h1>
 					<nav className="primary-nav" aria-label="Primary">
 						<ul>
-							<li
-								className={classnames({
-									'nav-item': true,
-									'nav-item-active': siteSection === 'home',
-								})}
-							>
-								<a href="/">Home</a>
-							</li>
-							<li
-								className={classnames({
-									'nav-item': true,
-									'nav-item-active': siteSection === 'osn',
-								})}
-							>
-								<a href="/osn">Open Source North</a>
-							</li>
+							{navItems.map(i => {
+								return (
+									<li
+										key={i.key}
+										className={classnames({
+											'nav-item': true,
+											'nav-item-active': siteSection === i.key,
+										})}
+									>
+										<a href={i.href}>{i.label}</a>
+									</li>
+								);
+							})}
 						</ul>
 					</nav>
 				</header>
