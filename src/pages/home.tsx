@@ -1,6 +1,6 @@
 import StandardLayout from '@/layouts/standard';
 
-export const Home = () => {
+export default function Pages__Home() {
 	return (
 		<StandardLayout siteSection="home">
 			<p>
@@ -14,4 +14,4 @@ export const Home = () => {
 			</p>
 		</StandardLayout>
 	);
-};
+}
