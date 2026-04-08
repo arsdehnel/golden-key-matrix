@@ -45,21 +45,27 @@ export default function AttendeePoll({
 	};
 
 	return (
-		<div className="initial-question">
-			<h3>Attendee View</h3>
-			<p>Session ID: {sessionId}</p>
-			<h2>Taking the Temperature</h2>
-			<p>Looking to see who we have in the room with us today!</p>
-			<div className="question-frame">
-				<h3>How would you describe your role?</h3>
-				<div className="role-slider">
-					<Slider.Root className="SliderRoot" defaultValue={[50]} max={100} step={1} onValueCommit={handleRoleChange}>
-						<Slider.Track className="SliderTrack">
-							<Slider.Range className="SliderRange" />
-						</Slider.Track>
-						<Slider.Thumb className="SliderThumb" aria-label="Volume" />
-					</Slider.Root>
-				</div>
+		<>
+			<p>Couple quick questions to see who we've got in the room today.</p>
+			<h3>How would you describe your role?</h3>
+			<p>
+				We put this on a slider because all companies, roles, and humans are different. Slide it to a spot that feels
+				right for you!
+			</p>
+			<div className="role-slider">
+				<Slider.Root
+					className="gkm-slider-root"
+					defaultValue={[50]}
+					max={100}
+					step={1}
+					onValueCommit={handleRoleChange}
+					orientation="vertical"
+				>
+					<Slider.Track className="gkm-slider-track">
+						<Slider.Range className="gkm-slider-range" />
+					</Slider.Track>
+					<Slider.Thumb className="gkm-slider-thumb" aria-label="role-rating" />
+				</Slider.Root>
 				<div className="role-markers">
 					<div className="role">Developer</div>
 					<div className="role">Dev with an eye</div>
@@ -68,26 +74,30 @@ export default function AttendeePoll({
 					<div className="role">Designer</div>
 				</div>
 			</div>
-			<div className="question-frame">
-				<h3>Click to plot your ranking on these two scales</h3>
-				<p>What is your experience and comfort level with "the other side"?</p>
-				<div className="ranking-frame">
-					<div
-						className="marker"
-						style={{
-							top: clickCoordinates[1],
-							left: clickCoordinates[0],
-							backgroundColor: roleColor,
-						}}
-					></div>
-					{/* biome-ignore lint/a11y/useKeyWithClickEvents: need to add keyboard option */}
-					<img
-						onClick={e => handleRankingClick(e)}
-						src="/initial-question-bg.jpg"
-						alt="Empty quadrant graph showing Comfort on the x-axis and Experience on the y-axis"
-					/>
-				</div>
+
+			<h3>Click to plot your ranking on these two scales</h3>
+			<p>What is your experience and comfort level with "the other side"?</p>
+			<div className="ranking-frame">
+				<div
+					className="marker"
+					style={{
+						top: clickCoordinates[1],
+						left: clickCoordinates[0],
+						backgroundColor: roleColor,
+					}}
+				></div>
+				{/* biome-ignore lint/a11y/useKeyWithClickEvents: need to add keyboard option */}
+				<img
+					onClick={e => handleRankingClick(e)}
+					src="/initial-question-bg.jpg"
+					alt="Empty quadrant graph showing Comfort on the x-axis and Experience on the y-axis"
+				/>
 			</div>
-		</div>
+
+			<p>
+				No submit here, we're collecting results in real-time and you can keep tweaking your answers -- and see them
+				change on the board!
+			</p>
+		</>
 	);
 }
