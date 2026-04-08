@@ -1,3 +1,10 @@
+# [1.14.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.13.0...v1.14.0) (2026-04-08)
+
+
+### Features
+
+* initial matrix leavebehind page ([9ee4e20](https://github.com/arsdehnel/golden-key-matrix/commit/9ee4e20f2186accbba2dccb4f201c2df426a55ac))
+
 # [1.13.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.12.0...v1.13.0) (2026-04-08)
 
 
