@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.12.0...v1.13.0) (2026-04-08)
+
+
+### Features
+
+* yay footer links ([d73fe77](https://github.com/arsdehnel/golden-key-matrix/commit/d73fe77da213c644705e790678308db82e365465))
+
 # [1.12.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.11.0...v1.12.0) (2026-04-08)
 
 
