@@ -1,3 +1,17 @@
+# [1.15.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.14.0...v1.15.0) (2026-04-10)
+
+
+### Bug Fixes
+
+* move to poppins for the font ([d8b535a](https://github.com/arsdehnel/golden-key-matrix/commit/d8b535af008d5bd60a0ace31b253362b64318abb))
+
+
+### Features
+
+* initial matrix view ([1854c28](https://github.com/arsdehnel/golden-key-matrix/commit/1854c2828cb98dc777e304dffe7e3a04c96139a6))
+* more pieces of the matrix ([b88b7d6](https://github.com/arsdehnel/golden-key-matrix/commit/b88b7d6b76d6553c9268c4dc0720693ed9b70c07))
+* move to slide deck color scheme ([17e81ff](https://github.com/arsdehnel/golden-key-matrix/commit/17e81ffa211b7d3ff0665c5c08b76b48e40a66da))
+
 # [1.14.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.13.0...v1.14.0) (2026-04-08)
 
 
