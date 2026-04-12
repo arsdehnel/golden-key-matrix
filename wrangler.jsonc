@@ -17,9 +17,7 @@
 			{ "name": "SYNCED_STATE_DO", "class_name": "SyncedStateServer" }
 		]
 	},
-	"migrations": [
-		{ "tag": "v1", "new_sqlite_classes": ["SessionDurableObject", "SyncedStateServer"] }
-	],
+	"migrations": [{ "tag": "v1", "new_sqlite_classes": ["SessionDurableObject", "SyncedStateServer"] }],
 	"env": {
 		"integration": {
 			"name": "golden-key-matrix-integration",
