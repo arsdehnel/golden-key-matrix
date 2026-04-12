@@ -1,7 +1,7 @@
-import { GitHubLogoIcon, GlobeIcon, LinkedInLogoIcon } from '@radix-ui/react-icons';
-import classnames from 'classnames';
-import { StrictMode } from 'react';
-import FooterLinks from '@/components/footer-links';
+import { GitHubLogoIcon, GlobeIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
+import classnames from "classnames";
+import { StrictMode } from "react";
+import FooterLinks from "@/components/footer-links";
 
 export default function StandardLayout({
 	siteSection,
@@ -14,19 +14,19 @@ export default function StandardLayout({
 }) {
 	const navItems = [
 		{
-			key: 'home',
-			href: '/',
-			label: 'Home',
+			key: "home",
+			href: "/",
+			label: "Home",
 		},
 		{
-			key: 'osn',
-			href: '/osn',
-			label: 'Open Source North',
+			key: "osn",
+			href: "/osn",
+			label: "Open Source North",
 		},
 		{
-			key: 'matrix',
-			href: '/matrix',
-			label: 'Matrix',
+			key: "matrix",
+			href: "/matrix",
+			label: "Matrix",
 		},
 	];
 
@@ -42,8 +42,8 @@ export default function StandardLayout({
 									<li
 										key={i.key}
 										className={classnames({
-											'nav-item': true,
-											'nav-item-active': siteSection === i.key,
+											"nav-item": true,
+											"nav-item-active": siteSection === i.key,
 										})}
 									>
 										<a href={i.href}>{i.label}</a>
@@ -53,7 +53,7 @@ export default function StandardLayout({
 						</ul>
 					</nav>
 				</header>
-				<main className={classnames('main-content', `site-section-${siteSection}`)}>
+				<main className={classnames("main-content", `site-section-${siteSection}`)}>
 					{pageTitle && <h2 className="page-title">{pageTitle}</h2>}
 					{children}
 				</main>
@@ -64,8 +64,8 @@ export default function StandardLayout({
 							linkCategory="gkm"
 							links={[
 								{
-									key: 'github',
-									href: 'https://github.com/arsdehnel/golden-key-matrix',
+									key: "github",
+									href: "https://github.com/arsdehnel/golden-key-matrix",
 									icon: GitHubLogoIcon,
 								},
 							]}
@@ -75,18 +75,18 @@ export default function StandardLayout({
 							linkCategory="dt"
 							links={[
 								{
-									key: 'site',
-									href: 'https://dorothytoth.com/',
+									key: "site",
+									href: "https://dorothytoth.com/",
 									icon: GlobeIcon,
 								},
 								{
-									key: 'github',
-									href: 'https://github.com/DorothyToth',
+									key: "github",
+									href: "https://github.com/DorothyToth",
 									icon: GitHubLogoIcon,
 								},
 								{
-									key: 'linkedin',
-									href: 'https://www.linkedin.com/in/dorothy-toth/',
+									key: "linkedin",
+									href: "https://www.linkedin.com/in/dorothy-toth/",
 									icon: LinkedInLogoIcon,
 								},
 							]}
@@ -96,18 +96,18 @@ export default function StandardLayout({
 							linkCategory="ad"
 							links={[
 								{
-									key: 'site',
-									href: 'https://arsdehnel.com/',
+									key: "site",
+									href: "https://arsdehnel.com/",
 									icon: GlobeIcon,
 								},
 								{
-									key: 'github',
-									href: 'https://github.com/arsdehnel',
+									key: "github",
+									href: "https://github.com/arsdehnel",
 									icon: GitHubLogoIcon,
 								},
 								{
-									key: 'linkedin',
-									href: 'https://www.linkedin.com/in/adamdehnel/',
+									key: "linkedin",
+									href: "https://www.linkedin.com/in/adamdehnel/",
 									icon: LinkedInLogoIcon,
 								},
 							]}

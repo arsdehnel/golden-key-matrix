@@ -1,4 +1,4 @@
-import styles from '@/styles/global.less?url';
+import styles from "@/styles/global.less?url";
 
 export const Document: React.FC<{ children: React.ReactNode }> = ({ children }) => (
 	<html lang="en">

@@ -1,4 +1,4 @@
-import StandardLayout from '@/layouts/standard';
+import StandardLayout from "@/layouts/standard";
 
 export default function Pages__OSN__Index() {
 	return (

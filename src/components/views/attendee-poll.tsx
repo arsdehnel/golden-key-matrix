@@ -1,8 +1,8 @@
-'use client';
-import chroma from 'chroma-js';
-import { Slider } from 'radix-ui';
-import { useState } from 'react';
-import type { PollAnswer } from '@/types';
+"use client";
+import chroma from "chroma-js";
+import { Slider } from "radix-ui";
+import { useState } from "react";
+import type { PollAnswer } from "@/types";
 
 export default function AttendeePoll({
 	recordPollAnswer,
@@ -11,7 +11,7 @@ export default function AttendeePoll({
 	recordPollAnswer: (answer: PollAnswer) => void;
 	sessionId: string | undefined;
 }) {
-	const roleColorScale = chroma.scale(['#8400ff', '#049e02']);
+	const roleColorScale = chroma.scale(["#8400ff", "#049e02"]);
 	const [roleColor, setRoleColor] = useState(roleColorScale(0.5).hex());
 	const [clickCoordinates, setClickCoordinatess] = useState([50, 50]);
 

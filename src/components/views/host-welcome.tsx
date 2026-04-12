@@ -1,5 +1,5 @@
-import { QRCodeSVG } from 'qrcode.react';
-import type { PollAnswer } from '@/types';
+import { QRCodeSVG } from "qrcode.react";
+import type { PollAnswer } from "@/types";
 
 export default function HostWelcome({
 	pollAnswerCoordinates,
