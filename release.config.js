@@ -1,16 +1,31 @@
 export default {
-	branches: ["main"],
+	branches: ['main'],
 	plugins: [
-		"@semantic-release/commit-analyzer",
-		"@semantic-release/release-notes-generator",
-		["@semantic-release/changelog", { changelogFile: "CHANGELOG.md" }],
 		[
-			"@semantic-release/git",
+			'@semantic-release/commit-analyzer',
 			{
-				assets: ["CHANGELOG.md"],
-				message: "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}",
+				preset: 'conventionalcommits',
 			},
 		],
-		"@semantic-release/github",
+		[
+			'@semantic-release/release-notes-generator',
+			{
+				preset: 'conventionalcommits',
+			},
+		],
+		'@semantic-release/changelog',
+		[
+			'@semantic-release/npm',
+			{
+				npmPublish: false,
+			},
+		],
+		[
+			'@semantic-release/git',
+			{
+				assets: ['package.json', 'pnpm-lock.yaml', 'package-lock.json', 'yarn.lock', 'CHANGELOG.md'],
+			},
+		],
+		'@semantic-release/github',
 	],
 };
