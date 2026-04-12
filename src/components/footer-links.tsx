@@ -1,5 +1,5 @@
-import type { IconProps } from '@radix-ui/react-icons/dist/types';
-import classnames from 'classnames';
+import type { IconProps } from "@radix-ui/react-icons/dist/types";
+import classnames from "classnames";
 
 type FooterLink = {
 	key: string;
@@ -17,7 +17,7 @@ export default function FooterLinks({
 	links: FooterLink[];
 }) {
 	return (
-		<nav className={classnames('footer-nav', `footer-nav-${linkCategory}`)} aria-label={title}>
+		<nav className={classnames("footer-nav", `footer-nav-${linkCategory}`)} aria-label={title}>
 			<div className="footer-nav-title">{title}</div>
 			<ul>
 				{links.map(l => {
