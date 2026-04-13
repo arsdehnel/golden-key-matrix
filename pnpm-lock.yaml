@@ -57,12 +57,21 @@ importers:
       '@semantic-release/changelog':
         specifier: ^6.0.3
         version: 6.0.3(semantic-release@25.0.3(typescript@5.9.3))
+      '@semantic-release/commit-analyzer':
+        specifier: ^13.0.1
+        version: 13.0.1(semantic-release@25.0.3(typescript@5.9.3))
       '@semantic-release/git':
         specifier: ^10.0.1
         version: 10.0.1(semantic-release@25.0.3(typescript@5.9.3))
       '@semantic-release/github':
         specifier: ^12.0.6
         version: 12.0.6(semantic-release@25.0.3(typescript@5.9.3))
+      '@semantic-release/npm':
+        specifier: ^13.0.0
+        version: 13.1.5(semantic-release@25.0.3(typescript@5.9.3))
+      '@semantic-release/release-notes-generator':
+        specifier: ^14.0.0
+        version: 14.1.0(semantic-release@25.0.3(typescript@5.9.3))
       '@types/chroma-js':
         specifier: ^3.1.2
         version: 3.1.2
@@ -75,6 +84,9 @@ importers:
       '@types/react-dom':
         specifier: 19.2.3
         version: 19.2.3(@types/react@19.2.14)
+      conventional-changelog-conventionalcommits:
+        specifier: ^8.0.0
+        version: 8.0.0
       husky:
         specifier: ^9.1.7
         version: 9.1.7
@@ -2539,6 +2551,10 @@ packages:
 
   conventional-changelog-angular@8.3.1:
     resolution: {integrity: sha512-6gfI3otXK5Ph5DfCOI1dblr+kN3FAm5a97hYoQkqNZxOaYa5WKfXH+AnpsmS+iUH2mgVC2Cg2Qw9m5OKcmNrIg==}
+    engines: {node: '>=18'}
+
+  conventional-changelog-conventionalcommits@8.0.0:
+    resolution: {integrity: sha512-eOvlTO6OcySPyyyk8pKz2dP4jjElYunj9hn9/s0OB+gapTO8zwS9UQWrZ1pmF2hFs3vw1xhonOLGcGjy/zgsuA==}
     engines: {node: '>=18'}
 
   conventional-changelog-conventionalcommits@9.3.1:
@@ -7378,6 +7394,10 @@ snapshots:
       proto-list: 1.2.4
 
   conventional-changelog-angular@8.3.1:
+    dependencies:
+      compare-func: 2.0.0
+
+  conventional-changelog-conventionalcommits@8.0.0:
     dependencies:
       compare-func: 2.0.0
 
