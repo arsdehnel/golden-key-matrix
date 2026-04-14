@@ -5,7 +5,7 @@ import AttendeePoll from "./views/attendee-poll";
 import HostRegister from "./views/host-register";
 import HostWelcome from "./views/host-welcome";
 
-export default function OsnWelcomeClient({ pollUrl, sessionId }: { pollUrl: string; sessionId: string | undefined }) {
+export default function OsnWelcomeClient({ pollUrl, sessionId }: { pollUrl: string; sessionId: string }) {
 	const [hostSessionId, setHostSessionId] = useSyncedState<string | null>(null, "hostSessionId");
 	const [pollAnswerCoordinates, setPollAnswerCoordinates] = useSyncedState<PollAnswer[]>([], "pollCoordinates");
 

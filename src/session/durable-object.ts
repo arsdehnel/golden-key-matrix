@@ -4,7 +4,7 @@ import { MAX_SESSION_DURATION } from "rwsdk/auth";
 type SessionError = "Invalid session" | "Session expired";
 
 export interface Session {
-	sessionId?: string;
+	sessionId: string;
 	userId?: string | null;
 	createdAt: number;
 	lastAccessedAt: number;
@@ -25,7 +25,9 @@ export class SessionDurableObject extends DurableObject {
 
 	async saveSession({ userId = null }: { userId?: string | null }): Promise<Session> {
 		const now = this.now();
+		const newSessionId = crypto.randomUUID();
 		const session: Session = {
+			sessionId: newSessionId,
 			userId,
 			createdAt: now,
 			lastAccessedAt: now,
