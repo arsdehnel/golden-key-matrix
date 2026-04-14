@@ -1,3 +1,9 @@
+## [1.16.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.15.2...v1.16.0) (2026-04-14)
+
+### Features
+
+* hide menu on osn pages in mobile sizes ([36046bf](https://github.com/arsdehnel/golden-key-matrix/commit/36046bfed03dc6ce21ed941df02a2943969a31de))
+
 ## [1.15.2](https://github.com/arsdehnel/golden-key-matrix/compare/v1.15.1...v1.15.2) (2026-04-14)
 
 ### Bug Fixes
