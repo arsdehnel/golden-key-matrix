@@ -22,23 +22,25 @@ export default function HostWelcome({
 			<div className="osn-welcome-panel">
 				<h3>Poll Results</h3>
 				<p>As y'all answer those questions we'll see the results over here.</p>
-				{pollAnswerCoordinates.map(({ sessionId, roleColor, xCoord, yCoord }) => {
-					return (
-						<div
-							key={sessionId}
-							className="marker"
-							style={{
-								top: yCoord,
-								left: xCoord,
-								backgroundColor: roleColor,
-							}}
-						/>
-					);
-				})}
-				<img
-					src="/initial-question-bg.jpg"
-					alt="Empty quadrant graph showing Comfort on the x-axis and Experience on the y-axis"
-				/>
+				<div className="ranking-frame">
+					{pollAnswerCoordinates.map(({ sessionId, roleColor, xCoord, yCoord }) => {
+						return (
+							<div
+								key={sessionId}
+								className="marker"
+								style={{
+									top: yCoord,
+									left: xCoord,
+									backgroundColor: roleColor,
+								}}
+							/>
+						);
+					})}
+					<img
+						src="/initial-question-bg.jpg"
+						alt="Empty quadrant graph showing Comfort on the x-axis and Experience on the y-axis"
+					/>
+				</div>
 			</div>
 		</div>
 	);
