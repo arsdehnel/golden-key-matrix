@@ -32,7 +32,7 @@ export default function StandardLayout({
 
 	return (
 		<StrictMode>
-			<div className="layout-standard">
+			<div className={classnames("layout-standard", `layout-standard-site-section-${siteSection}`)}>
 				<header className="global-header">
 					<h1>Golden Keys Matrix</h1>
 					<nav className="primary-nav" aria-label="Primary">
