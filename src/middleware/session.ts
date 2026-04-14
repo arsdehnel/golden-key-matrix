@@ -3,7 +3,7 @@ import type { DefaultAppContext, RequestInfo } from "rwsdk/worker";
 
 const COOKIE_NAME = "GOLDEN_KEYS_MATRIX_SESSION";
 
-function getSssionIdFromCookie(cookies: string): string | undefined {
+function getSessionIdFromCookie(cookies: string): string | undefined {
 	const cookieArray = cookies.split(";").map(cookie => cookie.trim());
 	for (const cookie of cookieArray) {
 		if (cookie.startsWith(`${COOKIE_NAME}=`)) {
@@ -17,7 +17,7 @@ export default async function sessionMiddleware(requestInfo: RequestInfo<Default
 	const { ctx, request, response } = requestInfo;
 
 	const useSecureCookie = env.GOLDEN_KEYS_MATRIX_ENV !== "development";
-	const existingSessionId = getSssionIdFromCookie(request.headers.get("Cookie") || "");
+	const existingSessionId = getSessionIdFromCookie(request.headers.get("Cookie") || "");
 	if (existingSessionId) {
 		ctx.session = {
 			sessionId: existingSessionId,
