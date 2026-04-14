@@ -1,3 +1,9 @@
+## [1.15.2](https://github.com/arsdehnel/golden-key-matrix/compare/v1.15.1...v1.15.2) (2026-04-14)
+
+### Bug Fixes
+
+* actually show poll answers ([eef6369](https://github.com/arsdehnel/golden-key-matrix/commit/eef6369213643f5a4fe266fda2538c6901ee8433))
+
 ## [1.15.1](https://github.com/arsdehnel/golden-key-matrix/compare/v1.15.0...v1.15.1) (2026-04-14)
 
 ### Bug Fixes
