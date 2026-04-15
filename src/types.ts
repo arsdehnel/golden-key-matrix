@@ -3,4 +3,6 @@ export type PollAnswer = {
 	roleColor: string;
 	xCoord: number;
 	yCoord: number;
+	quadrantWidth: number;
+	quadrantHeight: number;
 };

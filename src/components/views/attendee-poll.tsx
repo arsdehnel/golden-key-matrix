@@ -12,55 +12,60 @@ export default function AttendeePoll({
 	sessionId: string | undefined;
 }) {
 	const roleColorScale = chroma.scale(["#8400ff", "#049e02"]);
-	const [roleColor, setRoleColor] = useState(roleColorScale(0.5).hex());
-	const [clickCoordinates, setClickCoordinatess] = useState([50, 50]);
+	const defaultPollAnswer: PollAnswer = {
+		sessionId: sessionId || "",
+		roleColor: roleColorScale(0.5).hex(),
+		xCoord: 0,
+		yCoord: 0,
+		quadrantHeight: 0,
+		quadrantWidth: 0,
+	};
+
+	const [pollAnswer, setPollAnswer] = useState<PollAnswer>(defaultPollAnswer);
+
+	if (!sessionId) {
+		return <p>No session found</p>;
+	}
 
 	const handleRankingClick = (e: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
-		if (!sessionId) {
-			return;
-		}
-		const { top, left } = e.currentTarget.getBoundingClientRect();
-		const newCoordinates = [e.clientX - left, e.clientY - top];
-		setClickCoordinatess(newCoordinates);
+		const { top, left, height, width } = e.currentTarget.getBoundingClientRect();
 		recordPollAnswer({
-			sessionId,
-			roleColor,
-			xCoord: newCoordinates[0],
-			yCoord: newCoordinates[1],
+			...pollAnswer,
+			xCoord: e.clientX - left,
+			yCoord: e.clientY - top,
+			quadrantHeight: height,
+			quadrantWidth: width,
+		});
+		setPollAnswer({
+			...pollAnswer,
+			xCoord: e.clientX - left,
+			yCoord: e.clientY - top,
+			quadrantHeight: height,
+			quadrantWidth: width,
 		});
 	};
 
 	const handleRoleChange = (val: number[]) => {
-		if (!sessionId) {
-			return;
-		}
 		const singleVal = val[0];
-		setRoleColor(chroma(roleColorScale(singleVal / 100)).hex());
 		recordPollAnswer({
-			sessionId,
-			roleColor,
-			xCoord: clickCoordinates[0],
-			yCoord: clickCoordinates[1],
+			...pollAnswer,
+			roleColor: chroma(roleColorScale(singleVal / 100)).hex(),
+		});
+		setPollAnswer({
+			...pollAnswer,
+			roleColor: chroma(roleColorScale(singleVal / 100)).hex(),
 		});
 	};
 
 	return (
 		<>
-			<p>Couple quick questions to see who we've got in the room today.</p>
+			<h2 className="page-title">Welcome!</h2>
+			<p>Couple quick questions to see who we've got in the room today...</p>
+
 			<h3>How would you describe your role?</h3>
-			<p>
-				We put this on a slider because all companies, roles, and humans are different. Slide it to a spot that feels
-				right for you!
-			</p>
+			<p>Slide to a spot that feels the most accurate.</p>
 			<div className="role-slider">
-				<Slider.Root
-					className="gkm-slider-root"
-					defaultValue={[50]}
-					max={100}
-					step={1}
-					onValueCommit={handleRoleChange}
-					orientation="vertical"
-				>
+				<Slider.Root className="gkm-slider-root" defaultValue={[50]} max={100} step={1} onValueCommit={handleRoleChange}>
 					<Slider.Track className="gkm-slider-track">
 						<Slider.Range className="gkm-slider-range" />
 					</Slider.Track>
@@ -68,22 +73,20 @@ export default function AttendeePoll({
 				</Slider.Root>
 				<div className="role-markers">
 					<div className="role">Developer</div>
-					<div className="role">Dev with an eye</div>
 					<div className="role">Somewhere in the middle</div>
-					<div className="role">Technical Designer</div>
 					<div className="role">Designer</div>
 				</div>
 			</div>
 
-			<h3>Click to plot your ranking on these two scales</h3>
-			<p>What is your experience and comfort level with "the other side"?</p>
+			<h3>Tap to plot your role!</h3>
+			<p>Plot your experience and comfort level working with complementary/different teams.</p>
 			<div className="ranking-frame">
 				<div
 					className="marker"
 					style={{
-						top: clickCoordinates[1],
-						left: clickCoordinates[0],
-						backgroundColor: roleColor,
+						top: pollAnswer.yCoord - 10,
+						left: pollAnswer.xCoord - 10,
+						backgroundColor: pollAnswer.roleColor,
 					}}
 				></div>
 				{/* biome-ignore lint/a11y/useKeyWithClickEvents: need to add keyboard option */}
@@ -94,10 +97,8 @@ export default function AttendeePoll({
 				/>
 			</div>
 
-			<p>
-				No submit here, we're collecting results in real-time and you can keep tweaking your answers -- and see them
-				change on the board!
-			</p>
+			<h3>That's it!</h3>
+			<p>Real-time results are displayed on the big screen. You can keep tweaking your answers -- and see them change!</p>
 		</>
 	);
 }

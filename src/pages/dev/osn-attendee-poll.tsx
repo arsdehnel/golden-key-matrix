@@ -11,7 +11,7 @@ export default function Pages__Dev__OsnAttendeePoll() {
 	const sessionId = "my-dev-session-id";
 
 	return (
-		<StandardLayout pageTitle="Welcome" siteSection="osn">
+		<StandardLayout siteSection="osn">
 			<AttendeePoll sessionId={sessionId} recordPollAnswer={recordPollAnswer} />
 		</StandardLayout>
 	);
