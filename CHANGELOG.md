@@ -1,3 +1,9 @@
+## [1.18.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.17.0...v1.18.0) (2026-04-15)
+
+### Features
+
+* host welcome formatting and copy ([a3183d6](https://github.com/arsdehnel/golden-key-matrix/commit/a3183d6b22a3b91a5ac5b1753eaf4b3e28877625))
+
 ## [1.17.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.16.0...v1.17.0) (2026-04-15)
 
 ### Features
