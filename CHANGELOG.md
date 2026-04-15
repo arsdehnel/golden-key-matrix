@@ -1,3 +1,9 @@
+## [1.17.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.16.0...v1.17.0) (2026-04-15)
+
+### Features
+
+* better styling and state for attendee welcome ([dc066e0](https://github.com/arsdehnel/golden-key-matrix/commit/dc066e0293251131767622ee51499f15cf07b435))
+
 ## [1.16.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.15.2...v1.16.0) (2026-04-14)
 
 ### Features
