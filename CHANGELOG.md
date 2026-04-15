@@ -1,3 +1,9 @@
+## [1.19.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.18.0...v1.19.0) (2026-04-15)
+
+### Features
+
+* debug table for coordinates ([0aabe73](https://github.com/arsdehnel/golden-key-matrix/commit/0aabe73403ef26f2f84e9ccfbe754b6405ab6b60))
+
 ## [1.18.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.17.0...v1.18.0) (2026-04-15)
 
 ### Features
