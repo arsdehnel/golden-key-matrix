@@ -44,6 +44,32 @@ export default function HostWelcome({
 							src="/initial-question-bg.jpg"
 							alt="Empty quadrant graph showing Comfort on the x-axis and Experience on the y-axis"
 						/>
+						<table className="coords-table">
+							<thead>
+								<tr>
+									<th>Session ID</th>
+									<th>Color</th>
+									<th>X</th>
+									<th>Y</th>
+									<th>Height</th>
+									<th>Width</th>
+								</tr>
+							</thead>
+							<tbody>
+								{pollAnswerCoordinates.map(coord => {
+									return (
+										<tr key={coord.sessionId}>
+											<td>{coord.sessionId}</td>
+											<td>{coord.roleColor}</td>
+											<td>{coord.xCoord}</td>
+											<td>{coord.yCoord}</td>
+											<td>{coord.quadrantHeight}</td>
+											<td>{coord.quadrantWidth}</td>
+										</tr>
+									);
+								})}
+							</tbody>
+						</table>
 					</div>
 				</div>
 			</div>
