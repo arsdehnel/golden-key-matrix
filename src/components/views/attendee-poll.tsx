@@ -3,6 +3,7 @@ import chroma from "chroma-js";
 import { Slider } from "radix-ui";
 import { useState } from "react";
 import type { PollAnswer } from "@/types";
+import Steps from "../steps";
 
 export default function AttendeePoll({
 	recordPollAnswer,
@@ -60,7 +61,15 @@ export default function AttendeePoll({
 	return (
 		<>
 			<h2 className="page-title">Welcome!</h2>
-			<p>Couple quick questions to see who we've got in the room today...</p>
+
+			<Steps
+				steps={[
+					{ code: "role", label: "Your Role" },
+					{ code: "experience", label: "Your Experience" },
+					{ code: "done", label: "Done" },
+				]}
+				currentStep={0}
+			/>
 
 			<h3>How would you describe your role?</h3>
 			<p>Slide to a spot that feels the most accurate.</p>
