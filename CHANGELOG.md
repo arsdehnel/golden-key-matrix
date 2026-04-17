@@ -1,3 +1,9 @@
+## [1.19.1](https://github.com/arsdehnel/golden-key-matrix/compare/v1.19.0...v1.19.1) (2026-04-17)
+
+### Bug Fixes
+
+* font size on mobile view ([a808988](https://github.com/arsdehnel/golden-key-matrix/commit/a808988109cb2304a2651334cff3f22d0a5a1997))
+
 ## [1.19.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.18.0...v1.19.0) (2026-04-15)
 
 ### Features
