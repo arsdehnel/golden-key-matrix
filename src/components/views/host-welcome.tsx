@@ -10,7 +10,7 @@ export default function HostWelcome({
 }) {
 	return (
 		<>
-			<h2 className="page-title">Welcome!</h2>
+			<h2 className="page-title osn-host-view">Welcome!</h2>
 			<div className="osn-welcome-view">
 				<div className="osn-welcome-panel">
 					<h3>Take Our 5-Second Poll</h3>
