@@ -11,7 +11,7 @@ export default function AttendeePoll({
 	recordPollAnswer: (answer: PollAnswer) => void;
 	sessionId: string | undefined;
 }) {
-	const roleColorScale = chroma.scale(["#8400ff", "#049e02"]);
+	const roleColorScale = chroma.scale(["#83d0f6", "#07363b"]);
 	const defaultPollAnswer: PollAnswer = {
 		sessionId: sessionId || "",
 		roleColor: roleColorScale(0.5).hex(),
@@ -27,7 +27,7 @@ export default function AttendeePoll({
 		return <p>No session found</p>;
 	}
 
-	const handleRankingClick = (e: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
+	const handleRankingClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
 		const { top, left, height, width } = e.currentTarget.getBoundingClientRect();
 		recordPollAnswer({
 			...pollAnswer,
@@ -79,24 +79,31 @@ export default function AttendeePoll({
 			</div>
 
 			<h3>Tap to plot your role!</h3>
-			<p>Plot your experience and comfort level working with complementary/different teams.</p>
-			<div className="ranking-frame">
-				<div
-					className="marker"
-					style={{
-						top: pollAnswer.yCoord - 10,
-						left: pollAnswer.xCoord - 10,
-						backgroundColor: pollAnswer.roleColor,
-					}}
-				></div>
-				{/* biome-ignore lint/a11y/useKeyWithClickEvents: need to add keyboard option */}
-				<img
-					onClick={e => handleRankingClick(e)}
-					src="/initial-question-bg.jpg"
-					alt="Empty quadrant graph showing Comfort on the x-axis and Experience on the y-axis"
-				/>
+			<div className="gkm-quadrant">
+				<div className="gkm-quadrant-y-axis">
+					<div className="gkm-quadrant-y-axis-title">Experience</div>
+					<div className="gkm-quadrant-y-axis-infinity-label">All the time</div>
+				</div>
+				{/* biome-ignore lint/a11y/useKeyWithClickEvents: click position is the data */}
+				{/* biome-ignore lint/a11y/noStaticElementInteractions: see above */}
+				<div className="gkm-quadrant-click-area" onClick={e => handleRankingClick(e)}>
+					<div
+						className="marker"
+						style={{
+							top: pollAnswer.yCoord - 10,
+							left: pollAnswer.xCoord - 10,
+							backgroundColor: pollAnswer.roleColor,
+						}}
+					/>
+				</div>
+				<div className="gkm-quadrant-shared-axis">
+					<div className="gkm-quadrant-shared-axis-zero-label">None</div>
+				</div>
+				<div className="gkm-quadrant-x-axis">
+					<div className="gkm-quadrant-x-axis-title">Comfort Level</div>
+					<div className="gkm-quadrant-x-axis-infinity-label">Very Comfy</div>
+				</div>
 			</div>
-
 			<h3>That's it!</h3>
 			<p>Real-time results are displayed on the big screen. You can keep tweaking your answers -- and see them change!</p>
 		</>

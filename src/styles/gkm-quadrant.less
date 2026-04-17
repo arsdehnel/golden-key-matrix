@@ -1,0 +1,68 @@
+.gkm-quadrant {
+	flex: 1;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 40px 1fr;
+	grid-template-rows: 1fr 40px;
+	grid-template-areas:
+		"y-axis click-area"
+		"shared-axis x-axis";
+
+	.gkm-quadrant-y-axis {
+		grid-area: y-axis;
+		display: flex;
+		flex-direction: column-reverse;
+		align-items: center;
+		justify-content: space-between;
+		padding: 4px 0;
+
+		.gkm-quadrant-y-axis-infinity-label {
+			font-size: 0.75rem;
+			writing-mode: vertical-lr;
+			transform: rotate(180deg);
+		}
+
+		.gkm-quadrant-y-axis-title {
+			writing-mode: vertical-lr;
+			transform: rotate(180deg);
+			font-size: 1.25rem;
+			font-weight: bold;
+		}
+	}
+
+	.gkm-quadrant-click-area {
+		grid-area: click-area;
+		position: relative;
+		border-left: 2px solid #333;
+		border-bottom: 2px solid #333;
+		cursor: crosshair;
+	}
+
+	.gkm-quadrant-shared-axis {
+		grid-area: shared-axis;
+		display: flex;
+		align-items: flex-start;
+		justify-content: flex-end;
+		padding-right: 4px;
+		font-size: 0.75rem;
+	}
+
+	.gkm-quadrant-x-axis {
+		grid-area: x-axis;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 0 4px;
+
+		.gkm-quadrant-x-axis-title {
+			font-size: 1.25rem;
+			font-weight: bold;
+			flex: 1;
+			text-align: center;
+		}
+
+		.gkm-quadrant-x-axis-infinity-label {
+			font-size: 0.75rem;
+		}
+	}
+}
