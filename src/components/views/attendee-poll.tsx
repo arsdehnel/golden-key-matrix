@@ -1,5 +1,6 @@
 "use client";
-import { useState } from "react";
+import { Slider } from "radix-ui";
+import { useRef, useState } from "react";
 import type { PollAnswer } from "@/types";
 import Steps from "../steps";
 
@@ -31,6 +32,9 @@ export default function AttendeePoll({
 		quadrantHeight: 0,
 		quadrantWidth: 0,
 	});
+	const [sliderX, setSliderX] = useState(50);
+	const [sliderY, setSliderY] = useState(50);
+	const imageRef = useRef<HTMLImageElement>(null);
 
 	if (!sessionId) {
 		return <p>No session found</p>;
@@ -43,18 +47,40 @@ export default function AttendeePoll({
 		setCurrentStep(1);
 	};
 
-	const handleRankingClick = (e: React.MouseEvent<HTMLImageElement, MouseEvent>) => {
+	// Applies new coordinates from either pointer events or sliders.
+	// Spreads coords last so stale xCoord/yCoord from the closure are always overridden.
+	const applyCoords = (rawX: number, rawY: number, width: number, height: number) => {
+		const x = Math.max(0, Math.min(rawX, width));
+		const y = Math.max(0, Math.min(rawY, height));
+		setSliderX((x / width) * 100);
+		setSliderY((y / height) * 100);
+		const coords = { xCoord: x, yCoord: y, quadrantWidth: width, quadrantHeight: height };
+		setPollAnswer(prev => ({ ...prev, ...coords }));
+		recordPollAnswer({ ...pollAnswer, ...coords });
+	};
+
+	const handlePointerDown = (e: React.PointerEvent<HTMLImageElement>) => {
+		e.currentTarget.setPointerCapture(e.pointerId);
 		const { top, left, height, width } = e.currentTarget.getBoundingClientRect();
-		const updated = {
-			...pollAnswer,
-			xCoord: e.clientX - left,
-			yCoord: e.clientY - top,
-			quadrantHeight: height,
-			quadrantWidth: width,
-		};
-		setPollAnswer(updated);
-		recordPollAnswer(updated);
-		setCurrentStep(2);
+		applyCoords(e.clientX - left, e.clientY - top, width, height);
+	};
+
+	const handlePointerMove = (e: React.PointerEvent<HTMLImageElement>) => {
+		if (e.buttons === 0) return;
+		const { top, left, height, width } = e.currentTarget.getBoundingClientRect();
+		applyCoords(e.clientX - left, e.clientY - top, width, height);
+	};
+
+	const handleSliderX = (value: number[]) => {
+		if (!imageRef.current) return;
+		const { width, height } = imageRef.current.getBoundingClientRect();
+		applyCoords((value[0] / 100) * width, (sliderY / 100) * height, width, height);
+	};
+
+	const handleSliderY = (value: number[]) => {
+		if (!imageRef.current) return;
+		const { width, height } = imageRef.current.getBoundingClientRect();
+		applyCoords((sliderX / 100) * width, (value[0] / 100) * height, width, height);
 	};
 
 	return (
@@ -98,13 +124,49 @@ export default function AttendeePoll({
 								}}
 							/>
 						)}
-						{/* biome-ignore lint/a11y/useKeyWithClickEvents: need to add keyboard option */}
 						<img
-							onClick={e => handleRankingClick(e)}
+							ref={imageRef}
+							onPointerDown={handlePointerDown}
+							onPointerMove={handlePointerMove}
+							draggable={false}
 							src="/initial-question-bg.jpg"
 							alt="Empty quadrant graph showing Comfort on the x-axis and Experience on the y-axis"
 						/>
 					</div>
+					{/* Sliders provide keyboard-accessible positioning; the dot on the quadrant is the visual indicator */}
+					<div className="quadrant-sliders">
+						<Slider.Root
+							className="gkm-slider-root"
+							value={[sliderX]}
+							min={0}
+							max={100}
+							step={1}
+							onValueChange={handleSliderX}
+							aria-label="Horizontal position on quadrant"
+						>
+							<Slider.Track className="gkm-slider-track">
+								<Slider.Range className="gkm-slider-range" />
+							</Slider.Track>
+							<Slider.Thumb className="gkm-slider-thumb" />
+						</Slider.Root>
+						<Slider.Root
+							className="gkm-slider-root"
+							value={[sliderY]}
+							min={0}
+							max={100}
+							step={1}
+							onValueChange={handleSliderY}
+							aria-label="Vertical position on quadrant"
+						>
+							<Slider.Track className="gkm-slider-track">
+								<Slider.Range className="gkm-slider-range" />
+							</Slider.Track>
+							<Slider.Thumb className="gkm-slider-thumb" />
+						</Slider.Root>
+					</div>
+					<button type="button" className="quadrant-next" onClick={() => setCurrentStep(2)}>
+						Next →
+					</button>
 				</>
 			)}
 
