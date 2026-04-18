@@ -34,7 +34,7 @@ export default function AttendeePoll({
 	});
 	const [sliderX, setSliderX] = useState(50);
 	const [sliderY, setSliderY] = useState(50);
-	const imageRef = useRef<HTMLImageElement>(null);
+	const quadrantRef = useRef<HTMLDivElement>(null);
 
 	if (!sessionId) {
 		return <p>No session found</p>;
@@ -59,27 +59,27 @@ export default function AttendeePoll({
 		recordPollAnswer({ ...pollAnswer, ...coords });
 	};
 
-	const handlePointerDown = (e: React.PointerEvent<HTMLImageElement>) => {
+	const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
 		e.currentTarget.setPointerCapture(e.pointerId);
 		const { top, left, height, width } = e.currentTarget.getBoundingClientRect();
 		applyCoords(e.clientX - left, e.clientY - top, width, height);
 	};
 
-	const handlePointerMove = (e: React.PointerEvent<HTMLImageElement>) => {
+	const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
 		if (e.buttons === 0) return;
 		const { top, left, height, width } = e.currentTarget.getBoundingClientRect();
 		applyCoords(e.clientX - left, e.clientY - top, width, height);
 	};
 
 	const handleSliderX = (value: number[]) => {
-		if (!imageRef.current) return;
-		const { width, height } = imageRef.current.getBoundingClientRect();
+		if (!quadrantRef.current) return;
+		const { width, height } = quadrantRef.current.getBoundingClientRect();
 		applyCoords((value[0] / 100) * width, (sliderY / 100) * height, width, height);
 	};
 
 	const handleSliderY = (value: number[]) => {
-		if (!imageRef.current) return;
-		const { width, height } = imageRef.current.getBoundingClientRect();
+		if (!quadrantRef.current) return;
+		const { width, height } = quadrantRef.current.getBoundingClientRect();
 		applyCoords((sliderX / 100) * width, (value[0] / 100) * height, width, height);
 	};
 
@@ -113,25 +113,35 @@ export default function AttendeePoll({
 				<>
 					<h3>Tap to plot your role!</h3>
 					<p>Plot your experience and comfort level working with complementary/different teams.</p>
-					<div className="ranking-frame">
-						{pollAnswer.xCoord > 0 && (
-							<div
-								className="marker"
-								style={{
-									top: pollAnswer.yCoord - 10,
-									left: pollAnswer.xCoord - 10,
-									backgroundColor: pollAnswer.roleColor,
-								}}
-							/>
-						)}
-						<img
-							ref={imageRef}
+					<div className="gkm-quadrant">
+						<div className="gkm-quadrant-y-axis">
+							<div className="gkm-quadrant-y-axis-title">Experience</div>
+							<div className="gkm-quadrant-y-axis-infinity-label">All the time</div>
+						</div>
+						<div
+							ref={quadrantRef}
+							className="gkm-quadrant-click-area"
 							onPointerDown={handlePointerDown}
 							onPointerMove={handlePointerMove}
-							draggable={false}
-							src="/initial-question-bg.jpg"
-							alt="Empty quadrant graph showing Comfort on the x-axis and Experience on the y-axis"
-						/>
+						>
+							{pollAnswer.xCoord > 0 && (
+								<div
+									className="marker"
+									style={{
+										top: pollAnswer.yCoord - 10,
+										left: pollAnswer.xCoord - 10,
+										backgroundColor: pollAnswer.roleColor,
+									}}
+								/>
+							)}
+						</div>
+						<div className="gkm-quadrant-shared-axis">
+							<div className="gkm-quadrant-shared-axis-zero-label">None</div>
+						</div>
+						<div className="gkm-quadrant-x-axis">
+							<div className="gkm-quadrant-x-axis-title">Comfort Level</div>
+							<div className="gkm-quadrant-x-axis-infinity-label">Very Comfy</div>
+						</div>
 					</div>
 					{/* Sliders provide keyboard-accessible positioning; the dot on the quadrant is the visual indicator */}
 					<div className="quadrant-sliders">
