@@ -1,6 +1,6 @@
 "use client";
 import { Slider } from "radix-ui";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import type { PollAnswer } from "@/types";
 import Steps from "../steps";
 
@@ -27,61 +27,50 @@ export default function AttendeePoll({
 	const [pollAnswer, setPollAnswer] = useState<PollAnswer>({
 		sessionId: sessionId || "",
 		roleColor: "",
-		xCoord: 0,
-		yCoord: 0,
-		quadrantHeight: 0,
-		quadrantWidth: 0,
+		xPercent: 0,
+		yPercent: 0,
 	});
 	const [sliderX, setSliderX] = useState(50);
 	const [sliderY, setSliderY] = useState(50);
-	const quadrantRef = useRef<HTMLDivElement>(null);
+	const [hasPlaced, setHasPlaced] = useState(false);
 
 	if (!sessionId) {
 		return <p>No session found</p>;
 	}
 
 	const handleRoleSelect = (color: string) => {
-		const updated = { ...pollAnswer, roleColor: color };
-		setPollAnswer(updated);
-		recordPollAnswer(updated);
+		setPollAnswer(prev => ({ ...prev, roleColor: color }));
 		setCurrentStep(1);
 	};
 
-	// Applies new coordinates from either pointer events or sliders.
-	// Spreads coords last so stale xCoord/yCoord from the closure are always overridden.
-	const applyCoords = (rawX: number, rawY: number, width: number, height: number) => {
-		const x = Math.max(0, Math.min(rawX, width));
-		const y = Math.max(0, Math.min(rawY, height));
-		setSliderX((x / width) * 100);
-		setSliderY((y / height) * 100);
-		const coords = { xCoord: x, yCoord: y, quadrantWidth: width, quadrantHeight: height };
-		setPollAnswer(prev => ({ ...prev, ...coords }));
-		recordPollAnswer({ ...pollAnswer, ...coords });
+	// Converts 0–100 percentages from either pointer events or sliders into stored state
+	// and syncs to the host view. Spreads percents last so stale values from the closure
+	// are always overridden.
+	const applyPercents = (xPct: number, yPct: number) => {
+		const x = Math.max(0, Math.min(xPct, 100));
+		const y = Math.max(0, Math.min(yPct, 100));
+		setSliderX(x);
+		setSliderY(y);
+		setHasPlaced(true);
+		const percents = { xPercent: x, yPercent: y };
+		setPollAnswer(prev => ({ ...prev, ...percents }));
+		recordPollAnswer({ ...pollAnswer, ...percents });
 	};
 
 	const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
 		e.currentTarget.setPointerCapture(e.pointerId);
 		const { top, left, height, width } = e.currentTarget.getBoundingClientRect();
-		applyCoords(e.clientX - left, e.clientY - top, width, height);
+		applyPercents(((e.clientX - left) / width) * 100, ((e.clientY - top) / height) * 100);
 	};
 
 	const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
 		if (e.buttons === 0) return;
 		const { top, left, height, width } = e.currentTarget.getBoundingClientRect();
-		applyCoords(e.clientX - left, e.clientY - top, width, height);
+		applyPercents(((e.clientX - left) / width) * 100, ((e.clientY - top) / height) * 100);
 	};
 
-	const handleSliderX = (value: number[]) => {
-		if (!quadrantRef.current) return;
-		const { width, height } = quadrantRef.current.getBoundingClientRect();
-		applyCoords((value[0] / 100) * width, (sliderY / 100) * height, width, height);
-	};
-
-	const handleSliderY = (value: number[]) => {
-		if (!quadrantRef.current) return;
-		const { width, height } = quadrantRef.current.getBoundingClientRect();
-		applyCoords((sliderX / 100) * width, (value[0] / 100) * height, width, height);
-	};
+	const handleSliderX = (value: number[]) => applyPercents(value[0], sliderY);
+	const handleSliderY = (value: number[]) => applyPercents(sliderX, value[0]);
 
 	return (
 		<>
@@ -119,17 +108,16 @@ export default function AttendeePoll({
 							<div className="gkm-quadrant-y-axis-infinity-label">All the time</div>
 						</div>
 						<div
-							ref={quadrantRef}
 							className="gkm-quadrant-click-area"
 							onPointerDown={handlePointerDown}
 							onPointerMove={handlePointerMove}
 						>
-							{pollAnswer.xCoord > 0 && (
+							{hasPlaced && (
 								<div
 									className="marker"
 									style={{
-										top: pollAnswer.yCoord - 10,
-										left: pollAnswer.xCoord - 10,
+										top: `calc(${pollAnswer.yPercent}% - 10px)`,
+										left: `calc(${pollAnswer.xPercent}% - 10px)`,
 										backgroundColor: pollAnswer.roleColor,
 									}}
 								/>

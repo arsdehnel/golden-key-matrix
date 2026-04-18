@@ -1,8 +1,6 @@
 export type PollAnswer = {
 	sessionId: string;
 	roleColor: string;
-	xCoord: number;
-	yCoord: number;
-	quadrantWidth: number;
-	quadrantHeight: number;
+	xPercent: number; // 0–100, relative to quadrant click-area width
+	yPercent: number; // 0–100, relative to quadrant click-area height
 };
