@@ -1,3 +1,17 @@
+## [1.20.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.19.1...v1.20.0) (2026-04-18)
+
+### Features
+
+* add Steps component for multi-step poll UI ([2a65b36](https://github.com/arsdehnel/golden-key-matrix/commit/2a65b3697f65b0f712e1506e1086b9daa3ab4d56))
+* normalize quadrant coords to percentages for device-independent positioning ([3c39baa](https://github.com/arsdehnel/golden-key-matrix/commit/3c39baa94c3dc821c0faa68b7c01ee28d4eca0d9))
+* polish CSS quadrant axes and dividers ([5d1e977](https://github.com/arsdehnel/golden-key-matrix/commit/5d1e977a35589f7267d2d652b20a1fcd82f50415))
+* replace static quadrant image with CSS grid layout ([1e737dd](https://github.com/arsdehnel/golden-key-matrix/commit/1e737ddfc041829f19d5bbfbd127ae684ad78d85))
+
+### Bug Fixes
+
+* separate buttons for roles instead of slider ([fa6e39c](https://github.com/arsdehnel/golden-key-matrix/commit/fa6e39c005d8e4e10a4e231b844fad5180b44aa8))
+* user the slider on the quadrant view for keyboards ([ce33a01](https://github.com/arsdehnel/golden-key-matrix/commit/ce33a0197bf1cf82d5af0e9c9efb874c7fd9c989))
+
 ## [1.19.1](https://github.com/arsdehnel/golden-key-matrix/compare/v1.19.0...v1.19.1) (2026-04-17)
 
 ### Bug Fixes
