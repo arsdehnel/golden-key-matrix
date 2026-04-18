@@ -1,5 +1,24 @@
 import StandardLayout from "@/layouts/standard";
 
+function DevDesignQuadrant() {
+	return (
+		<div className="gkm-quadrant">
+			<div className="gkm-quadrant-y-axis">
+				<div className="gkm-quadrant-y-axis-title">Development</div>
+				<div className="gkm-quadrant-y-axis-infinity-label">Expert</div>
+			</div>
+			<div className="gkm-quadrant-click-area" />
+			<div className="gkm-quadrant-shared-axis">
+				<div className="gkm-quadrant-shared-axis-zero-label">None</div>
+			</div>
+			<div className="gkm-quadrant-x-axis">
+				<div className="gkm-quadrant-x-axis-title">Design</div>
+				<div className="gkm-quadrant-x-axis-infinity-label">Expert</div>
+			</div>
+		</div>
+	);
+}
+
 export default function Pages__Matrix() {
 	return (
 		<StandardLayout siteSection="matrix" pageTitle="Matrix Review">
@@ -24,10 +43,7 @@ export default function Pages__Matrix() {
 						<p>Wrap up words about open mindset</p>
 					</div>
 					<div className="matrix-key-quadrant">
-						<img
-							src="/dev-design-quadrant.jpg"
-							alt="Empty quadrant graph showing Design on the x-axis and Development on the y-axis"
-						/>
+						<DevDesignQuadrant />
 					</div>
 				</div>
 			</div>
@@ -38,10 +54,7 @@ export default function Pages__Matrix() {
 						<p>Iteration, back-and-forth, and near-constant collaboration</p>
 					</div>
 					<div className="matrix-key-quadrant">
-						<img
-							src="/dev-design-quadrant.jpg"
-							alt="Empty quadrant graph showing Design on the x-axis and Development on the y-axis"
-						/>
+						<DevDesignQuadrant />
 					</div>
 				</div>
 			</div>
@@ -52,10 +65,7 @@ export default function Pages__Matrix() {
 						<p>Documentation, microsites, videos, tutorials, and word-of-mouth</p>
 					</div>
 					<div className="matrix-key-quadrant">
-						<img
-							src="/dev-design-quadrant.jpg"
-							alt="Empty quadrant graph showing Design on the x-axis and Development on the y-axis"
-						/>
+						<DevDesignQuadrant />
 					</div>
 				</div>
 			</div>
