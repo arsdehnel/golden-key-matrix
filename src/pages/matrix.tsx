@@ -1,23 +1,5 @@
+import GkmQuadrant from "@/components/gkm-quadrant";
 import StandardLayout from "@/layouts/standard";
-
-function DevDesignQuadrant() {
-	return (
-		<div className="gkm-quadrant">
-			<div className="gkm-quadrant-y-axis">
-				<div className="gkm-quadrant-y-axis-title">Development</div>
-				<div className="gkm-quadrant-y-axis-infinity-label">Expert</div>
-			</div>
-			<div className="gkm-quadrant-click-area" />
-			<div className="gkm-quadrant-shared-axis">
-				<div className="gkm-quadrant-shared-axis-zero-label">None</div>
-			</div>
-			<div className="gkm-quadrant-x-axis">
-				<div className="gkm-quadrant-x-axis-title">Design</div>
-				<div className="gkm-quadrant-x-axis-infinity-label">Expert</div>
-			</div>
-		</div>
-	);
-}
 
 export default function Pages__Matrix() {
 	return (
@@ -43,7 +25,13 @@ export default function Pages__Matrix() {
 						<p>Wrap up words about open mindset</p>
 					</div>
 					<div className="matrix-key-quadrant">
-						<DevDesignQuadrant />
+						<GkmQuadrant
+							yAxisTitle="Development"
+							xAxisTitle="Design"
+							yAxisInfinityLabel="Expert"
+							xAxisInfinityLabel="Expert"
+							sharedAxisZeroLabel="None"
+						/>
 					</div>
 				</div>
 			</div>
@@ -54,7 +42,13 @@ export default function Pages__Matrix() {
 						<p>Iteration, back-and-forth, and near-constant collaboration</p>
 					</div>
 					<div className="matrix-key-quadrant">
-						<DevDesignQuadrant />
+						<GkmQuadrant
+							yAxisTitle="Development"
+							xAxisTitle="Design"
+							yAxisInfinityLabel="Expert"
+							xAxisInfinityLabel="Expert"
+							sharedAxisZeroLabel="None"
+						/>
 					</div>
 				</div>
 			</div>
@@ -65,7 +59,13 @@ export default function Pages__Matrix() {
 						<p>Documentation, microsites, videos, tutorials, and word-of-mouth</p>
 					</div>
 					<div className="matrix-key-quadrant">
-						<DevDesignQuadrant />
+						<GkmQuadrant
+							yAxisTitle="Development"
+							xAxisTitle="Design"
+							yAxisInfinityLabel="Expert"
+							xAxisInfinityLabel="Expert"
+							sharedAxisZeroLabel="None"
+						/>
 					</div>
 				</div>
 			</div>
