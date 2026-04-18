@@ -26,51 +26,52 @@ export default function HostWelcome({
 						<strong>As y'all answer the questions, results will display here.</strong>
 					</p>
 					<p>Just simple server-side state object storage :)</p>
-					<div className="ranking-frame">
-						{pollAnswerCoordinates.map(({ sessionId, roleColor, xCoord, yCoord }) => {
-							return (
+					<div className="gkm-quadrant">
+						<div className="gkm-quadrant-y-axis">
+							<div className="gkm-quadrant-y-axis-title">Experience</div>
+							<div className="gkm-quadrant-y-axis-infinity-label">All the time</div>
+						</div>
+						<div className="gkm-quadrant-click-area">
+							{pollAnswerCoordinates.map(({ sessionId, roleColor, xPercent, yPercent }) => (
 								<div
 									key={sessionId}
 									className="marker"
 									style={{
-										top: yCoord - 10,
-										left: xCoord - 10,
+										top: `calc(${yPercent}% - 10px)`,
+										left: `calc(${xPercent}% - 10px)`,
 										backgroundColor: roleColor,
 									}}
 								/>
-							);
-						})}
-						<img
-							src="/initial-question-bg.jpg"
-							alt="Empty quadrant graph showing Comfort on the x-axis and Experience on the y-axis"
-						/>
-						<table className="coords-table">
-							<thead>
-								<tr>
-									<th>Session ID</th>
-									<th>Color</th>
-									<th>X</th>
-									<th>Y</th>
-									<th>Height</th>
-									<th>Width</th>
-								</tr>
-							</thead>
-							<tbody>
-								{pollAnswerCoordinates.map(coord => {
-									return (
-										<tr key={coord.sessionId}>
-											<td>{coord.sessionId}</td>
-											<td>{coord.roleColor}</td>
-											<td>{coord.xCoord}</td>
-											<td>{coord.yCoord}</td>
-											<td>{coord.quadrantHeight}</td>
-											<td>{coord.quadrantWidth}</td>
-										</tr>
-									);
-								})}
-							</tbody>
-						</table>
+							))}
+						</div>
+						<div className="gkm-quadrant-shared-axis">
+							<div className="gkm-quadrant-shared-axis-zero-label">None</div>
+						</div>
+						<div className="gkm-quadrant-x-axis">
+							<div className="gkm-quadrant-x-axis-title">Comfort Level</div>
+							<div className="gkm-quadrant-x-axis-infinity-label">Very Comfy</div>
+						</div>
 					</div>
+					<table className="coords-table">
+						<thead>
+							<tr>
+								<th>Session ID</th>
+								<th>Color</th>
+								<th>X%</th>
+								<th>Y%</th>
+							</tr>
+						</thead>
+						<tbody>
+							{pollAnswerCoordinates.map(({ sessionId, roleColor, xPercent, yPercent }) => (
+								<tr key={sessionId}>
+									<td>{sessionId}</td>
+									<td>{roleColor}</td>
+									<td>{xPercent.toFixed(1)}</td>
+									<td>{yPercent.toFixed(1)}</td>
+								</tr>
+							))}
+						</tbody>
+					</table>
 				</div>
 			</div>
 		</>
