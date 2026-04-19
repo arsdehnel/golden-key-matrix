@@ -1,3 +1,15 @@
+## [1.22.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.21.0...v1.22.0) (2026-04-19)
+
+### Features
+
+* add /osn/admin page for toggling the OSN redirect flag ([917515a](https://github.com/arsdehnel/golden-key-matrix/commit/917515a61d40647a00ef9591f15f4518e76c0a87))
+* add KV-backed OSN redirect toggle with middleware and server action ([f947883](https://github.com/arsdehnel/golden-key-matrix/commit/f947883cc3ca96052ca1386e4ee801747226fc61))
+
+### Bug Fixes
+
+* skip redirect for WebSocket upgrade requests ([c631b8c](https://github.com/arsdehnel/golden-key-matrix/commit/c631b8c76120989e80d80c9b90de96b3ba91933f))
+* use Host header in osn redirect to preserve port in dev ([6d0a8a5](https://github.com/arsdehnel/golden-key-matrix/commit/6d0a8a5e198baf0f9b1a83e4060927f764537ff6))
+
 ## [1.21.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.20.0...v1.21.0) (2026-04-19)
 
 ### Features
