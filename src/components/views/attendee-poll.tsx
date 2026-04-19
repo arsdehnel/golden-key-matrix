@@ -1,6 +1,7 @@
 "use client";
 import { Slider } from "radix-ui";
 import { useState } from "react";
+import GkmQuadrant from "@/components/gkm-quadrant";
 import type { PollAnswer } from "@/types";
 import Steps from "../steps";
 
@@ -102,35 +103,26 @@ export default function AttendeePoll({
 				<>
 					<h3>Tap to plot your role!</h3>
 					<p>Plot your experience and comfort level working with complementary/different teams.</p>
-					<div className="gkm-quadrant">
-						<div className="gkm-quadrant-y-axis">
-							<div className="gkm-quadrant-y-axis-title">Experience</div>
-							<div className="gkm-quadrant-y-axis-infinity-label">All the time</div>
-						</div>
-						<div
-							className="gkm-quadrant-click-area"
-							onPointerDown={handlePointerDown}
-							onPointerMove={handlePointerMove}
-						>
-							{hasPlaced && (
-								<div
-									className="marker"
-									style={{
-										top: `calc(${pollAnswer.yPercent}% - 10px)`,
-										left: `calc(${pollAnswer.xPercent}% - 10px)`,
-										backgroundColor: pollAnswer.roleColor,
-									}}
-								/>
-							)}
-						</div>
-						<div className="gkm-quadrant-shared-axis">
-							<div className="gkm-quadrant-shared-axis-zero-label">None</div>
-						</div>
-						<div className="gkm-quadrant-x-axis">
-							<div className="gkm-quadrant-x-axis-title">Comfort Level</div>
-							<div className="gkm-quadrant-x-axis-infinity-label">Very Comfy</div>
-						</div>
-					</div>
+					<GkmQuadrant
+						yAxisTitle="Experience"
+						xAxisTitle="Comfort Level"
+						yAxisInfinityLabel="All the time"
+						xAxisInfinityLabel="Very Comfy"
+						sharedAxisZeroLabel="None"
+						onPointerDown={handlePointerDown}
+						onPointerMove={handlePointerMove}
+					>
+						{hasPlaced && (
+							<div
+								className="marker"
+								style={{
+									top: `calc(${pollAnswer.yPercent}% - 10px)`,
+									left: `calc(${pollAnswer.xPercent}% - 10px)`,
+									backgroundColor: pollAnswer.roleColor,
+								}}
+							/>
+						)}
+					</GkmQuadrant>
 					{/* Sliders provide keyboard-accessible positioning; the dot on the quadrant is the visual indicator */}
 					<div className="quadrant-sliders">
 						<Slider.Root

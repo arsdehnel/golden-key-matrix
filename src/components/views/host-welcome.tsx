@@ -1,4 +1,5 @@
 import { QRCodeSVG } from "qrcode.react";
+import GkmQuadrant from "@/components/gkm-quadrant";
 import type { PollAnswer } from "@/types";
 
 export default function HostWelcome({
@@ -26,32 +27,25 @@ export default function HostWelcome({
 						<strong>As y'all answer the questions, results will display here.</strong>
 					</p>
 					<p>Just simple server-side state object storage :)</p>
-					<div className="gkm-quadrant">
-						<div className="gkm-quadrant-y-axis">
-							<div className="gkm-quadrant-y-axis-title">Experience</div>
-							<div className="gkm-quadrant-y-axis-infinity-label">All the time</div>
-						</div>
-						<div className="gkm-quadrant-click-area">
-							{pollAnswerCoordinates.map(({ sessionId, roleColor, xPercent, yPercent }) => (
-								<div
-									key={sessionId}
-									className="marker"
-									style={{
-										top: `calc(${yPercent}% - 10px)`,
-										left: `calc(${xPercent}% - 10px)`,
-										backgroundColor: roleColor,
-									}}
-								/>
-							))}
-						</div>
-						<div className="gkm-quadrant-shared-axis">
-							<div className="gkm-quadrant-shared-axis-zero-label">None</div>
-						</div>
-						<div className="gkm-quadrant-x-axis">
-							<div className="gkm-quadrant-x-axis-title">Comfort Level</div>
-							<div className="gkm-quadrant-x-axis-infinity-label">Very Comfy</div>
-						</div>
-					</div>
+					<GkmQuadrant
+						yAxisTitle="Experience"
+						xAxisTitle="Comfort Level"
+						yAxisInfinityLabel="All the time"
+						xAxisInfinityLabel="Very Comfy"
+						sharedAxisZeroLabel="None"
+					>
+						{pollAnswerCoordinates.map(({ sessionId, roleColor, xPercent, yPercent }) => (
+							<div
+								key={sessionId}
+								className="marker"
+								style={{
+									top: `calc(${yPercent}% - 10px)`,
+									left: `calc(${xPercent}% - 10px)`,
+									backgroundColor: roleColor,
+								}}
+							/>
+						))}
+					</GkmQuadrant>
 					<table className="coords-table">
 						<thead>
 							<tr>

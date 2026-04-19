@@ -1,3 +1,4 @@
+import GkmQuadrant from "@/components/gkm-quadrant";
 import StandardLayout from "@/layouts/standard";
 
 export default function Pages__Matrix() {
@@ -24,9 +25,12 @@ export default function Pages__Matrix() {
 						<p>Wrap up words about open mindset</p>
 					</div>
 					<div className="matrix-key-quadrant">
-						<img
-							src="/dev-design-quadrant.jpg"
-							alt="Empty quadrant graph showing Design on the x-axis and Development on the y-axis"
+						<GkmQuadrant
+							yAxisTitle="Development"
+							xAxisTitle="Design"
+							yAxisInfinityLabel="Expert"
+							xAxisInfinityLabel="Expert"
+							sharedAxisZeroLabel="None"
 						/>
 					</div>
 				</div>
@@ -38,9 +42,12 @@ export default function Pages__Matrix() {
 						<p>Iteration, back-and-forth, and near-constant collaboration</p>
 					</div>
 					<div className="matrix-key-quadrant">
-						<img
-							src="/dev-design-quadrant.jpg"
-							alt="Empty quadrant graph showing Design on the x-axis and Development on the y-axis"
+						<GkmQuadrant
+							yAxisTitle="Development"
+							xAxisTitle="Design"
+							yAxisInfinityLabel="Expert"
+							xAxisInfinityLabel="Expert"
+							sharedAxisZeroLabel="None"
 						/>
 					</div>
 				</div>
@@ -52,9 +59,12 @@ export default function Pages__Matrix() {
 						<p>Documentation, microsites, videos, tutorials, and word-of-mouth</p>
 					</div>
 					<div className="matrix-key-quadrant">
-						<img
-							src="/dev-design-quadrant.jpg"
-							alt="Empty quadrant graph showing Design on the x-axis and Development on the y-axis"
+						<GkmQuadrant
+							yAxisTitle="Development"
+							xAxisTitle="Design"
+							yAxisInfinityLabel="Expert"
+							xAxisInfinityLabel="Expert"
+							sharedAxisZeroLabel="None"
 						/>
 					</div>
 				</div>
