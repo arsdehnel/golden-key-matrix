@@ -1,0 +1,19 @@
+"use server";
+import { env } from "cloudflare:workers";
+
+const ADMIN_CODE = "osn-2026-admin";
+const OSN_REDIRECT_KEY = "osn_redirect_active";
+
+export async function setOsnRedirect(
+	code: string,
+	active: boolean,
+): Promise<{ success: boolean; message: string; active?: boolean }> {
+	if (!env.FEATURE_FLAGS) {
+		return { success: false, message: "Feature flags not configured" };
+	}
+	if (code !== ADMIN_CODE) {
+		return { success: false, message: "Invalid code" };
+	}
+	await env.FEATURE_FLAGS.put(OSN_REDIRECT_KEY, String(active));
+	return { success: true, message: active ? "Redirect enabled" : "Redirect disabled", active };
+}

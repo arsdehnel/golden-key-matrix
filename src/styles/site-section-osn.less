@@ -106,6 +106,68 @@
 			opacity: 0.85;
 		}
 	}
+	.osn-admin-flag {
+		max-width: 480px;
+	}
+	.osn-admin-flag-status {
+		padding: 0.5rem 0.75rem;
+		border-radius: 6px;
+		font-weight: bold;
+		&.is-active {
+			background-color: @color_mint;
+			color: @color_darkteal;
+		}
+		&.is-inactive {
+			background-color: @color_darkteal;
+			color: @color_mint;
+		}
+	}
+	.osn-admin-flag-controls {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+		margin-top: 1.25rem;
+	}
+	.osn-admin-code-label {
+		display: flex;
+		flex-direction: column;
+		gap: 0.375rem;
+		font-weight: bold;
+	}
+	.osn-admin-code-input {
+		padding: 0.5rem 0.75rem;
+		border: 2px solid @color_darkteal;
+		border-radius: 6px;
+		font-size: 1rem;
+		background: transparent;
+	}
+	.osn-admin-flag-buttons {
+		display: flex;
+		gap: 0.75rem;
+	}
+	.osn-admin-btn {
+		flex: 1;
+		padding: 0.75rem 1.25rem;
+		border: none;
+		border-radius: 8px;
+		cursor: pointer;
+		font-size: 1rem;
+		font-weight: bold;
+		color: @color_darkteal;
+		background-color: @color_mint;
+		transition: opacity 0.15s ease;
+		&:hover:not(:disabled) {
+			opacity: 0.85;
+		}
+		&:disabled {
+			opacity: 0.35;
+			cursor: default;
+		}
+	}
+	.osn-admin-message {
+		margin-top: 0.75rem;
+		font-style: italic;
+	}
 	.coords-table {
 		margin: 0 auto;
 		font-size: 0.8rem;

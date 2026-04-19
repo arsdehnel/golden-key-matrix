@@ -4,6 +4,7 @@ import { defineApp } from "rwsdk/worker";
 
 import { Document } from "@/document";
 import headerMiddleware from "@/middleware/headers";
+import osnRedirect from "@/middleware/osn-redirect";
 import sessionMiddleware from "@/middleware/session";
 import wwwRedirect from "@/middleware/www-redirect";
 import Pages__Home from "@/pages/home";
@@ -15,6 +16,7 @@ import osnRoutes from "./pages/osn/routes";
 export default defineApp([
 	wwwRedirect,
 	headerMiddleware,
+	osnRedirect,
 	sessionMiddleware,
 	...syncedStateRoutes(e => e.SYNCED_STATE_DO),
 	render(Document, [

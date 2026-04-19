@@ -4,6 +4,7 @@
 		"includes": [
 			"**",
 			"!coverage",
+			"!**/.claude",
 			"!worker-configuration.d.ts",
 			"!**/.terraform",
 			"!**/node_modules",

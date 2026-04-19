@@ -13,46 +13,105 @@
 	"vars": {},
 	"durable_objects": {
 		"bindings": [
-			{ "name": "SESSION_DO", "class_name": "SessionDurableObject" },
-			{ "name": "SYNCED_STATE_DO", "class_name": "SyncedStateServer" }
+			{
+				"name": "SESSION_DO",
+				"class_name": "SessionDurableObject"
+			},
+			{
+				"name": "SYNCED_STATE_DO",
+				"class_name": "SyncedStateServer"
+			}
 		]
 	},
-	"migrations": [{ "tag": "v1", "new_sqlite_classes": ["SessionDurableObject", "SyncedStateServer"] }],
+	"migrations": [
+		{
+			"tag": "v1",
+			"new_sqlite_classes": ["SessionDurableObject", "SyncedStateServer"]
+		}
+	],
+	"kv_namespaces": [
+		{
+			"binding": "FEATURE_FLAGS",
+			"id": "e85d9e24d8014fd382d758c77b3c7113"
+		}
+	],
 	"env": {
 		"integration": {
 			"name": "golden-key-matrix-integration",
 			"vars": {},
 			"durable_objects": {
 				"bindings": [
-					{ "name": "SESSION_DO", "class_name": "SessionDurableObject" },
-					{ "name": "SYNCED_STATE_DO", "class_name": "SyncedStateServer" }
+					{
+						"name": "SESSION_DO",
+						"class_name": "SessionDurableObject"
+					},
+					{
+						"name": "SYNCED_STATE_DO",
+						"class_name": "SyncedStateServer"
+					}
 				]
-			}
+			},
+			"kv_namespaces": [
+				{
+					"binding": "FEATURE_FLAGS",
+					"id": "77805bafad4a487c8edda6c703ffef4f"
+				}
+			]
 		},
 		"staging": {
 			"name": "golden-key-matrix-staging",
 			"vars": {},
 			"durable_objects": {
 				"bindings": [
-					{ "name": "SESSION_DO", "class_name": "SessionDurableObject" },
-					{ "name": "SYNCED_STATE_DO", "class_name": "SyncedStateServer" }
+					{
+						"name": "SESSION_DO",
+						"class_name": "SessionDurableObject"
+					},
+					{
+						"name": "SYNCED_STATE_DO",
+						"class_name": "SyncedStateServer"
+					}
 				]
-			}
+			},
+			"kv_namespaces": [
+				{
+					"binding": "FEATURE_FLAGS",
+					"id": "051426404a114d1da1bcc5ecb2cd8460"
+				}
+			]
 		},
 		"production": {
 			"name": "golden-key-matrix",
 			"workers_dev": false,
 			"routes": [
-				{ "pattern": "golden-key-matrix.com", "custom_domain": true },
-				{ "pattern": "www.golden-key-matrix.com", "custom_domain": true }
+				{
+					"pattern": "golden-key-matrix.com",
+					"custom_domain": true
+				},
+				{
+					"pattern": "www.golden-key-matrix.com",
+					"custom_domain": true
+				}
 			],
 			"vars": {},
 			"durable_objects": {
 				"bindings": [
-					{ "name": "SESSION_DO", "class_name": "SessionDurableObject" },
-					{ "name": "SYNCED_STATE_DO", "class_name": "SyncedStateServer" }
+					{
+						"name": "SESSION_DO",
+						"class_name": "SessionDurableObject"
+					},
+					{
+						"name": "SYNCED_STATE_DO",
+						"class_name": "SyncedStateServer"
+					}
 				]
-			}
+			},
+			"kv_namespaces": [
+				{
+					"binding": "FEATURE_FLAGS",
+					"id": "1dce007b3ab84f8093f2b3fcb9106018"
+				}
+			]
 		}
 	}
 }
