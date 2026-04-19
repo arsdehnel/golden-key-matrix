@@ -10,6 +10,9 @@ export function shouldOsnRedirect(flagValue: string | null, pathname: string): b
 }
 
 const osnRedirect: RouteMiddleware = async ({ request }) => {
+	// Never redirect WebSocket upgrade requests — SyncedState connects on a non-/osn path
+	// and returning a 302 to an upgrade request kills the connection
+	if (request.headers.get("upgrade")?.toLowerCase() === "websocket") return;
 	const flagValue = (await env.FEATURE_FLAGS?.get(OSN_REDIRECT_KEY)) ?? null;
 	const { pathname } = new URL(request.url);
 	if (shouldOsnRedirect(flagValue, pathname)) {
