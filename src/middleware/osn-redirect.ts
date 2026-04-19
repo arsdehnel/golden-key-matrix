@@ -13,7 +13,11 @@ const osnRedirect: RouteMiddleware = async ({ request }) => {
 	const flagValue = (await env.FEATURE_FLAGS?.get(OSN_REDIRECT_KEY)) ?? null;
 	const { pathname } = new URL(request.url);
 	if (shouldOsnRedirect(flagValue, pathname)) {
-		return Response.redirect(new URL(REDIRECT_TARGET, request.url).toString(), 302);
+		const redirectUrl = new URL(REDIRECT_TARGET, request.url);
+		// request.url is normalized to port 80 in wrangler dev; the Host header preserves the real port
+		const host = request.headers.get("host");
+		if (host) redirectUrl.host = host;
+		return Response.redirect(redirectUrl.toString(), 302);
 	}
 };
 
