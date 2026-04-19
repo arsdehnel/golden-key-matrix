@@ -1,3 +1,9 @@
+## [1.21.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.20.0...v1.21.0) (2026-04-19)
+
+### Features
+
+* replace static quadrant image with CSS-based gkm-quadrant on matrix page ([2f51bfb](https://github.com/arsdehnel/golden-key-matrix/commit/2f51bfb40466a47c66cc1213ffd86e97d3f4a9fa))
+
 ## [1.20.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.19.1...v1.20.0) (2026-04-18)
 
 ### Features
