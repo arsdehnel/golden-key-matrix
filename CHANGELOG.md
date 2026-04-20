@@ -1,3 +1,9 @@
+## [1.23.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.22.0...v1.23.0) (2026-04-20)
+
+### Features
+
+* make host view QR code and quadrant equal size and responsive ([33411ae](https://github.com/arsdehnel/golden-key-matrix/commit/33411ae9ddded2008b34cb9f7f3cfaef0cf4fc1d))
+
 ## [1.22.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.21.0...v1.22.0) (2026-04-19)
 
 ### Features
