@@ -19,7 +19,9 @@ export default function HostWelcome({
 						<strong>2 Questions • 5 Seconds • 100% Anonymous</strong>
 					</p>
 					<p>Scan the QR code and help us gauge the room's experience and roles.</p>
-					<QRCodeSVG value={pollUrl} size={520} />
+					<div className="osn-qr-container">
+						<QRCodeSVG value={pollUrl} size={600} />
+					</div>
 				</div>
 				<div className="osn-welcome-panel">
 					<h3>See Live Results</h3>
