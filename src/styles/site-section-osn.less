@@ -6,12 +6,26 @@
 		text-align: center;
 	}
 	.osn-welcome-view {
-		display: flex;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 2rem;
+		align-items: start;
 	}
 	.osn-welcome-panel {
-		flex: 1;
-		position: relative;
 		text-align: center;
+	}
+	.osn-qr-container {
+		aspect-ratio: 4/3;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		svg {
+			max-height: 100%;
+			width: auto;
+			height: auto;
+			display: block;
+		}
 	}
 	.role-options {
 		display: flex;
