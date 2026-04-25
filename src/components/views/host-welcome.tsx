@@ -29,25 +29,27 @@ export default function HostWelcome({
 						<strong>As y'all answer the questions, results will display here.</strong>
 					</p>
 					<p>Just simple server-side state object storage :)</p>
-					<GkmQuadrant
-						yAxisTitle="Experience"
-						xAxisTitle="Comfort Level"
-						yAxisInfinityLabel="All the time"
-						xAxisInfinityLabel="Very Comfy"
-						sharedAxisZeroLabel="None"
-					>
-						{pollAnswerCoordinates.map(({ sessionId, roleColor, xPercent, yPercent }) => (
-							<div
-								key={sessionId}
-								className="marker"
-								style={{
-									top: `calc(${yPercent}% - 10px)`,
-									left: `calc(${xPercent}% - 10px)`,
-									backgroundColor: roleColor,
-								}}
-							/>
-						))}
-					</GkmQuadrant>
+					<div className="osn-quadrant-container">
+						<GkmQuadrant
+							yAxisTitle="Experience"
+							xAxisTitle="Comfort Level"
+							yAxisInfinityLabel="All the time"
+							xAxisInfinityLabel="Very Comfy"
+							sharedAxisZeroLabel="None"
+						>
+							{pollAnswerCoordinates.map(({ sessionId, roleColor, xPercent, yPercent }) => (
+								<div
+									key={sessionId}
+									className="marker"
+									style={{
+										top: `calc(${yPercent}% - 10px)`,
+										left: `calc(${xPercent}% - 10px)`,
+										backgroundColor: roleColor,
+									}}
+								/>
+							))}
+						</GkmQuadrant>
+					</div>
 					<table className="coords-table">
 						<thead>
 							<tr>
