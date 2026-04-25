@@ -1,3 +1,13 @@
+## [1.24.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.23.0...v1.24.0) (2026-04-25)
+
+### Features
+
+* keeping host welcome panels the same size ([ceec4d9](https://github.com/arsdehnel/golden-key-matrix/commit/ceec4d90a4009305df8f51958acb138c63bd8704))
+
+### Bug Fixes
+
+* propagate viewport height through OSN layout to prevent overflow ([0e4e9bb](https://github.com/arsdehnel/golden-key-matrix/commit/0e4e9bb0b09e4cb0b6954d5ef961bf4e166fc982))
+
 ## [1.23.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.22.0...v1.23.0) (2026-04-20)
 
 ### Features
