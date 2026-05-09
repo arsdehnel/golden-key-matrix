@@ -15,6 +15,7 @@
 		gap: 2rem;
 		flex: 1;
 		min-height: 0;
+		margin: 0 0 2rem;
 	}
 	.osn-welcome-panel {
 		text-align: center;
@@ -46,9 +47,10 @@
 		align-items: flex-start;
 
 		.gkm-quadrant {
-			height: 100%;
-			width: auto;
 			grid-template-rows: 1fr 40px;
+			height: calc(100% - 2rem);
+			width: calc(100% - 2rem);
+			margin: 2rem 2rem 0 0;
 		}
 	}
 	.role-options {

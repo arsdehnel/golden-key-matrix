@@ -50,26 +50,6 @@ export default function HostWelcome({
 							))}
 						</GkmQuadrant>
 					</div>
-					<table className="coords-table">
-						<thead>
-							<tr>
-								<th>Session ID</th>
-								<th>Color</th>
-								<th>X%</th>
-								<th>Y%</th>
-							</tr>
-						</thead>
-						<tbody>
-							{pollAnswerCoordinates.map(({ sessionId, roleColor, xPercent, yPercent }) => (
-								<tr key={sessionId}>
-									<td>{sessionId}</td>
-									<td>{roleColor}</td>
-									<td>{xPercent.toFixed(1)}</td>
-									<td>{yPercent.toFixed(1)}</td>
-								</tr>
-							))}
-						</tbody>
-					</table>
 				</div>
 			</div>
 		</>
