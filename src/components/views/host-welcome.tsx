@@ -10,7 +10,7 @@ export default function HostWelcome({
 	pollUrl: string;
 }) {
 	return (
-		<>
+		<div className="osn-view-host-welcome">
 			<h2 className="page-title osn-host-view">
 				Welcome to <span>The Golden Key to Badass Products</span>!
 			</h2>
@@ -40,6 +40,6 @@ export default function HostWelcome({
 					</div>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 }

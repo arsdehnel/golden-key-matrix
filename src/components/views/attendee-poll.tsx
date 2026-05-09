@@ -53,6 +53,7 @@ export default function AttendeePoll({
 		setSliderX(x);
 		setSliderY(y);
 		setHasPlaced(true);
+		console.log(`Applying percents: x=${x} y=${y}`); // Debug log to verify values
 		const percents = { xPercent: x, yPercent: y };
 		setPollAnswer(prev => ({ ...prev, ...percents }));
 		recordPollAnswer({ ...pollAnswer, ...percents });
@@ -74,15 +75,13 @@ export default function AttendeePoll({
 	const handleSliderY = (value: number[]) => applyPercents(sliderX, value[0]);
 
 	return (
-		<>
-			<h2 className="page-title">Welcome!</h2>
-			<h3>2-Question Audience Poll</h3>
+		<div className="osn-view-attendee-poll">
+			<h2 className="page-title">2-Question Audience Poll</h2>
 			<Steps steps={STEPS} currentStep={currentStep} onStepClick={setCurrentStep} />
 
 			{currentStep === 0 && (
 				<>
-					<h3>How would you describe your role?</h3>
-					<p>Pick whichever feels most like you.</p>
+					<h3>How would you best describe your role?</h3>
 					<div className="role-options">
 						{ROLE_OPTIONS.map(({ label, color }) => (
 							<button
@@ -105,10 +104,7 @@ export default function AttendeePoll({
 					<p>Plot your experience and comfort level working with complementary/different teams.</p>
 					<GkmQuadrant
 						xAxisTitle="Comfort Level"
-						xAxisInfinityLabel="High"
 						yAxisTitle="Experience"
-						yAxisInfinityLabel="Lots"
-						sharedAxisZeroLabel="None"
 						onPointerDown={handlePointerDown}
 						onPointerMove={handlePointerMove}
 					>
@@ -175,6 +171,6 @@ export default function AttendeePoll({
 					</p>
 				</>
 			)}
-		</>
+		</div>
 	);
 }
