@@ -1,3 +1,9 @@
+## [1.24.3](https://github.com/arsdehnel/golden-key-matrix/compare/v1.24.2...v1.24.3) (2026-05-09)
+
+### Bug Fixes
+
+* more welcome view styling tweaks ([5eff683](https://github.com/arsdehnel/golden-key-matrix/commit/5eff6835647535bc3bf8031384d7749477ea38a6))
+
 ## [1.24.2](https://github.com/arsdehnel/golden-key-matrix/compare/v1.24.1...v1.24.2) (2026-05-09)
 
 ### Bug Fixes
