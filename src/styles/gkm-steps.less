@@ -14,7 +14,7 @@
 		flex: 1;
 		height: 2px;
 		margin-top: (@steps-circle-size / 2);
-		background-color: @color_darkgrey;
+		background-color: #666;
 		transition: background-color 0.2s ease;
 
 		&.is-completed {
@@ -37,23 +37,23 @@
 
 		&.is-upcoming {
 			.gkm-steps-item-circle {
-				border-color: @color_darkgrey;
-				color: @color_darkgrey;
+				border-color: #aaa;
+				color: #aaa;
 				background-color: transparent;
 			}
 			.gkm-steps-item-label {
-				color: @color_darkgrey;
+				color: #aaa;
 			}
 		}
 
 		&.is-current {
 			.gkm-steps-item-circle {
-				border-color: @color_mint;
+				border-color: @color_blue;
 				color: @color_darkteal;
-				background-color: @color_mint;
+				background-color: @color_blue;
 			}
 			.gkm-steps-item-label {
-				color: @color_darkteal;
+				color: @color_blue;
 				font-weight: bold;
 			}
 		}

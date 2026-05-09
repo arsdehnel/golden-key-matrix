@@ -12,9 +12,9 @@ const STEPS = [
 ];
 
 const ROLE_OPTIONS = [
-	{ label: "Developer / Engineer", color: "#6ad1fa" }, // @color_blue
-	{ label: "Designer / UX", color: "#30e8b0" }, // @color_mint
-	{ label: "I work with both", color: "#07363b" }, // @color_darkteal
+	{ label: "Developer / Engineer", color: "magenta" }, // @color_blue
+	{ label: "Designer / User Experience", color: "yellow" }, // @color_mint
+	{ label: "Other", color: "lime" }, // @color_darkteal
 ];
 
 export default function AttendeePoll({
@@ -76,7 +76,7 @@ export default function AttendeePoll({
 	return (
 		<>
 			<h2 className="page-title">Welcome!</h2>
-
+			<p>2-Question Audience Poll</p>
 			<Steps steps={STEPS} currentStep={currentStep} onStepClick={setCurrentStep} />
 
 			{currentStep === 0 && (
@@ -104,10 +104,10 @@ export default function AttendeePoll({
 					<h3>Tap to plot your role!</h3>
 					<p>Plot your experience and comfort level working with complementary/different teams.</p>
 					<GkmQuadrant
-						yAxisTitle="Experience"
 						xAxisTitle="Comfort Level"
-						yAxisInfinityLabel="All the time"
-						xAxisInfinityLabel="Very Comfy"
+						xAxisInfinityLabel="High"
+						yAxisTitle="Experience"
+						yAxisInfinityLabel="Lots"
 						sharedAxisZeroLabel="None"
 						onPointerDown={handlePointerDown}
 						onPointerMove={handlePointerMove}
@@ -125,34 +125,40 @@ export default function AttendeePoll({
 					</GkmQuadrant>
 					{/* Sliders provide keyboard-accessible positioning; the dot on the quadrant is the visual indicator */}
 					<div className="quadrant-sliders">
-						<Slider.Root
-							className="gkm-slider-root"
-							value={[sliderX]}
-							min={0}
-							max={100}
-							step={1}
-							onValueChange={handleSliderX}
-							aria-label="Horizontal position on quadrant"
-						>
-							<Slider.Track className="gkm-slider-track">
-								<Slider.Range className="gkm-slider-range" />
-							</Slider.Track>
-							<Slider.Thumb className="gkm-slider-thumb" />
-						</Slider.Root>
-						<Slider.Root
-							className="gkm-slider-root"
-							value={[sliderY]}
-							min={0}
-							max={100}
-							step={1}
-							onValueChange={handleSliderY}
-							aria-label="Vertical position on quadrant"
-						>
-							<Slider.Track className="gkm-slider-track">
-								<Slider.Range className="gkm-slider-range" />
-							</Slider.Track>
-							<Slider.Thumb className="gkm-slider-thumb" />
-						</Slider.Root>
+						<div className="quadrant-slider">
+							<span className="quadrant-slider-label">Comfort Level</span>
+							<Slider.Root
+								className="gkm-slider-root"
+								value={[sliderX]}
+								min={0}
+								max={100}
+								step={1}
+								onValueChange={handleSliderX}
+								aria-label="Horizontal position on quadrant indicating your comfort level with the 'other' team"
+							>
+								<Slider.Track className="gkm-slider-track">
+									<Slider.Range className="gkm-slider-range" />
+								</Slider.Track>
+								<Slider.Thumb className="gkm-slider-thumb" />
+							</Slider.Root>
+						</div>
+						<div className="quadrant-slider">
+							<span className="quadrant-slider-label">Experience</span>
+							<Slider.Root
+								className="gkm-slider-root"
+								value={[sliderY]}
+								min={0}
+								max={100}
+								step={1}
+								onValueChange={handleSliderY}
+								aria-label="Vertical position on quadrant indicating your level of experience with the 'other' team"
+							>
+								<Slider.Track className="gkm-slider-track">
+									<Slider.Range className="gkm-slider-range" />
+								</Slider.Track>
+								<Slider.Thumb className="gkm-slider-thumb" />
+							</Slider.Root>
+						</div>
 					</div>
 					<button type="button" className="quadrant-next" onClick={() => setCurrentStep(2)}>
 						Next →
