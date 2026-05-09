@@ -20,22 +20,22 @@ describe("setOsnRedirect", () => {
 	});
 
 	it("rejects an invalid code without writing to KV", async () => {
-		const result = await setOsnRedirect("wrong-code", true);
+		const result = await setOsnRedirect("wrong-code", "OSN");
 		expect(result.success).toBe(false);
 		expect(mockKV.put).not.toHaveBeenCalled();
 	});
 
-	it("enables the redirect with the correct code", async () => {
-		const result = await setOsnRedirect("osn-2026-admin", true);
+	it("changes redirect mode with the correct code", async () => {
+		const result = await setOsnRedirect("osn-2026-admin", "OSN");
 		expect(result.success).toBe(true);
-		expect(result.active).toBe(true);
-		expect(mockKV.put).toHaveBeenCalledWith("osn_redirect_active", "true");
+		expect(result.mode).toBe("OSN");
+		expect(mockKV.put).toHaveBeenCalledWith("osn_redirect_active", "OSN");
 	});
 
-	it("disables the redirect with the correct code", async () => {
-		const result = await setOsnRedirect("osn-2026-admin", false);
+	it("changes redirect mode with the correct code", async () => {
+		const result = await setOsnRedirect("osn-2026-admin", "PRE_OSN");
 		expect(result.success).toBe(true);
-		expect(result.active).toBe(false);
-		expect(mockKV.put).toHaveBeenCalledWith("osn_redirect_active", "false");
+		expect(result.mode).toBe("PRE_OSN");
+		expect(mockKV.put).toHaveBeenCalledWith("osn_redirect_active", "PRE_OSN");
 	});
 });

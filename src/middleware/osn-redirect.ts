@@ -5,22 +5,39 @@ const REDIRECT_TARGET = "/osn/welcome";
 const OSN_REDIRECT_KEY = "osn_redirect_active";
 
 // Exported for unit testing — no framework dependencies
-export function shouldOsnRedirect(flagValue: string | null, pathname: string): boolean {
-	return flagValue === "true" && !pathname.startsWith("/osn");
-}
+// export function shouldOsnRedirect(redirectMode: string | null, pathname: string): boolean {
+// 	return redirectMode === "OSN" && !pathname.startsWith("/osn");
+// }
 
 const osnRedirect: RouteMiddleware = async ({ request }) => {
 	// Never redirect WebSocket upgrade requests — SyncedState connects on a non-/osn path
 	// and returning a 302 to an upgrade request kills the connection
 	if (request.headers.get("upgrade")?.toLowerCase() === "websocket") return;
-	const flagValue = (await env.FEATURE_FLAGS?.get(OSN_REDIRECT_KEY)) ?? null;
+	const redirectMode = (await env.FEATURE_FLAGS?.get(OSN_REDIRECT_KEY)) ?? null;
 	const { pathname } = new URL(request.url);
-	if (shouldOsnRedirect(flagValue, pathname)) {
-		const redirectUrl = new URL(REDIRECT_TARGET, request.url);
-		// request.url is normalized to port 80 in wrangler dev; the Host header preserves the real port
-		const host = request.headers.get("host");
-		if (host) redirectUrl.host = host;
-		return Response.redirect(redirectUrl.toString(), 302);
+
+	if (pathname === "/osn/admin") {
+		// Don't redirect the admin page, even if we're in OSN mode, so that admins can change the redirect mode without needing to access KV directly
+		return;
+	}
+
+	// Pre-OSN we just want the homepage
+	if (redirectMode === "PRE_OSN") {
+		if (pathname !== "/intro") {
+			const redirectUrl = new URL("/intro", request.url);
+			return Response.redirect(redirectUrl.toString(), 302);
+		}
+	}
+
+	// During OSN we want all traffic to hit the OSN welcome page except for paths under /osn, which are needed for the OSN app to function. This ensures that users see the welcome page regardless of how they access the site, but can still use the OSN app if they go to an /osn URL directly.
+	if (redirectMode === "OSN") {
+		if (!pathname.startsWith("/osn")) {
+			const redirectUrl = new URL(REDIRECT_TARGET, request.url);
+			// request.url is normalized to port 80 in wrangler dev; the Host header preserves the real port
+			const host = request.headers.get("host");
+			if (host) redirectUrl.host = host;
+			return Response.redirect(redirectUrl.toString(), 302);
+		}
 	}
 };
 
