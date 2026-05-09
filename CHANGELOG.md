@@ -1,3 +1,9 @@
+## [1.24.1](https://github.com/arsdehnel/golden-key-matrix/compare/v1.24.0...v1.24.1) (2026-05-09)
+
+### Bug Fixes
+
+* styling to flex to fit presentation device ([921dad6](https://github.com/arsdehnel/golden-key-matrix/commit/921dad6a0677cea5d838a233f00ff2f04fb9fec5))
+
 ## [1.24.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.23.0...v1.24.0) (2026-04-25)
 
 ### Features
