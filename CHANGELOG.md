@@ -1,3 +1,9 @@
+## [1.24.2](https://github.com/arsdehnel/golden-key-matrix/compare/v1.24.1...v1.24.2) (2026-05-09)
+
+### Bug Fixes
+
+* adjust styling to the slides color scheme ([a29ce41](https://github.com/arsdehnel/golden-key-matrix/commit/a29ce419945b9ca3850c79ca3659958156c7977c))
+
 ## [1.24.1](https://github.com/arsdehnel/golden-key-matrix/compare/v1.24.0...v1.24.1) (2026-05-09)
 
 ### Bug Fixes
