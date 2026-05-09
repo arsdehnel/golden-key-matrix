@@ -11,32 +11,20 @@ export default function HostWelcome({
 }) {
 	return (
 		<>
-			<h2 className="page-title osn-host-view">Welcome!</h2>
+			<h2 className="page-title osn-host-view">
+				Welcome to <span>The Golden Key to Badass Products</span>!
+			</h2>
 			<div className="osn-welcome-view">
 				<div className="osn-welcome-panel">
-					<h3>Take Our 5-Second Poll</h3>
-					<p>
-						<strong>2 Questions • 5 Seconds • 100% Anonymous</strong>
-					</p>
-					<p>Scan the QR code and help us gauge the room's experience and roles.</p>
+					<h4>Quick survey about...</h4>
 					<div className="osn-qr-container">
 						<QRCodeSVG value={pollUrl} size={600} />
 					</div>
 				</div>
 				<div className="osn-welcome-panel">
-					<h3>See Live Results</h3>
-					<p>
-						<strong>As y'all answer the questions, results will display here.</strong>
-					</p>
-					<p>Just simple server-side state object storage :)</p>
+					<h4>...working with other teams</h4>
 					<div className="osn-quadrant-container">
-						<GkmQuadrant
-							yAxisTitle="Experience"
-							xAxisTitle="Comfort Level"
-							yAxisInfinityLabel="All the time"
-							xAxisInfinityLabel="Very Comfy"
-							sharedAxisZeroLabel="None"
-						>
+						<GkmQuadrant yAxisTitle="Experience" xAxisTitle="Comfort Level">
 							{pollAnswerCoordinates.map(({ sessionId, roleColor, xPercent, yPercent }) => (
 								<div
 									key={sessionId}

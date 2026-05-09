@@ -76,7 +76,7 @@ export default function AttendeePoll({
 	return (
 		<>
 			<h2 className="page-title">Welcome!</h2>
-			<p>2-Question Audience Poll</p>
+			<h3>2-Question Audience Poll</h3>
 			<Steps steps={STEPS} currentStep={currentStep} onStepClick={setCurrentStep} />
 
 			{currentStep === 0 && (

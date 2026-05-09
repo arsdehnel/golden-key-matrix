@@ -9,9 +9,21 @@
 	background-color: @color_darkteal;
 	color: @color_blue;
 	.page-title.osn-host-view {
-		font-size: 10rem;
+		font-size: 4.5rem;
 		text-align: center;
 		color: @color_mint;
+		span {
+			// color: @color_blue;
+			font-style: italic;
+		}
+	}
+	.gkm-quadrant-x-axis-title {
+		font-size: 3rem !important;
+		color: white;
+	}
+	.gkm-quadrant-y-axis-title {
+		font-size: 3rem !important;
+		color: white;
 	}
 	.osn-welcome-view {
 		display: grid;
@@ -21,6 +33,16 @@
 		flex: 1;
 		min-height: 0;
 		margin: 0 0 2rem;
+	}
+	h3 {
+		text-align: center;
+		font-size: 3rem;
+		margin: 0;
+	}
+	h4 {
+		text-align: center;
+		font-size: 3rem;
+		margin-bottom: 1rem;
 	}
 	.osn-welcome-panel {
 		text-align: center;
@@ -52,7 +74,7 @@
 		align-items: flex-start;
 
 		.gkm-quadrant {
-			grid-template-rows: 1fr 40px;
+			grid-template-rows: 1fr 80px;
 			height: calc(100% - 2rem);
 			width: calc(100% - 2rem);
 			margin: 2rem 2rem 0 0;
