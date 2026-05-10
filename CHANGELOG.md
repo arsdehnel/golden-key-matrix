@@ -1,3 +1,9 @@
+## [1.26.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.25.0...v1.26.0) (2026-05-10)
+
+### Features
+
+* better intro styling ([4887b7f](https://github.com/arsdehnel/golden-key-matrix/commit/4887b7f253855ba96507a63bec84100645f0b399))
+
 ## [1.25.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.24.3...v1.25.0) (2026-05-10)
 
 ### Features
