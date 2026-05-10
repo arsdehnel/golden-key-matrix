@@ -35,25 +35,23 @@ export default function StandardLayout({
 			<div className={classnames("layout-standard", `layout-standard-site-section-${siteSection}`)}>
 				<header className="global-header">
 					<h1>The Golden Key to Badass Products</h1>
-					{siteSection !== "intro" && (
-						<nav className="primary-nav" aria-label="Primary">
-							<ul>
-								{navItems.map(i => {
-									return (
-										<li
-											key={i.key}
-											className={classnames({
-												"nav-item": true,
-												"nav-item-active": siteSection === i.key,
-											})}
-										>
-											<a href={i.href}>{i.label}</a>
-										</li>
-									);
-								})}
-							</ul>
-						</nav>
-					)}
+					<nav className="primary-nav" aria-label="Primary">
+						<ul>
+							{navItems.map(i => {
+								return (
+									<li
+										key={i.key}
+										className={classnames({
+											"nav-item": true,
+											"nav-item-active": siteSection === i.key,
+										})}
+									>
+										<a href={i.href}>{i.label}</a>
+									</li>
+								);
+							})}
+						</ul>
+					</nav>
 				</header>
 				<main className={classnames("main-content", `site-section-${siteSection}`)}>
 					{pageTitle && <h2 className="page-title">{pageTitle}</h2>}
