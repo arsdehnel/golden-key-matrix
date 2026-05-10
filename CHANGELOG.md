@@ -1,3 +1,10 @@
+## [1.25.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.24.3...v1.25.0) (2026-05-10)
+
+### Features
+
+* better styling for the talk pages ([b1af5ec](https://github.com/arsdehnel/golden-key-matrix/commit/b1af5ecd86423319f44f9a4e03358694c74eb919))
+* enable three phase redirect ([e0f013a](https://github.com/arsdehnel/golden-key-matrix/commit/e0f013a04cadb65238671274cc01e641ac9485f5))
+
 ## [1.24.3](https://github.com/arsdehnel/golden-key-matrix/compare/v1.24.2...v1.24.3) (2026-05-09)
 
 ### Bug Fixes
