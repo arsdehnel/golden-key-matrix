@@ -10,6 +10,7 @@ import wwwRedirect from "@/middleware/www-redirect";
 import Pages__Home from "@/pages/home";
 import { SessionDurableObject } from "@/session/durable-object";
 import DevRoutes from "./pages/dev/routes";
+import Pages__Intro from "./pages/intro";
 import Pages__Matrix from "./pages/matrix";
 import osnRoutes from "./pages/osn/routes";
 
@@ -21,6 +22,7 @@ export default defineApp([
 	...syncedStateRoutes(e => e.SYNCED_STATE_DO),
 	render(Document, [
 		route("/", Pages__Home),
+		route("/intro", Pages__Intro),
 		prefix("/osn", osnRoutes),
 		route("/matrix", Pages__Matrix),
 		prefix("/dev", DevRoutes),

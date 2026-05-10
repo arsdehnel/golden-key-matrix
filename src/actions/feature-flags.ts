@@ -6,14 +6,19 @@ const OSN_REDIRECT_KEY = "osn_redirect_active";
 
 export async function setOsnRedirect(
 	code: string,
-	active: boolean,
-): Promise<{ success: boolean; message: string; active?: boolean }> {
+	mode: "PRE_OSN" | "OSN" | "POST_OSN",
+): Promise<{ success: boolean; message: string; mode?: "PRE_OSN" | "OSN" | "POST_OSN" }> {
 	if (!env.FEATURE_FLAGS) {
 		return { success: false, message: "Feature flags not configured" };
 	}
 	if (code !== ADMIN_CODE) {
 		return { success: false, message: "Invalid code" };
 	}
-	await env.FEATURE_FLAGS.put(OSN_REDIRECT_KEY, String(active));
-	return { success: true, message: active ? "Redirect enabled" : "Redirect disabled", active };
+	const currentMode = await env.FEATURE_FLAGS.get(OSN_REDIRECT_KEY);
+	if (mode === currentMode) {
+		return { success: false, message: `Redirect already in ${mode} mode` };
+	}
+
+	await env.FEATURE_FLAGS.put(OSN_REDIRECT_KEY, mode);
+	return { success: true, message: `Redirect set to ${mode} mode`, mode };
 }
