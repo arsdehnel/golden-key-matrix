@@ -1,3 +1,9 @@
+## [1.26.1](https://github.com/arsdehnel/golden-key-matrix/compare/v1.26.0...v1.26.1) (2026-05-10)
+
+### Bug Fixes
+
+* performance and a11y improvements ([a2a3337](https://github.com/arsdehnel/golden-key-matrix/commit/a2a3337b76bc06779df041df35ba076b342c0ad7))
+
 ## [1.26.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.25.0...v1.26.0) (2026-05-10)
 
 ### Features
