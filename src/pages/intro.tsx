@@ -1,6 +1,6 @@
 export default function Pages__Intro() {
 	return (
-		<div className="intro-page">
+		<main className="intro-page">
 			<h1>The Golden Key to Badass Products</h1>
 			<p className="date-line">May 28, 2026</p>
 			<div className="speaker-row">
@@ -34,6 +34,6 @@ export default function Pages__Intro() {
 					<a href="https://opensourcenorth.com/presentations/The-Golden-Key-to-Badass-Products">View Talk Details</a>
 				</p>
 			</div>
-		</div>
+		</main>
 	);
 }
