@@ -1,3 +1,12 @@
+## [1.26.2](https://github.com/arsdehnel/golden-key-matrix/compare/v1.26.1...v1.26.2) (2026-05-11)
+
+### Bug Fixes
+
+* a little padding to fit the poll to a phone more nicely ([704b528](https://github.com/arsdehnel/golden-key-matrix/commit/704b5288476bb60e39077021cfe20c8853790088))
+* flip logic for placement on attendee poll ([4c3fe74](https://github.com/arsdehnel/golden-key-matrix/commit/4c3fe74d8fb4ea7cddd5839e75d26a683973ad28))
+* handle logic placement on welcome screen too ([6c7da3a](https://github.com/arsdehnel/golden-key-matrix/commit/6c7da3a485b1196dc5cf4fd15ca94ae1ebd2c2a0))
+* keep poll within 800px to make it usable on big screens ([a00dbde](https://github.com/arsdehnel/golden-key-matrix/commit/a00dbde852d105ccdef5ab9dc527464aeb8dc521))
+
 ## [1.26.1](https://github.com/arsdehnel/golden-key-matrix/compare/v1.26.0...v1.26.1) (2026-05-10)
 
 ### Bug Fixes
