@@ -61,14 +61,14 @@ export default function AttendeePoll({
 
 	const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
 		e.currentTarget.setPointerCapture(e.pointerId);
-		const { top, left, height, width } = e.currentTarget.getBoundingClientRect();
-		applyPercents(((e.clientX - left) / width) * 100, ((e.clientY - top) / height) * 100);
+		const { bottom, left, height, width } = e.currentTarget.getBoundingClientRect();
+		applyPercents(((e.clientX - left) / width) * 100, ((bottom - e.clientY) / height) * 100);
 	};
 
 	const handlePointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
 		if (e.buttons === 0) return;
-		const { top, left, height, width } = e.currentTarget.getBoundingClientRect();
-		applyPercents(((e.clientX - left) / width) * 100, ((e.clientY - top) / height) * 100);
+		const { bottom, left, height, width } = e.currentTarget.getBoundingClientRect();
+		applyPercents(((e.clientX - left) / width) * 100, ((bottom - e.clientY) / height) * 100);
 	};
 
 	const handleSliderX = (value: number[]) => applyPercents(value[0], sliderY);
@@ -112,7 +112,7 @@ export default function AttendeePoll({
 							<div
 								className="marker"
 								style={{
-									top: `calc(${pollAnswer.yPercent}% - 10px)`,
+									bottom: `calc(${pollAnswer.yPercent}% - 10px)`,
 									left: `calc(${pollAnswer.xPercent}% - 10px)`,
 									backgroundColor: pollAnswer.roleColor,
 								}}
