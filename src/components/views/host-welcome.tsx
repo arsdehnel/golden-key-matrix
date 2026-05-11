@@ -30,7 +30,7 @@ export default function HostWelcome({
 									key={sessionId}
 									className="marker"
 									style={{
-										top: `calc(${yPercent}% - 10px)`,
+										bottom: `calc(${yPercent}% - 10px)`,
 										left: `calc(${xPercent}% - 10px)`,
 										backgroundColor: roleColor,
 									}}
