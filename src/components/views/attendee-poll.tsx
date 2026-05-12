@@ -35,6 +35,7 @@ export default function AttendeePoll({
 	const [sliderY, setSliderY] = useState(50);
 	const [hasPlaced, setHasPlaced] = useState(false);
 
+	// Listen for back/forward navigation to restore previous steps
 	useEffect(() => {
 		const onPopState = (e: PopStateEvent) => {
 			console.log(e.state);
@@ -43,6 +44,27 @@ export default function AttendeePoll({
 		window.addEventListener("popstate", onPopState);
 		return () => window.removeEventListener("popstate", onPopState);
 	}, []);
+
+	// on mount, restore from sessionStorage
+	useEffect(() => {
+		const saved = sessionStorage.getItem(`poll-${sessionId}`);
+		if (saved) {
+			const { step, answer, sliderX, sliderY, hasPlaced } = JSON.parse(saved);
+			setCurrentStep(step);
+			setPollAnswer(answer);
+			setSliderX(sliderX);
+			setSliderY(sliderY);
+			setHasPlaced(hasPlaced);
+		}
+	}, [sessionId]);
+
+	// write on every relevant state change
+	useEffect(() => {
+		sessionStorage.setItem(
+			`poll-${sessionId}`,
+			JSON.stringify({ step: currentStep, answer: pollAnswer, sliderX, sliderY, hasPlaced }),
+		);
+	}, [sessionId, currentStep, pollAnswer, sliderX, sliderY, hasPlaced]);
 
 	if (!sessionId) {
 		return <p>No session found</p>;
