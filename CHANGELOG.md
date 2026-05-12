@@ -1,3 +1,13 @@
+## [1.27.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.26.2...v1.27.0) (2026-05-12)
+
+### Features
+
+* add session storage for page reloading resilience ([d6a615c](https://github.com/arsdehnel/golden-key-matrix/commit/d6a615ccdae2f89bc6716bdb4efb1e45e2fbcc2b))
+
+### Bug Fixes
+
+* use radix radio buttons for a11y and state on poll ([71c9f75](https://github.com/arsdehnel/golden-key-matrix/commit/71c9f75a1ce3b699a507ea43345db59081d43dd8))
+
 ## [1.26.2](https://github.com/arsdehnel/golden-key-matrix/compare/v1.26.1...v1.26.2) (2026-05-11)
 
 ### Bug Fixes
