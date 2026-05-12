@@ -1,6 +1,6 @@
 "use client";
-import { Slider } from "radix-ui";
-import { useState } from "react";
+import { RadioGroup, Slider } from "radix-ui";
+import { useEffect, useState } from "react";
 import GkmQuadrant from "@/components/gkm-quadrant";
 import type { PollAnswer } from "@/types";
 import Steps from "../steps";
@@ -35,12 +35,25 @@ export default function AttendeePoll({
 	const [sliderY, setSliderY] = useState(50);
 	const [hasPlaced, setHasPlaced] = useState(false);
 
+	useEffect(() => {
+		const onPopState = (e: PopStateEvent) => {
+			console.log(e.state);
+			setCurrentStep(e.state?.step ?? 0);
+		};
+		window.addEventListener("popstate", onPopState);
+		return () => window.removeEventListener("popstate", onPopState);
+	}, []);
+
 	if (!sessionId) {
 		return <p>No session found</p>;
 	}
 
-	const handleRoleSelect = (color: string) => {
+	const handleRoleChange = (color: string) => {
 		setPollAnswer(prev => ({ ...prev, roleColor: color }));
+	};
+
+	const handleRoleSubmit = () => {
+		window.history.pushState({ step: 1 }, "");
 		setCurrentStep(1);
 	};
 
@@ -74,6 +87,11 @@ export default function AttendeePoll({
 	const handleSliderX = (value: number[]) => applyPercents(value[0], sliderY);
 	const handleSliderY = (value: number[]) => applyPercents(sliderX, value[0]);
 
+	const handleQuadrantSubmit = () => {
+		window.history.pushState({ step: 2 }, "");
+		setCurrentStep(2);
+	};
+
 	return (
 		<div className="osn-view-attendee-poll">
 			<h2 className="page-title">2-Question Audience Poll</h2>
@@ -82,19 +100,26 @@ export default function AttendeePoll({
 			{currentStep === 0 && (
 				<>
 					<h3>How would you best describe your role?</h3>
-					<div className="role-options">
+					<RadioGroup.Root
+						className="role-options"
+						value={pollAnswer.roleColor}
+						onValueChange={handleRoleChange}
+						aria-label="Your role"
+					>
 						{ROLE_OPTIONS.map(({ label, color }) => (
-							<button
+							<RadioGroup.Item
 								key={label}
-								type="button"
+								value={color}
 								className="role-option"
 								style={{ "--role-color": color } as React.CSSProperties}
-								onClick={() => handleRoleSelect(color)}
 							>
 								{label}
-							</button>
+							</RadioGroup.Item>
 						))}
-					</div>
+					</RadioGroup.Root>
+					<button type="button" className="quadrant-next" disabled={!pollAnswer.roleColor} onClick={handleRoleSubmit}>
+						Next →
+					</button>
 				</>
 			)}
 
@@ -156,7 +181,7 @@ export default function AttendeePoll({
 							</Slider.Root>
 						</div>
 					</div>
-					<button type="button" className="quadrant-next" onClick={() => setCurrentStep(2)}>
+					<button type="button" className="quadrant-next" onClick={handleQuadrantSubmit}>
 						Next →
 					</button>
 				</>
