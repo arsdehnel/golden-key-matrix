@@ -1,12 +1,18 @@
 import { useState } from "react";
 import { hostCodeValidation } from "@/actions/host-code-validation";
 
-export default function HostRegister({ hostIdentified }: { hostIdentified: (sessionId: string) => void }) {
+export default function HostRegister({
+	hostIdentified,
+	sessionId,
+}: {
+	hostIdentified: (sessionId: string) => void;
+	sessionId: string;
+}) {
 	const [error, setError] = useState<string | null>(null);
 	async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
 		e.preventDefault();
 		const code = new FormData(e.currentTarget).get("presenter-code") as string;
-		const result = await hostCodeValidation(code);
+		const result = await hostCodeValidation(code, sessionId);
 		if (result.success && result.sessionId) {
 			hostIdentified(result.sessionId);
 		} else {
