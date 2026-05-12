@@ -5,8 +5,16 @@ import AttendeePoll from "./views/attendee-poll";
 import HostRegister from "./views/host-register";
 import HostWelcome from "./views/host-welcome";
 
-export default function OsnWelcomeClient({ pollUrl, sessionId }: { pollUrl: string; sessionId: string }) {
-	const [hostSessionId, setHostSessionId] = useSyncedState<string | null>(null, "hostSessionId");
+export default function OsnWelcomeClient({
+	pollUrl,
+	sessionId,
+	initialHostSessionId,
+}: {
+	pollUrl: string;
+	sessionId: string;
+	initialHostSessionId: string | null;
+}) {
+	const [hostSessionId, setHostSessionId] = useSyncedState<string | null>(initialHostSessionId ?? null, "hostSessionId");
 	const [pollAnswerCoordinates, setPollAnswerCoordinates] = useSyncedState<PollAnswer[]>([], "pollCoordinates");
 
 	const recordPollAnswer = (answer: PollAnswer) => {
@@ -18,7 +26,7 @@ export default function OsnWelcomeClient({ pollUrl, sessionId }: { pollUrl: stri
 	};
 
 	if (!hostSessionId) {
-		return <HostRegister hostIdentified={hostIdentified} />;
+		return <HostRegister hostIdentified={hostIdentified} sessionId={sessionId} />;
 	}
 
 	if (hostSessionId === sessionId) {
