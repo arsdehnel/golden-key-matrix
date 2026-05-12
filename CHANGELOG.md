@@ -1,3 +1,9 @@
+## [1.27.1](https://github.com/arsdehnel/golden-key-matrix/compare/v1.27.0...v1.27.1) (2026-05-12)
+
+### Bug Fixes
+
+* hopefully avoid flash of host page ([0e99e4e](https://github.com/arsdehnel/golden-key-matrix/commit/0e99e4e331c8b330d1a30ddd12a52c765e7b323b))
+
 ## [1.27.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.26.2...v1.27.0) (2026-05-12)
 
 ### Features
