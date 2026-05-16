@@ -1,7 +1,10 @@
+import AfterTitleBreak from "@/components/after-title-break";
+
 export default function Pages__Intro() {
 	return (
 		<main className="intro-page">
 			<h1>The Golden Key to Badass Products</h1>
+			<AfterTitleBreak />
 			<p className="date-line">May 28, 2026</p>
 			<div className="speaker-row">
 				<div className="speaker-panel">

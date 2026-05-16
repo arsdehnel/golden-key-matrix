@@ -12,15 +12,3 @@
 		flex: 0 0 100px;
 	}
 }
-
-// OSN hides header + footer, so main fills 100dvh. Propagate that height
-// down so the welcome view can fill the remaining space without overflowing.
-.layout-standard-site-section-osn,
-.layout-standard-site-section-intro {
-	main.main-content {
-		display: flex;
-		flex-direction: column;
-		flex: 1;
-		margin-bottom: 2rem;
-	}
-}
