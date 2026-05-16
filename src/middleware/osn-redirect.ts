@@ -33,6 +33,11 @@ const osnRedirect: RouteMiddleware = async ({ request, ctx }) => {
 		return;
 	}
 
+	if (pathname.startsWith("/dev")) {
+		// Don't redirect dev pages, to make development easier
+		return;
+	}
+
 	// Pre-OSN we just want the homepage
 	if (redirectMode === "PRE_OSN") {
 		if (pathname !== "/intro") {

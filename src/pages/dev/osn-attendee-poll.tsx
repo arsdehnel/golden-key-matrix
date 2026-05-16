@@ -4,6 +4,7 @@ import StandardLayout from "@/layouts/standard";
 import type { PollAnswer } from "@/types";
 
 export default function Pages__Dev__OsnAttendeePoll() {
+	const redirectMode = "OSN";
 	const recordPollAnswer = (answer: PollAnswer) => {
 		console.log(`Dev OSN Attendee Poll answer: ${JSON.stringify(answer, null, 4)}`);
 	};
@@ -11,7 +12,7 @@ export default function Pages__Dev__OsnAttendeePoll() {
 	const sessionId = "my-dev-session-id";
 
 	return (
-		<StandardLayout siteSection="osn">
+		<StandardLayout siteSection="osn" redirectMode={redirectMode}>
 			<AttendeePoll sessionId={sessionId} recordPollAnswer={recordPollAnswer} />
 		</StandardLayout>
 	);
