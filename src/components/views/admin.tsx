@@ -3,7 +3,7 @@ import { useState } from "react";
 import { setOsnRedirect } from "@/actions/feature-flags";
 import type { OsnRedirectMode } from "@/types";
 
-export default function OsnAdmin({ initialRedirectMode }: { initialRedirectMode: OsnRedirectMode }) {
+export default function Admin({ initialRedirectMode }: { initialRedirectMode: OsnRedirectMode }) {
 	const [redirectMode, setRedirectMode] = useState(initialRedirectMode);
 	const [code, setCode] = useState("");
 	const [message, setMessage] = useState<string | null>(null);

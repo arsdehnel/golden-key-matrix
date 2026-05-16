@@ -28,7 +28,7 @@ const osnRedirect: RouteMiddleware = async ({ request, ctx }) => {
 
 	ctx.redirectMode = redirectMode;
 
-	if (pathname === "/osn/admin") {
+	if (pathname === "/admin") {
 		// Don't redirect the admin page, even if we're in OSN mode, so that admins can change the redirect mode without needing to access KV directly
 		return;
 	}
