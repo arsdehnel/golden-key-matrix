@@ -136,12 +136,12 @@ const cspClaims = { 'default-src': "'self'", 'script-src': "'nonce-...' ..." };
 - Binding: `FEATURE_FLAGS` — per-environment IDs in `wrangler.jsonc` (like D1, NOT root-level like DOs)
 - Native CF Workers API only — no third-party: `env.FEATURE_FLAGS.get(key)` / `.put(key, value)`
 - Values are strings: `"true"` / `"false"` / `null` (not booleans)
-- Admin code: `"osn-2026-admin"`, redirect flag key: `"osn_redirect_active"`
+- Admin code: `"osn-2026-admin"`, redirect flag key: `"osn_redirect_mode"`
 - `/osn/admin` is always reachable even when redirect is active — redirect excludes `/osn/*` paths
 
 ### OSN Redirect Middleware (`src/middleware/osn-redirect.ts`)
 
-- Redirects all non-`/osn` traffic to `/osn/welcome` when `FEATURE_FLAGS.get("osn_redirect_active") === "true"`
+- Redirects all non-`/osn` traffic to `/osn/welcome` when `FEATURE_FLAGS.get("osn_redirect_mode") === "true"`
 - **Must bail out on WebSocket upgrade requests** — a 302 response to an `Upgrade: websocket` request kills the SyncedState connection with ECONNRESET. Check `request.headers.get("upgrade")?.toLowerCase() === "websocket"` and return early.
 - **Use `Host` header to build redirect URL** — `request.url` normalizes to port 80 in wrangler dev. Build the redirect with `new URL(target, request.url)` then override `redirectUrl.host = request.headers.get("host")` to preserve the actual port.
 - Exports `shouldOsnRedirect(flagValue, pathname): boolean` as a pure function for unit testing

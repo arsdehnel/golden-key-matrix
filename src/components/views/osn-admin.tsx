@@ -1,13 +1,14 @@
 "use client";
 import { useState } from "react";
 import { setOsnRedirect } from "@/actions/feature-flags";
+import type { OsnRedirectMode } from "@/types";
 
-export default function OsnAdmin({ initialRedirectMode }: { initialRedirectMode: "PRE_OSN" | "OSN" | "POST_OSN" | null }) {
+export default function OsnAdmin({ initialRedirectMode }: { initialRedirectMode: OsnRedirectMode }) {
 	const [redirectMode, setRedirectMode] = useState(initialRedirectMode);
 	const [code, setCode] = useState("");
 	const [message, setMessage] = useState<string | null>(null);
 
-	async function handleModeChange(mode: "PRE_OSN" | "OSN" | "POST_OSN") {
+	async function handleModeChange(mode: OsnRedirectMode) {
 		const result = await setOsnRedirect(code, mode);
 		setMessage(result.message);
 		if (result.success && result.mode !== undefined) {
