@@ -1,10 +1,26 @@
 .site-section-matrix {
 	.matrix-key {
+		display: flex;
+		flex-direction: column;
+		min-height: 500px;
 		padding: 0 0 3rem;
 		border-bottom: 5px double @color_blue;
+		h3 {
+			font-size: 1.5rem;
+		}
+		p {
+			font-size: 1.3rem;
+			margin: 0;
+		}
+		li {
+			font-size: 1.1rem;
+		}
 	}
 	.matrix-key-contents-container {
 		display: flex;
+		flex: 1;
+		height: 100%;
+		padding: 0 2rem;
 	}
 	.matrix-key-contents {
 		flex: 1 0 50%;
@@ -12,7 +28,6 @@
 	}
 	.matrix-key-quadrant {
 		flex: 1 0 50%;
-		max-width: 400px;
 
 		.gkm-quadrant-click-area {
 			cursor: default;
