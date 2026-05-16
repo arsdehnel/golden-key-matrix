@@ -1,3 +1,13 @@
+## [1.29.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.28.0...v1.29.0) (2026-05-16)
+
+### Features
+
+* add admin option to reset host session ([0c4b6b8](https://github.com/arsdehnel/golden-key-matrix/commit/0c4b6b8f98474e020c95ed4e03a140d81fed53c4))
+
+### Bug Fixes
+
+* make title break svg fit ([8aa9242](https://github.com/arsdehnel/golden-key-matrix/commit/8aa92421b5ad484754570d44f686afc37c83f518))
+
 ## [1.28.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.27.1...v1.28.0) (2026-05-16)
 
 ### Features
