@@ -1,3 +1,15 @@
+## [1.28.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.27.1...v1.28.0) (2026-05-16)
+
+### Features
+
+* move from OSN redirect boolean to mode ([396adad](https://github.com/arsdehnel/golden-key-matrix/commit/396adad8a911ab9d73f5dd8db2d72696dcf0f6d5))
+
+### Bug Fixes
+
+* better styling for intro view ([7f946f8](https://github.com/arsdehnel/golden-key-matrix/commit/7f946f8b57ab5e12653f66601d4d153f6fa7fec1))
+* get dev page working again ([8a41c7f](https://github.com/arsdehnel/golden-key-matrix/commit/8a41c7fe957ff740722ae863851e1c8f8bf76eb1))
+* move the admin page to root ([3e036d8](https://github.com/arsdehnel/golden-key-matrix/commit/3e036d81376cf50427a0c6da2288c73778e79f28))
+
 ## [1.27.1](https://github.com/arsdehnel/golden-key-matrix/compare/v1.27.0...v1.27.1) (2026-05-12)
 
 ### Bug Fixes
