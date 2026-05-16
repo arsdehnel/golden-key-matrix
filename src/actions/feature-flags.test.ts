@@ -29,13 +29,13 @@ describe("setOsnRedirect", () => {
 		const result = await setOsnRedirect("osn-2026-admin", "OSN");
 		expect(result.success).toBe(true);
 		expect(result.mode).toBe("OSN");
-		expect(mockKV.put).toHaveBeenCalledWith("osn_redirect_active", "OSN");
+		expect(mockKV.put).toHaveBeenCalledWith("osn_redirect_mode", "OSN");
 	});
 
 	it("changes redirect mode with the correct code", async () => {
 		const result = await setOsnRedirect("osn-2026-admin", "PRE_OSN");
 		expect(result.success).toBe(true);
 		expect(result.mode).toBe("PRE_OSN");
-		expect(mockKV.put).toHaveBeenCalledWith("osn_redirect_active", "PRE_OSN");
+		expect(mockKV.put).toHaveBeenCalledWith("osn_redirect_mode", "PRE_OSN");
 	});
 });

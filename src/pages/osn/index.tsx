@@ -1,8 +1,9 @@
+import type { RequestInfo } from "rwsdk/worker";
 import StandardLayout from "@/layouts/standard";
 
-export default function Pages__OSN__Index() {
+export default async function Pages__OSN__Index({ ctx }: RequestInfo): Promise<React.JSX.Element> {
 	return (
-		<StandardLayout pageTitle="Golden Keys Matrix @ OSN 2026" siteSection="osn">
+		<StandardLayout pageTitle="Golden Keys Matrix @ OSN 2026" siteSection="osn" redirectMode={ctx.redirectMode}>
 			<ul>
 				<li>
 					<a href="/osn/welcome">Welcome Slide / Poll</a>

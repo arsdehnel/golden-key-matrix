@@ -1,9 +1,10 @@
+import type { RequestInfo } from "rwsdk/worker";
 import GkmQuadrant from "@/components/gkm-quadrant";
 import StandardLayout from "@/layouts/standard";
 
-export default function Pages__Matrix() {
+export default async function Pages__Matrix({ ctx }: RequestInfo): Promise<React.JSX.Element> {
 	return (
-		<StandardLayout siteSection="matrix" pageTitle="Matrix Review">
+		<StandardLayout siteSection="matrix" pageTitle="Matrix Review" redirectMode={ctx.redirectMode}>
 			<p>
 				These simple rating quadrants serve as a quick way to gauge progress. For now it can just be a page to reference
 				in discussions or perhaps print out. In the future we're considering making a system of accounts and tracking

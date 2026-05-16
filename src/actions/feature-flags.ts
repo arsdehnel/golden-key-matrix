@@ -2,7 +2,7 @@
 import { env } from "cloudflare:workers";
 
 const ADMIN_CODE = "osn-2026-admin";
-const OSN_REDIRECT_KEY = "osn_redirect_active";
+const OSN_REDIRECT_KEY = "osn_redirect_mode";
 
 export async function setOsnRedirect(
 	code: string,
@@ -12,7 +12,7 @@ export async function setOsnRedirect(
 		return { success: false, message: "Feature flags not configured" };
 	}
 	if (code !== ADMIN_CODE) {
-		return { success: false, message: "Invalid code" };
+		return { success: false, message: "Invalid admin code" };
 	}
 	const currentMode = await env.FEATURE_FLAGS.get(OSN_REDIRECT_KEY);
 	if (mode === currentMode) {

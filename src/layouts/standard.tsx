@@ -7,10 +7,12 @@ export default function StandardLayout({
 	siteSection,
 	children,
 	pageTitle,
+	redirectMode,
 }: {
 	siteSection: string;
 	children: React.ReactNode;
 	pageTitle?: string;
+	redirectMode: string | null;
 }) {
 	const navItems = [
 		{
@@ -32,7 +34,13 @@ export default function StandardLayout({
 
 	return (
 		<StrictMode>
-			<div className={classnames("layout-standard", `layout-standard-site-section-${siteSection}`)}>
+			<div
+				className={classnames(
+					"layout-standard",
+					`layout-standard-site-section-${siteSection}`,
+					`layout-standard-redirect-mode-${redirectMode?.toLocaleLowerCase().replaceAll("_", "-")}`,
+				)}
+			>
 				<header className="global-header">
 					<h1>The Golden Key to Badass Products</h1>
 					<nav className="primary-nav" aria-label="Primary">
