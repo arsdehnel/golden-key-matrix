@@ -12,30 +12,34 @@ vi.mock("cloudflare:workers", () => ({
 	env: { FEATURE_FLAGS: mockKV },
 }));
 
-import { setOsnRedirect } from "./feature-flags";
+import { setRedirectModeAction } from "./feature-flags";
 
-describe("setOsnRedirect", () => {
+describe("setRedirectModeAction", () => {
 	beforeEach(() => {
 		vi.clearAllMocks();
 	});
 
 	it("rejects an invalid code without writing to KV", async () => {
-		const result = await setOsnRedirect("wrong-code", "OSN");
+		const result = await setRedirectModeAction("wrong-code", "OSN");
 		expect(result.success).toBe(false);
 		expect(mockKV.put).not.toHaveBeenCalled();
 	});
 
 	it("changes redirect mode with the correct code", async () => {
-		const result = await setOsnRedirect("osn-2026-admin", "OSN");
+		const result = await setRedirectModeAction("osn-2026-admin", "OSN");
 		expect(result.success).toBe(true);
 		expect(result.mode).toBe("OSN");
-		expect(mockKV.put).toHaveBeenCalledWith("osn_redirect_mode", "OSN");
+		expect(mockKV.put).toHaveBeenCalledWith("osn_redirect_mode", "OSN", {
+			expirationTtl: 10800,
+		});
 	});
 
 	it("changes redirect mode with the correct code", async () => {
-		const result = await setOsnRedirect("osn-2026-admin", "PRE_OSN");
+		const result = await setRedirectModeAction("osn-2026-admin", "PRE_OSN");
 		expect(result.success).toBe(true);
 		expect(result.mode).toBe("PRE_OSN");
-		expect(mockKV.put).toHaveBeenCalledWith("osn_redirect_mode", "PRE_OSN");
+		expect(mockKV.put).toHaveBeenCalledWith("osn_redirect_mode", "PRE_OSN", {
+			expirationTtl: 10800,
+		});
 	});
 });
