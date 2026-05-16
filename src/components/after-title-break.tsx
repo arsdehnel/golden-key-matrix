@@ -2,7 +2,7 @@ export default function AfterTitleBreak() {
 	return (
 		<svg
 			width="1000"
-			height="40"
+			height="50"
 			viewBox="0 0 1000 40"
 			fill="none"
 			xmlns="http://www.w3.org/2000/svg"
