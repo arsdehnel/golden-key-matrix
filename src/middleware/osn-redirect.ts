@@ -56,6 +56,11 @@ const osnRedirect: RouteMiddleware = async ({ request, ctx }) => {
 			return Response.redirect(redirectUrl.toString(), 302);
 		}
 	}
+
+	if (redirectMode === "POST_OSN" && pathname !== "/thank-you") {
+		const redirectUrl = new URL("/thank-you", request.url);
+		return Response.redirect(redirectUrl.toString(), 302);
+	}
 };
 
 export default osnRedirect;
