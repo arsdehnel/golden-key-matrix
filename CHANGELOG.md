@@ -1,3 +1,9 @@
+## [1.31.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.30.0...v1.31.0) (2026-05-27)
+
+### Features
+
+* post-osn thank you page styling ([909488e](https://github.com/arsdehnel/golden-key-matrix/commit/909488e42147d591368bf7f6235e8e98e2a61a32))
+
 ## [1.30.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.29.0...v1.30.0) (2026-05-17)
 
 ### Features
