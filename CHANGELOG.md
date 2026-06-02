@@ -1,3 +1,13 @@
+## [1.32.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.31.0...v1.32.0) (2026-06-02)
+
+### Features
+
+* everything is thank you page ([8e50c5e](https://github.com/arsdehnel/golden-key-matrix/commit/8e50c5e8ca65f127084c8a1c3e6c905f4a4b5fbc))
+
+### Bug Fixes
+
+* update allowed builds setup for pnpm ([61c5612](https://github.com/arsdehnel/golden-key-matrix/commit/61c5612678aa27fffe7a025411d2aa3592109c8e))
+
 ## [1.31.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.30.0...v1.31.0) (2026-05-27)
 
 ### Features
