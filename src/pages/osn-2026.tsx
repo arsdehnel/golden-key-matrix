@@ -1,11 +1,10 @@
 import AfterTitleBreak from "@/components/after-title-break";
 import GkmQuadrant from "@/components/gkm-quadrant";
+import StandardLayout from "@/layouts/standard";
 
-export default function Pages__ThankYou() {
+export default function Pages__OSN2026() {
 	return (
-		<main className="thank-you-page">
-			<h1>The Golden Key to Badass Products</h1>
-			<AfterTitleBreak />
+		<StandardLayout siteSection="osn-2026">
 			<div className="talk-info">
 				<div className="speaker-row">
 					<div className="speaker-panel">
@@ -135,6 +134,6 @@ export default function Pages__ThankYou() {
 					it top of mind. And <strong>be honest</strong> because nobody will benefit from fake and insincere answers.
 				</p>
 			</div>
-		</main>
+		</StandardLayout>
 	);
 }

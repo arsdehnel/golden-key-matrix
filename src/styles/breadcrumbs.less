@@ -1,0 +1,29 @@
+@import "./variables.less";
+
+.breadcrumbs {
+	background: rgba(0, 0, 0, 0.1);
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+		display: flex;
+	}
+	li {
+		position: relative;
+		padding: 0 1.5rem 0 0;
+	}
+	li + li::before {
+		content: ">";
+		position: absolute;
+		left: -1rem;
+	}
+	a {
+		color: @color_darkteal;
+		font-weight: bold;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
