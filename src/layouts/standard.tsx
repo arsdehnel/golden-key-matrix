@@ -39,6 +39,11 @@ export default function StandardLayout({
 			href: "/outcomes",
 			label: "Outcomes",
 		},
+		{
+			key: "matrix",
+			href: "/matrix",
+			label: "Matrix",
+		},
 	];
 
 	return (

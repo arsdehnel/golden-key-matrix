@@ -17,14 +17,22 @@
 		justify-content: center;
 		padding: 1rem;
 		text-align: center;
-		&.footer-nav-gkm {
-			flex: 1 0 50%;
+		flex-direction: row-reverse;
+		flex: 1 0 33%;
+		@media screen and (min-width: 600px) {
+			flex-direction: column;
 		}
-		&.footer-nav-dt,
-		&.footer-nav-ad {
-			flex: 1 0 25%;
-			@media screen and (min-width: 600px) {
-				border-left: 1px solid @color_mint;
+		@media screen and (min-width: 900px) {
+			flex-direction: row;
+			&.footer-nav-gkm {
+				flex: 1 0 50%;
+			}
+			&.footer-nav-dt,
+			&.footer-nav-ad {
+				flex: 1 0 25%;
+				@media screen and (min-width: 600px) {
+					border-left: 1px solid @color_mint;
+				}
 			}
 		}
 		.footer-nav-title {
