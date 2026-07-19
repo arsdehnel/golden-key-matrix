@@ -29,13 +29,22 @@ Defining how these workflows can (and perhaps cannot) be integrated across team 
 
 ### what it looks like
 There is no specific formula or definition for what the integrated workflow looks like. Identifying it as important leads discussions and organization-specific definitions and models. Some guiding ideas and concepts for those discussions can be helpful, though, so here are some starting points and things to consider.
-(Examples/bullets from slides)
+- Prototype run throughs — walk the other team through a design or build before it's finished
+- UX Intention Discussions — designers explain the *why* behind a design decision, not just the what
+- Dev Build Explanations — developers walk designers through implementation constraints early, not after the fact
+- Cross-team paired programming — designers and developers working through a problem together
+
+A simple starting point: use the same project management and communication tools across teams (Jira, ADO, Slack, etc.). When designers and developers are working in the same tools, the workflow starts to integrate itself.
 
 ### how you are doing
 Part of our approach in the golden key talk and ongoing thought sharing is to apply a loose but meaningful rating system to the keys. These aren’t intended to be rigid or judgemental but rather to inform areas for growth and maturing. To reinforce the non-binary and relative nature of these ratings we define each as a spectrum. Sometimes you’ll move right and sometimes you’ll move left, just remember: no judgment!
 
 For the integrated workflow the rating spectrum looks like this:
-(Pull spectrum from slides)
+**Isolated** — Linear & Rigid · Little Communication Between Teams · Process for Process Sake · Separated Environments
+
+**Integrated** — Cyclical & Looping · Cross-team/Paired Programming · Iterative Collaboration · Shared Environments
+
+Where are you on that spectrum right now?
 
 ### takeaways and perspectives
 This key is essential to grow a product organization beyond a single team. What that looks like for you and your organization at your specific point in growth and maturity is going to be up to you to define. But defining it is the important part. Don’t let it define itself or you’ll have countless hours of meetings and rework to straighten it out retroactively. `;

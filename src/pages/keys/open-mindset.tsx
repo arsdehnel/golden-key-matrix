@@ -29,13 +29,24 @@ Open mindsets foster creativity, engagement, and group problem solving. While it
 
 ### what it looks like
 While the term open mindset is thrown around a lot it may be useful to review what it means and how to bring it into daily life. 
-(Examples/bullets from slides)
+- Receptive to new ideas, experiences, and perspectives
+- Fuels adaptability & flexibility
+- Embraces challenges as opportunities
+- Respect for others
+- Curious & asks questions
+- Receives questions as ideas, not criticism
+
+A concrete example: a developer reaching out with questions and suggestions about UX flow — offering a perspective that no one else (stakeholders, users, product) would know to bring. That exchange made the flow better for both users and the dev team. That's an open mindset in action.
 
 ### how you are doing
 Part of our approach in the golden key talk and ongoing thought sharing is to apply a loose but meaningful rating system to the keys. These aren’t intended to be rigid or judgemental but rather to inform areas for growth and maturing. To reinforce the non-binary and relative nature of these ratings we define each as a spectrum. Sometimes you’ll move right and sometimes you’ll move left, just remember: no judgment!
 
 For the open mindset the rating spectrum looks like this:
-(Pull spectrum from slides)
+**Closed** — Empty Criticism · Definitive Answers · Rejecting Feedback · No Grey
+
+**Open** — Questions & Suggestions · Curiosity · Learning · All Gray
+
+Where are you on that spectrum right now? Where is your team?
 
 ### takeaways and perspectives
 

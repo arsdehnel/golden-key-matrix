@@ -10,21 +10,29 @@ export default async function Pages__Outcomes(): Promise<React.JSX.Element> {
 	);
 }
 
-const markdown = `While the keys define what to do to make a great product there are stakeholders and budget owners that need more than some keys. For those doing the day-to-day work of product making they keys are easy to agree with, support, and institute. An essential part of our approach is connecting those keys to tangible and meaningful outcomes for those that are paying for the product teams and guiding the organizational vision. 
+const markdown = `The three keys each operate at a different scale — Open Mindset is personal, Integrated Workflow is a team-level practice, and Rich Ecosystem is about the broader community you build around your product. Together they unlock outcomes that matter whether you're a designer, a developer, or an executive signing off on the roadmap.
+
+The people doing the day-to-day work will find the keys easy to agree with and institute. But connecting those keys to tangible outcomes is what makes this land for the stakeholders, business leaders, and budget holders who need more than a philosophy.
 
 ### Outcome 1: Speed & Efficiency
 
-- Quickness without Losing Depth
-- Adaptability & Completeness
+Moving fast is easy when you cut corners. Moving fast *and* well is what aligned teams can do.
+
+- **Quickness without Losing Depth** — Open mindsets and integrated workflows reduce friction and rework, so you move faster without sacrificing the quality of what you're building.
+- **Adaptability & Completeness** — When requirements shift (and they will), teams with these habits adapt without falling apart — and they finish what they start because they're not constantly undoing misaligned work.
 
 ### Outcome 2: Maintainability & Scalability
 
-- Cooperative Governance
-- Vision for Future
+A product that can't grow with the organization is a liability. These outcomes are about building something that holds up.
+
+- **Cooperative Governance** — Shared ownership structures that emerge from integrated workflows and a rich ecosystem hold up as teams grow, instead of collapsing into whoever shouts loudest.
+- **Vision for Future** — The shared understanding built across teams through these keys makes long-term decisions possible — not just surviving the next sprint.
 
 ### Outcome 3: Community & Passion
 
-- Mutual Intention
-- Common Vernacular & Language
+The part that's easy to dismiss as "soft" is often what separates teams that thrive from teams that churn.
+
+- **Mutual Intention** — People do their best work when they understand why. The keys create alignment around shared purpose, not just shared deliverables.
+- **Common Vernacular & Language** — Design and development often talk past each other because they use different words for the same things. A rich ecosystem and an open mindset converge on shared language, which makes everything else faster and less frustrating.
 
 `;
