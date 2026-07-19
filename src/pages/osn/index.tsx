@@ -1,4 +1,3 @@
-import type { RequestInfo } from "rwsdk/worker";
 import StandardLayout from "@/layouts/standard";
 
 export default async function Pages__OSN__Index(): Promise<React.JSX.Element> {
