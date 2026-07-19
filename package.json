@@ -25,7 +25,7 @@
 		"semantic-release": "semantic-release",
 		"test": "vitest run",
 		"test:watch": "vitest",
-		"types": "tsc",
+		"types:check": "tsc",
 		"worker:run": "rw-scripts worker-run"
 	},
 	"lint-staged": {

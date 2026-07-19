@@ -4,7 +4,7 @@ import StandardLayout from "@/layouts/standard";
 
 export default async function Pages__Admin({ ctx }: RequestInfo): Promise<React.JSX.Element> {
 	return (
-		<StandardLayout siteSection="osn" redirectMode={ctx.redirectMode}>
+		<StandardLayout siteSection="osn">
 			<Admin initialRedirectMode={ctx.redirectMode} />
 		</StandardLayout>
 	);
