@@ -16,15 +16,18 @@ export default async function Pages__Outcomes(): Promise<React.JSX.Element> {
 				need more than a philosophy.
 			</p>
 			<h3>Outcome 1: Speed & Efficiency</h3>
-			<p>Moving fast is easy when you cut corners. Moving fast *and* well is what aligned teams can do.</p>
+			<p>
+				Moving fast is easy when you cut corners. Moving fast <em>and</em> well is what aligned teams can do.
+			</p>
 			<ul>
 				<li>
-					**Quickness without Losing Depth:** Open mindsets and integrated workflows reduce friction and rework, so you
-					move faster without sacrificing the quality of what you're building.
+					<strong>Quickness without Losing Depth:</strong> Open mindsets and integrated workflows reduce friction and
+					rework, so you move faster without sacrificing the quality of what you're building.
 				</li>
 				<li>
-					**Adaptability & Completeness:** When requirements shift (and they will), teams with these habits adapt
-					without falling apart and they finish what they start because they're not constantly undoing misaligned work.
+					<strong>Adaptability & Completeness:</strong> When requirements shift (and they will), teams with these habits
+					adapt without falling apart and they finish what they start because they're not constantly undoing misaligned
+					work.
 				</li>
 			</ul>
 			<h3>Outcome 2: Maintainability & Scalability</h3>
@@ -34,24 +37,25 @@ export default async function Pages__Outcomes(): Promise<React.JSX.Element> {
 			</p>
 			<ul>
 				<li>
-					**Cooperative Governance:** Shared ownership structures that emerge from integrated workflows and a rich
-					ecosystem hold up as teams grow, instead of collapsing into whoever shouts loudest.
+					<strong>Cooperative Governance:</strong> Shared ownership structures that emerge from integrated workflows and
+					a rich ecosystem hold up as teams grow, instead of collapsing into whoever shouts loudest.
 				</li>
 				<li>
-					**Vision for Future:** The shared understanding built across teams through these keys makes long-term
-					decisions possible not just surviving the next sprint.
+					<strong>Vision for Future:</strong> The shared understanding built across teams through these keys makes
+					long-term decisions possible — not just surviving the next sprint.
 				</li>
 			</ul>
 			<h3>Outcome 3: Community & Passion</h3>
 			<p>The part that's easy to dismiss as "soft" is often what separates teams that thrive from teams that churn.</p>
 			<ul>
 				<li>
-					**Mutual Intention:** People do their best work when they understand why. The keys create alignment around
-					shared purpose, not just shared deliverables.
+					<strong>Mutual Intention:</strong> People do their best work when they understand why. The keys create
+					alignment around shared purpose, not just shared deliverables.
 				</li>
 				<li>
-					**Common Vernacular & Language:** Design and development often talk past each other because they use different
-					words for the same things.
+					<strong>Common Vernacular & Language:</strong> Design and development often talk past each other because they
+					use different words for the same things. A rich ecosystem and an open mindset converge on shared language,
+					which makes everything else faster and less frustrating.
 				</li>
 			</ul>
 			<p>
