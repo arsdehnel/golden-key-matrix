@@ -1,4 +1,4 @@
-name: CI
+name: Pull Requests
 
 on:
   pull_request:
@@ -34,7 +34,7 @@ jobs:
           node-version: 22
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm types
+      - run: pnpm types:check
 
   test:
     name: Test
