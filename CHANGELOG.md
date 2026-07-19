@@ -1,3 +1,11 @@
+## [1.33.1](https://github.com/arsdehnel/golden-key-matrix/compare/v1.33.0...v1.33.1) (2026-07-19)
+
+### Bug Fixes
+
+* clean up some wording and formatting ([8de080a](https://github.com/arsdehnel/golden-key-matrix/commit/8de080afb11e592393d0a7ffbd0796de3325cc46))
+* convert everything to straight html ([9056ad1](https://github.com/arsdehnel/golden-key-matrix/commit/9056ad12f294cd9cf9026f5b3a5b0539b6152a9b))
+* remove old pages ([1c922ad](https://github.com/arsdehnel/golden-key-matrix/commit/1c922ad03d4a3ba822bc096d4c5d4bbd73de9078))
+
 ## [1.33.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.32.0...v1.33.0) (2026-07-19)
 
 ### Features
