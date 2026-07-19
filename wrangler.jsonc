@@ -10,7 +10,9 @@
 	"observability": {
 		"enabled": true
 	},
-	"vars": {},
+	"vars": {
+		"GOLDEN_KEYS_MATRIX_ENV": "development"
+	},
 	"durable_objects": {
 		"bindings": [
 			{
@@ -38,7 +40,9 @@
 	"env": {
 		"integration": {
 			"name": "golden-key-matrix-integration",
-			"vars": {},
+			"vars": {
+				"GOLDEN_KEYS_MATRIX_ENV": "integration"
+			},
 			"durable_objects": {
 				"bindings": [
 					{
@@ -60,7 +64,9 @@
 		},
 		"staging": {
 			"name": "golden-key-matrix-staging",
-			"vars": {},
+			"vars": {
+				"GOLDEN_KEYS_MATRIX_ENV": "staging"
+			},
 			"durable_objects": {
 				"bindings": [
 					{
@@ -93,7 +99,9 @@
 					"custom_domain": true
 				}
 			],
-			"vars": {},
+			"vars": {
+				"GOLDEN_KEYS_MATRIX_ENV": "production"
+			},
 			"durable_objects": {
 				"bindings": [
 					{
