@@ -1,3 +1,18 @@
+## [1.33.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.32.0...v1.33.0) (2026-07-19)
+
+### Features
+
+* improving wording and content for key pages and outcomes page ([8afda32](https://github.com/arsdehnel/golden-key-matrix/commit/8afda32e6829ed32da096aec7cc1563f90a2c59f))
+* more content for the keys pages ([79fc4ed](https://github.com/arsdehnel/golden-key-matrix/commit/79fc4ed5056263a061f4e9693eb93216378bd8bb))
+* more post-osn work and adding matrix page ([eb246c5](https://github.com/arsdehnel/golden-key-matrix/commit/eb246c5cbede743fcafe3ac425d731eeba0b91aa))
+* semi-functional key pages ([4e6f49f](https://github.com/arsdehnel/golden-key-matrix/commit/4e6f49f2291319d6917e517172c9d3ac82186968))
+* update homepage for post-conference content ([bdfc310](https://github.com/arsdehnel/golden-key-matrix/commit/bdfc310658398e6c378aee25f8b4126ee8fd2d50))
+
+### Bug Fixes
+
+* remove old intro page ([a883bd7](https://github.com/arsdehnel/golden-key-matrix/commit/a883bd7d9ef492fec8e4361fed5ddc7b0927ab3b))
+* tidy up the matrix wording to be less hedgy ([0208b2e](https://github.com/arsdehnel/golden-key-matrix/commit/0208b2ed3046e34233d1ae64ca27e9e4ca8d1858))
+
 ## [1.32.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.31.0...v1.32.0) (2026-06-02)
 
 ### Features
