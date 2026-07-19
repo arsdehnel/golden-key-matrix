@@ -5,9 +5,10 @@ export default async function Pages__Matrix(): Promise<React.JSX.Element> {
 	return (
 		<StandardLayout siteSection="matrix" pageTitle="Matrix Review">
 			<p>
-				Each quadrant below is a self-assessment — a snapshot of where your Design and Development practices currently sit
-				for that key. Right now this page is static: print it, pull it up in a retro, or work through it as a team. The
-				longer-term goal is to make it interactive with saved state and progress tracking. That part isn't built yet.
+				Each quadrant below is a self-assessment, sort of a snapshot of where your Design and Development practices
+				currently sit for that key. Right now this page is static: print it, pull it up in a retro, or work through it as
+				a team. The longer-term goal is to make it interactive with saved state and progress tracking. That part isn't
+				built yet.
 			</p>
 			<div className="matrix-key">
 				<h3>Key 1: Open Mindset</h3>
@@ -86,7 +87,7 @@ export default async function Pages__Matrix(): Promise<React.JSX.Element> {
 				</div>
 			</div>
 			<p>
-				Return to this regularly — per sprint, quarterly, whatever fits your team's rhythm. The cadence matters less than
+				Return to this regularly (per sprint, quarterly, whatever fits your team's rhythm). The cadence matters less than
 				the consistency. And <strong>be honest</strong>: inflated ratings don't help anyone, and the whole point is to
 				surface where real growth can happen.
 			</p>

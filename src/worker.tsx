@@ -1,4 +1,4 @@
-import { except, prefix, render, route } from "rwsdk/router";
+import { except, render, route } from "rwsdk/router";
 import { SyncedStateServer, syncedStateRoutes } from "rwsdk/use-synced-state/worker";
 import { defineApp, type RequestInfo } from "rwsdk/worker";
 
@@ -7,7 +7,6 @@ import headerMiddleware from "@/middleware/headers";
 import sessionMiddleware from "@/middleware/session";
 import wwwRedirect from "@/middleware/www-redirect";
 import { SessionDurableObject } from "@/session/durable-object";
-import DevRoutes from "./pages/dev/routes";
 import Pages__Home from "./pages/home";
 import Pages__Keys from "./pages/keys";
 import Pages__IntegratedWorkflow from "./pages/keys/integrated-workflow";
@@ -33,7 +32,6 @@ export default defineApp([
 		route("/keys/open-mindset", Pages__OpenMindset),
 		route("/matrix", Pages__Matrix),
 		route("/outcomes", Pages__Outcomes),
-		prefix("/dev", DevRoutes),
 		route("*", Pages__OSN2026),
 	]),
 ]);
