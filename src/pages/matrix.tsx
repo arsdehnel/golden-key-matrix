@@ -1,14 +1,13 @@
-import type { RequestInfo } from "rwsdk/worker";
 import GkmQuadrant from "@/components/gkm-quadrant";
 import StandardLayout from "@/layouts/standard";
 
-export default async function Pages__Matrix({ ctx }: RequestInfo): Promise<React.JSX.Element> {
+export default async function Pages__Matrix(): Promise<React.JSX.Element> {
 	return (
-		<StandardLayout siteSection="matrix" pageTitle="Matrix Review" redirectMode={ctx.redirectMode}>
+		<StandardLayout siteSection="matrix" pageTitle="Matrix Review">
 			<p>
-				These simple rating quadrants serve as a quick way to gauge progress. For now it can just be a page to reference
-				in discussions or perhaps print out. In the future we're considering making a system of accounts and tracking
-				progress for you and your team.
+				Each quadrant below is a self-assessment — a snapshot of where your Design and Development practices currently sit
+				for that key. Right now this page is static: print it, pull it up in a retro, or work through it as a team. The
+				longer-term goal is to make it interactive with saved state and progress tracking. That part isn't built yet.
 			</p>
 			<div className="matrix-key">
 				<h3>Key 1: Open Mindset</h3>
@@ -87,8 +86,9 @@ export default async function Pages__Matrix({ ctx }: RequestInfo): Promise<React
 				</div>
 			</div>
 			<p>
-				Fill this out on a regular basis. Maybe it's a per-sprint item or every-other sprint but something that keeps it
-				top of mind. And <strong>be honest</strong> because nobody will benefit from fake and insincere answers.
+				Return to this regularly — per sprint, quarterly, whatever fits your team's rhythm. The cadence matters less than
+				the consistency. And <strong>be honest</strong>: inflated ratings don't help anyone, and the whole point is to
+				surface where real growth can happen.
 			</p>
 		</StandardLayout>
 	);

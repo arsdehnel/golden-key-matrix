@@ -1,15 +1,7 @@
 @import "./variables.less";
 
 nav.primary-nav {
-	width: 100%;
-	@media screen and (min-width: 600px) {
-		width: 80vw;
-	}
 	margin: 0 auto;
-	border-radius: 6px;
-	border: solid @color_darkteal;
-	border-width: 4px 0;
-	background: #ffffff;
 	ul {
 		margin: 0;
 		padding: 0;
@@ -19,34 +11,29 @@ nav.primary-nav {
 	}
 	li {
 		position: relative;
-		margin: 0.25rem;
+		margin: 0 2px;
 		padding: 0;
-		flex: 1;
+		flex: 1 1 0;
 		text-align: center;
-		&:hover {
-			background-color: lighten(@color_mint, 30%);
-		}
-		&::before {
-			content: "";
-			position: absolute;
-			top: 0;
-			left: -0.25rem;
-			bottom: 0;
-			width: 1px;
-			background-color: @color_darkteal;
-		}
-		&:first-child::before {
-			content: none;
-		}
 	}
 	a {
 		display: block;
-		padding: 1rem;
+		padding: 0.25rem 0;
+		font-size: 0.8rem;
 		text-decoration: none;
 		color: @color_darkgrey;
+		background-color: rgba(255, 255, 255, 0.5);
+		border-radius: 0.5rem;
 		font-weight: bold;
+		&:hover {
+			background-color: lighten(@color_mint, 30%);
+		}
+		@media (min-width: 800px) {
+			padding: 1rem;
+			font-size: 1rem;
+		}
 	}
-	.nav-item-active {
+	.nav-item-active a {
 		background-color: @color_mint;
 	}
 }

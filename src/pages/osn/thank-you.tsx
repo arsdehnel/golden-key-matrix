@@ -2,10 +2,10 @@ import { QRCodeSVG } from "qrcode.react";
 import type { RequestInfo } from "rwsdk/worker";
 import StandardLayout from "@/layouts/standard";
 
-export default async function Pages__OSN__ThankYou({ request, ctx }: RequestInfo) {
+export default async function Pages__OSN__ThankYou({ request }: RequestInfo) {
 	const thankYouUrl = new URL("/osn/thank-you", request.url).href;
 	return (
-		<StandardLayout pageTitle="Thank You" siteSection="osn" redirectMode={ctx.redirectMode}>
+		<StandardLayout pageTitle="Thank You" siteSection="osn">
 			<p>Thank you for participating!</p>
 			<h2>Dorothy Toth</h2>
 			<ul>

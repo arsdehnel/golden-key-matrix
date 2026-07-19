@@ -25,11 +25,11 @@
 		"semantic-release": "semantic-release",
 		"test": "vitest run",
 		"test:watch": "vitest",
-		"types": "tsc",
+		"types:check": "tsc",
 		"worker:run": "rw-scripts worker-run"
 	},
 	"lint-staged": {
-		"*.{ts,tsx}": "biome check --write",
+		"*.{ts,tsx}": "biome check --write --no-errors-on-unmatched --files-ignore-unknown=true",
 		"*.{css,less}": "prettier --write"
 	},
 	"dependencies": {
@@ -40,6 +40,7 @@
 		"radix-ui": "latest",
 		"react": "19.2.4",
 		"react-dom": "19.2.4",
+		"react-markdown": "^10.1.0",
 		"react-server-dom-webpack": "19.2.4",
 		"rwsdk": "1.0.3"
 	},

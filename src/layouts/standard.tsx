@@ -1,18 +1,22 @@
 import { GitHubLogoIcon, GlobeIcon, LinkedInLogoIcon } from "@radix-ui/react-icons";
 import classnames from "classnames";
 import { StrictMode } from "react";
+import AfterTitleBreak from "@/components/after-title-break";
 import FooterLinks from "@/components/footer-links";
 
 export default function StandardLayout({
 	siteSection,
 	children,
 	pageTitle,
-	redirectMode,
+	breadcrumbs,
 }: {
 	siteSection: string;
 	children: React.ReactNode;
 	pageTitle?: string;
-	redirectMode: string | null;
+	breadcrumbs?: {
+		href?: string;
+		label: string;
+	}[];
 }) {
 	const navItems = [
 		{
@@ -21,9 +25,19 @@ export default function StandardLayout({
 			label: "Home",
 		},
 		{
-			key: "osn",
-			href: "/osn",
-			label: "Open Source North",
+			key: "osn-2026",
+			href: "/osn-2026",
+			label: "OSN 2026",
+		},
+		{
+			key: "keys",
+			href: "/keys",
+			label: "Keys",
+		},
+		{
+			key: "outcomes",
+			href: "/outcomes",
+			label: "Outcomes",
 		},
 		{
 			key: "matrix",
@@ -34,15 +48,10 @@ export default function StandardLayout({
 
 	return (
 		<StrictMode>
-			<div
-				className={classnames(
-					"layout-standard",
-					`layout-standard-site-section-${siteSection}`,
-					`layout-standard-redirect-mode-${redirectMode?.toLocaleLowerCase().replaceAll("_", "-")}`,
-				)}
-			>
+			<div className={classnames("layout-standard", `layout-standard-site-section-${siteSection}`)}>
 				<header className="global-header">
 					<h1>The Golden Key to Badass Products</h1>
+					<AfterTitleBreak />
 					<nav className="primary-nav" aria-label="Primary">
 						<ul>
 							{navItems.map(i => {
@@ -61,6 +70,17 @@ export default function StandardLayout({
 						</ul>
 					</nav>
 				</header>
+				{breadcrumbs && (
+					<nav className="breadcrumbs">
+						<ul>
+							{breadcrumbs.map(crumb => (
+								<li key={crumb.label}>
+									{crumb.href ? <a href={crumb.href}>{crumb.label}</a> : <span>{crumb.label}</span>}
+								</li>
+							))}
+						</ul>
+					</nav>
+				)}
 				<main className={classnames("main-content", `site-section-${siteSection}`)}>
 					{pageTitle && <h2 className="page-title">{pageTitle}</h2>}
 					{children}
