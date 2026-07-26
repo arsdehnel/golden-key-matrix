@@ -1,3 +1,9 @@
+## [1.34.0](https://github.com/arsdehnel/golden-key-matrix/compare/v1.33.1...v1.34.0) (2026-07-26)
+
+### Features
+
+* move to a blobby background animation ([88a88d8](https://github.com/arsdehnel/golden-key-matrix/commit/88a88d88598c0e3632e1694b9385c18bad385ec8))
+
 ## [1.33.1](https://github.com/arsdehnel/golden-key-matrix/compare/v1.33.0...v1.33.1) (2026-07-19)
 
 ### Bug Fixes
