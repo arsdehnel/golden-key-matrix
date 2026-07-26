@@ -143,6 +143,8 @@ export default function StandardLayout({
 					</div>
 				</footer>
 			</div>
+			<div className="bg-blob bg-blob-mint" />
+			<div className="bg-blob bg-blob-blue" />
 		</StrictMode>
 	);
 }
